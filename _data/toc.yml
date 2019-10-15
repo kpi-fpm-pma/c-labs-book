@@ -21,6 +21,8 @@
 #
 # See the links below for an example.
 
+- title: Introduction
+  url: /intro
+
 - title: Приклад
   url: /example
-  not_numbered: true

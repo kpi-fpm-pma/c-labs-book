@@ -24,6 +24,8 @@ This folder contains two scripts (one for Windows and one for Linux and Mac) tha
 Running this script first time will create the environment in the `.venv` dir in the repo root folder, activate it and install all needed packages into, then run Jupyter for you. 
 Running it subsequently will just start Jupyter.
 
+We require Python >= 3.6
+
 ## Building the book
 
 Before committing your book you can compile it by running the following code in the Jupyter Lab console:

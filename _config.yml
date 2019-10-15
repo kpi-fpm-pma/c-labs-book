@@ -20,10 +20,10 @@ title: Основи програмування мовою С
 author: Громова В.В.
 email: vikvikgrom@gmail.com
 description: >-
-  Інструкції до виконання лабораторних робіт
-  з дисципліни "Програмування-2. С"
+  Методичні вказівки до виконання лабораторних робіт
+  із кредитного модуля "Програмування-2. С"
 
-baseurl: с-labs-book # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
+baseurl: c-labs-book # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
 url: https://gasperpaul.github.io/ # the base hostname & protocol for your site, e.g. http://example.com
 
 
@@ -31,8 +31,7 @@ url: https://gasperpaul.github.io/ # the base hostname & protocol for your site,
 # Jupyter Book settings
 
 # Main page settings
-footer_text: This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The
-  Jupyter Book Community</a>
+footer_text: This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>
 
 # Sidebar settings
 show_sidebar: true                # Show the sidebar. Only set to false if your only wish to host a single page.

@@ -18,11 +18,11 @@ If you want to contribute to this repository or have found an error, please refe
 Please, cite this book as: 
 
 ```
-@book{pythonlabs,
+@book{clabs,
     author = {Громова В.В.},
     title = {Програмування мовою С},
     subtitle = {Методичні вказівки до виконання лабораторних робіт із кредитного модуля <<Програмування-2. С>>},
-    note = {навч. посіб. для студ. спеціальності 113 Прикладна математика, спеціалізації <<Наука про дані та математичне моделювання>>},
+    note = {навч. посіб. для студ. спеціальності 113 Прикладна математика},
     publisher = {НТУУ <<КПІ>>},
     address = {Київ},
     year = 2016,
