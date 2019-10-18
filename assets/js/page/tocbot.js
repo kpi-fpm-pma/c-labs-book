@@ -19,8 +19,11 @@ const initToc = () => {
     orderedList: false,
     collapseDepth: 6,
     listClass: 'toc__menu',
-    activeListItemClass: "",  // Not using
-    activeLinkClass: "", // Not using
+    activeListItemClass: " ",  // Not using
+    activeLinkClass: " ", // Not using
   });
+
+  document.querySelectorAll('.toc-list-item a')
+    .forEach(it => it.dataset['turbolinks'] = false);
 }
 initFunction(initToc);
