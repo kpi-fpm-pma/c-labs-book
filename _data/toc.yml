@@ -23,3 +23,15 @@
 
 - title: Вступ
   url: /intro/intro
+  
+- header: Лабораторна робота №1
+- title: Базові типи даних, уведення-виведення, бітові операції, операції зсуву
+  url: /lab1/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab1/theory
+    - title: Питання для самоперевірки
+      url: /lab1/questions
+    - title: Завдання
+      url: /lab1/problems
+      
