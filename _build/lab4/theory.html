@@ -1,0 +1,949 @@
+---
+interact_link: content/lab4/theory.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Теоретичні відомості
+prev_page:
+  url: /lab4/intro.html
+  title: |-
+    Указівники, функції, рекурсія
+next_page:
+  url: /lab4/questions.html
+  title: |-
+    Питання для самоперевірки
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;">&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110; &#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;<a class="anchor-link" href="#&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;"> </a></h1><h2 id="&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;">&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;<a class="anchor-link" href="#&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;"> </a></h2><p>Указівники є одним із найпотужніших засобів мови С. Сфера застосування вказівників досить широка, наприклад:</p>
+<ul>
+<li>указівники дають можливість змінювати аргументи функцій, що знаходяться у викликах;</li>
+<li>указівники можна використовувати для підтримки динамічного розміщення пам’яті;</li>
+<li>указівниками можна заміняти масиви з метою підвищення ефективності роботи програми.</li>
+</ul>
+<p><em>Указівник</em> — це адреса елемента пам’яті, яка розподіляється для розміщення деякого об’єкта (як такий об’єкт може виступати змінна, масив, структура, рядкова константа). У випадку, якщо змінну оголошено як указівник, вона містить адресу байта пам’яті комп’ютера, за яким може знаходитися скалярна величина будь-якого типу. Під час оголошення змінної типу вказівник потрібно визначити тип об’єкта даних, адресу якого міститиме змінна, та ім’я вказівника. Загальний формат оголошення вказівника має такий вигляд:</p>
+
+<pre><code>специфікатор_типу* ім’я_змінної;</code></pre>
+<p>де</p>
+<ul>
+<li>символ <code>*</code> означає, що наступна за ним змінна є вказівником;</li>
+<li><code>специфікатор_типу</code> задає тип об’єкта і може бути будь-яким із допустимих у мові С базових типів.</li>
+</ul>
+<p>Змінна, яку оголошують як указівник на тип <code>void</code>, можна використати для посилання на об’єкт будь-якого типу. Проте, щоб можна було виконати арифметичні та логічні операції над указівниками або над об’єктами, на які вони вказують, потрібно під час виконання кожної операції явно визначати типи об’єктів. Такі визначення типів можна виконати за допомогою операцій перетворення типів.</p>
+<h3 id="&#1054;&#1087;&#1077;&#1088;&#1072;&#1090;&#1086;&#1088;&#1080;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;&#1110;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1072;&#1084;&#1080;">&#1054;&#1087;&#1077;&#1088;&#1072;&#1090;&#1086;&#1088;&#1080; &#1076;&#1083;&#1103; &#1088;&#1086;&#1073;&#1086;&#1090;&#1080; &#1079;&#1110; &#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1054;&#1087;&#1077;&#1088;&#1072;&#1090;&#1086;&#1088;&#1080;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;&#1110;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1072;&#1084;&#1080;"> </a></h3><p>У мові C існує два оператори, які вживають зі вказівниками: <code>*</code> і <code>&amp;</code>. Оператор <code>&amp;</code> є унарним і повертає адресу комірки пам’яті свого операнда. Наприклад:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">var</span><span class="p">,</span> <span class="o">*</span><span class="n">pvar</span><span class="p">;</span> <span class="cm">/*оголошено змінну цілого типу та вказівник на змінну цілого тіпа*/</span>
+<span class="n">pvar</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">var</span><span class="p">;</span> <span class="cm">/*у змінну pvar поміщено адресу комірки пам&#39;яті змінної var*/</span>
+</pre></div>
+<p>Адреса <code>&amp;var</code> вказує на місце розташування змінної <code>var</code> у пам’яті комп’ютера. Варто пам’ятати, що адреса змінної не має нічого спільного зі значенням змінної. Операцію <code>&amp;</code> можна розглядати як оператор присвоювання, який присвоює змінній <code>pvar</code> адресу змінної <code>var</code>.</p>
+<p>Інший спосіб занесення адреси в змінну-вказівник полягає в присвоєнні вказівнику значення відомої константи. Така потреба виникає в програмах, у яких заздалегідь відомі абсолютні адреси, що задають, наприклад, комірки з описом стану апаратних засобів (у програмах драйверів пристроїв, у яких для управління пристроями потрібно мати доступ до таких елементів пам’яті, як регістри стану чи комірка буфера пристроїв).</p>
+<p>Оператор <code>*</code> є доповненням до оператора <code>&amp;</code>. Це унарний оператор, який використовують для доступу до змінної (непряма адресація). За такого способу звернення до змінної відбувається не безпосередньо, а через проміжну змінну, яка містить адресу змінної. Наприклад, якщо <code>pvar</code> містить адресу комірки пам’яті змінної <code>var</code>, то виконання операцій</p>
+<div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+<span class="o">*</span><span class="n">pvar</span> <span class="o">=</span> <span class="mi">150</span><span class="p">;</span>
+</pre></div>
+<p>призведе до однакового результату: змінна <code>var</code> набуде значення 150.</p>
+<h3 id="&#1042;&#1080;&#1088;&#1072;&#1079;&#1080;-&#1079;&#1110;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1072;&#1084;&#1080;">&#1042;&#1080;&#1088;&#1072;&#1079;&#1080; &#1079;&#1110; &#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1042;&#1080;&#1088;&#1072;&#1079;&#1080;-&#1079;&#1110;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1072;&#1084;&#1080;"> </a></h3><p>До вказівників можна застосовувати операцію присвоювання. Указівнику на <code>void</code> можна присвоїти вказівник будь-якого типу. Проте для зворотного присвоювання потрібно використовувати явне перетворення вказівника:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="n">pv</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">pf</span><span class="p">;</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">;</span>
+<span class="n">pv</span> <span class="o">=</span> <span class="n">pf</span><span class="p">;</span>
+<span class="n">pf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">pv</span><span class="p">;</span>
+</pre></div>
+<p>Над указівниками можна виконувати такі арифметичні операції:</p>
+<ol>
+<li>Додавання (указівник + ціле) та віднімання (указівник – ціле):<div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="n">n</span><span class="o">*</span><span class="k">sizeof</span><span class="p">(</span><span class="err">тип</span><span class="p">)</span>
+</pre></div>
+де </li>
+</ol>
+<ul>
+<li><code>p</code> — значення вказівника;</li>
+<li><code>n</code> — деяке ціле.</li>
+</ul>
+<p>У загальному випадку додавання (віднімання) цілого числа до вказівника збільшує (зменшує) адресу, що міститься в ньому, на добуток цього цілого числа на розмір в байтах того об’єкта, на який цей указівник указує.</p>
+<ol>
+<li>Віднімання (указівник – указівник).</li>
+</ol>
+<p>Якщо <code>р1</code> і <code>р2</code> — указівники на елементи одного й того ж масиву, то операція <code>р1 - р2</code> дає такий же результат, що й віднімання індексів відповідних елементів масивів.</p>
+<ol>
+<li>Приріст (збільшення або зменшення): <code>++</code>, <code>--</code>.
+Указівник після кожного збільшення буде вказувати на наступний елемент базового типу. Це стосується як додатного, так і від’ємного приросту.</li>
+</ol>
+<p>Інші арифметичні операції над указівниками заборонено, наприклад, не можна скласти два вказівника, помножити вказівник на число і т.п.</p>
+<p>Указівники можна порівнювати: до них можливо застосувати всі 6 операцій порівняння: <code>&gt;, &gt;=, &lt;, &lt;=, ==, !=</code>.</p>
+<h3 id="&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;-&#1090;&#1072;-&#1086;&#1076;&#1085;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;">&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080; &#1090;&#1072; &#1086;&#1076;&#1085;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110; &#1084;&#1072;&#1089;&#1080;&#1074;&#1080;<a class="anchor-link" href="#&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;-&#1090;&#1072;-&#1086;&#1076;&#1085;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;"> </a></h3><p>У мові С між указівниками й масивами існує тісний зв’язок. Наприклад, оголошення масиву <code>int array[25]</code> визначає не тільки виділення пам’яті для двадцяти п’яти елементів масиву, але й для вказівника з іменем <code>array</code>. Ім’я масиву без індексів трактується як адреса початкового елемента. Тобто ім’я масиву є вказівником на масив. Таким чином, доступ до елементів масиву здійснюється через указівник з іменем <code>array</code>.</p>
+<p>Оскільки ім’я масиву є вказівником, допустиме таке присвоєння:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">arrаy</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">ptr</span><span class="p">;</span>
+<span class="n">ptr</span> <span class="o">=</span> <span class="n">array</span><span class="p">;</span>
+</pre></div>
+<p>У цьому фрагменті вказівник <code>ptr</code> установлюється на адресу першого елемента масива, при цьому присвоювання <code>ptr = arrаy</code> можна записати в еквівалентній формі <code>ptr = &amp;arrаy[0]</code>.</p>
+<p>Звернення до, наприклад, п’ятого елемента масиву можна записати так:</p>
+<div class="highlight"><pre><span></span><span class="n">array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="o">*</span><span class="p">(</span><span class="n">array</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">*</span><span class="p">(</span><span class="err">р</span><span class="n">tr</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+<p>Усі ці оператори повернуть п’ятий елемент масиву. Таким чином, мова С дає два способи звернення до елемента масиву:</p>
+<ul>
+<li>за допомогою індексованого імені;</li>
+<li>за допомогою арифметики зі вказівниками.</li>
+</ul>
+<p>Як приклад використання вказівника замість індексованого імені масиву розгляньмо наступні дві програми. У них для виведення на екран вмісту рядка застосовують два методи: звернення до індексованого імені елемента та звернення до елемента за допомогою вказівника.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-41">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.1"> </a></h4><div class="highlight"><pre><span></span><span class="cm">/*версія з використанням індексованого імені*/</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctype.h&gt; // tolower</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">80</span><span class="p">];</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть рядок із великих літер: &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Рядок із малих літер: &quot;</span><span class="p">);</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span> <span class="n">tolower</span><span class="p">(</span><span class="n">str</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-42">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.2">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.2<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.2"> </a></h4><div class="highlight"><pre><span></span><span class="cm">/*версія з використанням указівника*/</span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;ctype.h&gt; //tolower</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">str</span><span class="p">[</span><span class="mi">80</span><span class="p">],</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть рядок із великих літер: &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Рядок із малих літер: &quot;</span><span class="p">);</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">str</span><span class="p">;</span> <span class="cm">/* одержуємо адресу str */</span>
+    <span class="k">while</span> <span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span> <span class="n">tolower</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="o">++</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Під час роботи з індексованим іменем можна використовувати форми запису <code>array[16] = 3</code> і <code>16[array] = 3</code>, тобто послідовність записів для 16-го елемента масиву може бути довільною. У будь-якому випадку:</p>
+<ul>
+<li>один із виразів має бути вказівником;</li>
+<li>другий із виразів має бути вираженням цілого типу.</li>
+</ul>
+<p>Другий спосіб доступу до елементів масиву пов’язаний із використанням адресних виразів та операції розадресації у формі <code>*(array + 16) = 3</code>. За такого способу доступу адресний вираз, що дорівнює адресі 16-го елемента масиву, теж можна записано різними способами: <code>*(array + 16)</code> або <code>*(16 + array)</code>.</p>
+<h3 id="&#1052;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1110;&#1074;">&#1052;&#1072;&#1089;&#1080;&#1074;&#1080; &#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1110;&#1074;<a class="anchor-link" href="#&#1052;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1110;&#1074;"> </a></h3><p>У мові С допускається організовувати масиви вказівників. Щоб оголосити масив цілих указівників розміром 10, потрібно записати:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</pre></div>
+<p>що читається як масив ([]) указівників (<code>*</code>) на об’єкти типу <code>int</code>.</p>
+<p>Щоб присвоїти адресу цілої змінної з іменем <code>var</code>, наприклад, третьому елементу масиву вказівників, потрібно записати <code>х[2] = &amp;var</code>. Для одержання значення змінної <code>var</code> потрібно записати <code>*х[2]</code>.</p>
+<p>У програмуванні часто доводиться використовувати масиви рядків. Для створення масиву рядків потрібно використовувати двовимірний масив, у якому розмір лівого індексу визначає число рядків, а розмір правого індексу — довжину кожного рядка. Наприклад, нижче оголошується масив із 30 рядків, у якому кожний рядок має довжину 80 символів:</p>
+<div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">str_array</span><span class="p">[</span><span class="mi">30</span><span class="p">][</span><span class="mi">80</span><span class="p">];</span>
+</pre></div>
+<p>Звернення до окремого рядка виконується досить легко: потрібно просто вказати тільки лівий індекс. Наприклад, наступний оператор викликає функцію <code>gets()</code> із третім рядком, що міститься в рядковому масиві <code>str_array</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">gets</span><span class="p">(</span><span class="n">str_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</pre></div>
+<p>За своєю дією цей оператор еквівалентний такому:</p>
+<div class="highlight"><pre><span></span><span class="n">gets</span><span class="p">(</span><span class="o">&amp;</span><span class="n">str_array</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+</pre></div>
+<p>Першу форму запису вважають професіональнішою.</p>
+<p>Найчастіше масив рядків розглядають як масив указівників, де кожний елемент (указівник) містить адресу наступного рядка тексту. Щоб зрозуміти, як працюють рядкові масиви, розгляньмо наступну програму. Ця програма уводить текст рядок за рядком доти, доки користувач не уведе порожній рядок. При цьому програма виводить кожний рядок на екран.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-43">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.3">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.3<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.3"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#define MAX_STR_LEN 1000</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">text</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+
+    <span class="kt">char</span> <span class="n">buffer</span><span class="p">[</span><span class="n">MAX_STR_LEN</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Уведіть рядок #%d: &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="n">fgets</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="n">MAX_STR_LEN</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\n&#39;</span><span class="p">)</span>
+            <span class="k">break</span><span class="p">;</span> <span class="cm">/* вихід, якщо рядок порожній */</span>
+
+        <span class="kt">int</span> <span class="n">str_length</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">buffer</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+        <span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="n">str_length</span><span class="p">);</span>
+        <span class="n">strncpy</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">str_length</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Уведені рядки: </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">free</span><span class="p">(</span><span class="n">text</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;,-&#1097;&#1086;-&#1074;&#1082;&#1072;&#1079;&#1091;&#1102;&#1090;&#1100;-&#1085;&#1072;-&#1110;&#1085;&#1096;&#1110;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;">&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;, &#1097;&#1086; &#1074;&#1082;&#1072;&#1079;&#1091;&#1102;&#1090;&#1100; &#1085;&#1072; &#1110;&#1085;&#1096;&#1110; &#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;<a class="anchor-link" href="#&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;,-&#1097;&#1086;-&#1074;&#1082;&#1072;&#1079;&#1091;&#1102;&#1090;&#1100;-&#1085;&#1072;-&#1110;&#1085;&#1096;&#1110;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;"> </a></h3><p>Указівник на вказівник є однією з форм багаторівневої (непрямої) адресації. Як відомо, значенням указівника є адреса змінної, що містить потрібне значення. У випадку вказівника на вказівник перший указівник містить адресу другого вказівника, який, у свою чергу, указує на змінну, що містить потрібне значення. На рисунках 4.1 і 4.2 зображено однорівневу й багаторівневу адресації, відповідно.</p>
+<p><img src="/images/lab41.png" alt="Однорівнева адресація"></p>
+<p>Рисунок 4.1 – Однорівнева адресація</p>
+<p><img src="/images/lab42.png" alt="Багаторівнева адресація"></p>
+<p>Рисунок 4.2 – Багаторівнева адресація</p>
+<p>Рівень непрямої адресації можна підвищувати до будь-якого ступеня, проте на практиці випадків, коли це потрібно чи виправдано, зустрічається мало. Адресацію занадто високого рівня важко відстежити, і вона є джерелом багатьох помилок.
+Для доступу до кінцевого значення, на яке вказує вказівник на вказівник, потрібно двічі використати оператор <code>*</code>, як показано в наступному прикладі.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-44">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.4">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.4<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.4"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">**</span><span class="n">q</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">q</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">p</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">q</span><span class="p">);</span> <span class="cm">/*друк значення х*/</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>У фрагменті <code>p</code> оголошують указівником на цілу змінну, а <code>q</code> — указівником на вказівник <code>p</code>. Функція <code>printf()</code> виводить на екран число 10.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;-&#1085;&#1072;-&#1073;&#1072;&#1075;&#1072;&#1090;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;">&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080; &#1085;&#1072; &#1073;&#1072;&#1075;&#1072;&#1090;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110; &#1084;&#1072;&#1089;&#1080;&#1074;&#1080;<a class="anchor-link" href="#&#1059;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1080;-&#1085;&#1072;-&#1073;&#1072;&#1075;&#1072;&#1090;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;"> </a></h3><p>Під час розміщення елементів багатовимірних масивів вони розташовуються в пам’яті поспіль за рядками, тобто останній індекс змінюється найшвидше, а перший — найповільніше. Такий порядок дає можливість звертатися до будь-якого елемента багатовимірного масиву, використовуючи адресу його початкового елемента та тільки один індексний вираз. Наприклад, для масиву, оголошеного як <code>int arr[m][n];</code>, справедливе співвідношення</p>
+
+<pre><code>адреса(arr[i][j]) = адреса(arr[0][0]) + (i*n + j)*k,</code></pre>
+<p>де <code>k</code> — кількість байтів, виділених для елемента масиву (залежно від типу).</p>
+<h3 id="&#1056;&#1086;&#1079;&#1087;&#1086;&#1076;&#1110;&#1083;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110;-&#1076;&#1083;&#1103;-&#1076;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1091;">&#1056;&#1086;&#1079;&#1087;&#1086;&#1076;&#1110;&#1083; &#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110; &#1076;&#1083;&#1103; &#1076;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086; &#1084;&#1072;&#1089;&#1080;&#1074;&#1091;<a class="anchor-link" href="#&#1056;&#1086;&#1079;&#1087;&#1086;&#1076;&#1110;&#1083;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110;-&#1076;&#1083;&#1103;-&#1076;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1091;"> </a></h3><p>Указівники на багатовимірні масиви у мові С — це масиви масивів, тобто масиви, елементами яких є масиви. Під час оголошення таких масивів у пам’яті комп’ютера створюється декілька різних об’єктів. Наприклад, під час оголошення двовимірного масиву <code>int arr[4][3]</code> у пам’яті виділяється ділянка для зберігання значення змінної <code>arr</code>, яка є вказівником на масив із чотирьох указівників. Для цього масиву з чотирьох указівників теж виділяється пам’ять. Кожний із цих чотирьох указівників містить адресу масиву з трьох елементів типу <code>int</code>. Таким чином, у пам’яті комп’ютера виділяється чотири ділянки для зберігання чотирьох масивів чисел типу <code>int</code>, кожний із яких складається з трьох елементів. Це породжує в програмі три різних об’єкта:</p>
+<ul>
+<li>указівник з ідентифікатором <code>arr</code>;</li>
+<li>безіменний масив із чотирьох указівників:
+<code>arr[0], arr[1], arr [2], arr[3];</code></li>
+<li>безіменний масив із дванадцяти чисел типу <code>int</code>.</li>
+</ul>
+<p>Для доступу до безіменних масивів використовують адресні вирази зі вказівником <code>arr</code>. Як було зазначено раніше, доступ до елементів одномірного масиву вказівників здійснюють, зазначуючи один індексний вираз у формі <code>arr[2]</code> або <code>*(arr + 2)</code>.</p>
+<p>Щоб отримати доступ до елементів двовимірного масиву чисел типу <code>int arr[i][j]</code>, потрібно використати такі вирази:</p>
+<ul>
+<li><code>arr[i][j]</code> (наприклад, <code>arr[1][2] = 10</code>);</li>
+<li><code>*(*(arr + i) + j)</code> (наприклад, <code>*(*(arr + 1) + 2) = 10</code>);</li>
+<li><code>(*(arr + i))[j]</code> (наприклад, <code>(*(arr + 1))[2] = 10</code>).</li>
+</ul>
+<p>Аналогічні дії можна виконати з допомогою вказівника <code>ptr</code>, такого, що <code>int* ptr = arr</code>:</p>
+<ul>
+<li><code>ptr[1*3 + 2]</code>, де індекси 1 і 2 — індекси використовуваного елемента, а 3 — число елементів у рядку;</li>
+<li><code>ptr[5]</code>. При цьому зовні схоже звернення <code>arr[5]</code> виконати неможливо, тому що вказівника з індексом 5 не існує;</li>
+<li><code>*(*(ptr + 1) + 2)</code>;</li>
+<li><code>*(ptr + 1*3 + 2)</code>.</li>
+</ul>
+<p>Розгляньмо на простому прикладі, як можна використовувати індексні й адресні вирази для опрацювання двовимірних масивів.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-45">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.5">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.5<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.5"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 2</span>
+<span class="cp">#define COLS 3</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">[</span><span class="n">ROWS</span><span class="p">][</span><span class="n">COLS</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">;</span>
+
+    <span class="cm">/* для друку розглядаємо ім&#39;я масиву як</span>
+<span class="cm">    указівник на початок (2 способи) */</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="n">j</span><span class="p">));</span>  <span class="c1">// 1</span>
+          <span class="c1">//printf(&quot;%d&quot;, (*(t+i))[j]);   // 2</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-46">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>У наступному фрагменті показано зв’язок між матрицею та вказівником на неї.</p>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.6">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.6<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.6"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 2</span>
+<span class="cp">#define COLS 3</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">[</span><span class="n">ROWS</span><span class="p">][</span><span class="n">COLS</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">;</span>
+
+    <span class="cm">/* для друку розглядаємо ім&#39;я масиву як</span>
+<span class="cm">    указівник на початок (2 способи) */</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">ptr</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">COLS</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="cm">/* із матрицею так робити не можна:*/</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">t</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">COLS</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="cm">/* а так можна: */</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="o">*</span><span class="n">COLS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">COLS</span> <span class="o">+</span> <span class="n">j</span><span class="p">]);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-47">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>У нижченаведеному прикладі показано зв’язок матриці та масиву вказівників.</p>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.7">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.7<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.7"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 2</span>
+<span class="cp">#define COLS 3</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">[</span><span class="n">ROWS</span><span class="p">][</span><span class="n">COLS</span><span class="p">],</span> <span class="o">*</span><span class="n">ptr</span><span class="p">[</span><span class="n">ROWS</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+        <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">;</span>
+
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">ptr</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="cm">/* а так робити не можна: */</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="o">*</span><span class="n">COLS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-48">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Оскільки вказівник на вказівник — це те саме, що й масив указівників, то дозволено запис, наведений у наступному фрагменті.</p>
+<p>Приклад 4.8</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 2</span>
+<span class="cp">#define COLS 3</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span><span class="p">[</span><span class="n">ROWS</span><span class="p">][</span><span class="n">COLS</span><span class="p">],</span> <span class="o">*</span><span class="n">ptr</span><span class="p">[</span><span class="n">ROWS</span><span class="p">],</span> <span class="o">**</span><span class="n">pp</span><span class="p">;</span>
+
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+        <span class="n">ptr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// pp[i] = &amp;t[i][0]</span>
+
+    <span class="n">pp</span> <span class="o">=</span> <span class="n">ptr</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">j</span><span class="p">;</span>
+
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">pp</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">pp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;">&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;<a class="anchor-link" href="#&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;"> </a></h2><p><em>Функція</em> — це деяка логічно завершена сукупність операторів мови, яка виконує певну задачу, і яку можна викликати для виконання потрібну кількість разів. Основна форма опису функції має вигляд:</p>
+
+<pre><code>&lt;тип&gt; &lt;ім’я функції&gt; (&lt;формальні параметри&gt;) {&lt;тіло функції&gt;}</code></pre>
+<p>де</p>
+<ul>
+<li><code>&lt;тип&gt;</code> визначає тип значення, яке повертає функція за допомогою оператора <code>return</code>. Якщо тип не вказано, то за замовчуванням передбачається, що функція повертає ціле значення (типу <code>int</code>). Якщо з іменем функції не пов’язано результату, то потрібно вказати тип функції <code>void</code>;</li>
+<li><code>&lt;формальні параметри&gt;</code> — список параметрів функції, який складається з переліку типів та імен параметрів, розділених комами. Функція може не мати параметрів, але круглі дужки в її описі неодмінні в будь-якому випадку.</li>
+</ul>
+<p>Оператор <code>return</code> має два варіанти використання:</p>
+<ul>
+<li>виконує негайний вихід із поточної функції та повернення в програму, яка викликає;</li>
+<li>його можна використовувати для повернення значення функції.</li>
+</ul>
+<p>У тілі функції може бути декілька операторів <code>return</code> або не бути жодного. У другому випадку повернення в програму, яка викликає, відбувається після виконання останнього оператора в тілі функції.</p>
+<p>Параметри, які записують у зверненні до функції, називають <em>фактичними</em>, а параметри, зазначені в описі функції — <em>формальними</em>. Фактичні параметри повинні відповідати формальним за кількістю, порядком слідування й типом. Об’єкти, оголошені поза функцією, діють у будь-якій функції. Їх називають <em>глобальними</em>. Об’єкти, оголошені всередині функції, діють тільки в ній. Їх називають <em>локальними</em>. Область дії локальної змінної називають <em>блоком</em>. Локальна змінна існує, доки виконується блок, у якому її оголошено. Вихід із блока веде до втрати змінної та її значення.</p>
+<p>Параметри можна передавати у функцію <em>за іменем (значенням)</em> або <em>за адресою (указівником)</em>. У першому випадку змінні, передані у функцію, після виходу з неї <em>зберігають свої вихідні значення</em>, незважаючи на те, чи було їх змінено всередині функції. У другому випадку зміни значень змінних, указівники на які передано у функцію, після виходу з неї <em>зберігаються</em>.</p>
+<p><em>Усі параметри функцій, крім масивів, передають за значенням.</em> Під час виконання функції в стеку виділяється місце для її формальних параметрів, і в це місце заноситься значення фактичного параметра (значення параметра на момент виклику функції). Функція використовує це значення, при цьому вона може змінити значення параметра. Після виходу з функції змінені значення параметрів губляться. У мові С викликана функція не може змінити значення змінних, указаних у момент звернення до неї як фактичні параметри. Якщо потрібно передати саму змінну, а не її значення (копію), то у функцію передають <em>адресу</em> цієї змінної. У такому випадку через параметри можна передавати результат виконання функції: параметри, за допомогою яких результати потрібно передати з функції в точку виклику, описують як указівники.</p>
+<p>Виклик функції можна оформити у вигляді <em>оператора</em>, якщо з іменем функції не пов’язано значення, що повертається, або у вигляді <em>виразу</em>, якщо повертається значення, пов’язане з іменем функції.</p>
+<p>Прототип функції можна вказувати замість її опису до моменту її виклику для того, щоб компілятор міг виконати перевірку відповідності типів аргументів і параметрів. Прототип функції за формою такий же, як і заголовок функції. Наприкінці нього ставлять <code>;</code>.</p>
+<h3 id="&#1052;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1081;-&#1092;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;">&#1052;&#1072;&#1089;&#1080;&#1074;&#1080; &#1081; &#1092;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;<a class="anchor-link" href="#&#1052;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1081;-&#1092;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;"> </a></h3><p>У тому випадку, коли в якості аргумента функції використовують масив, то у функцію передають тільки адресу масиву, а не його повну копію. Під час викликання функції з іменем масиву як аргументом у неї передається вказівник на перший елемент масиву. Тому оголошення параметра має мати тип, схожий із типом указівника.</p>
+<p>Існує три способи оголошення параметра, який буде отримувати вказівник масиву:</p>
+<ul>
+<li><code>func(int ar[10]);</code> — оголошення як масиву;</li>
+<li><code>func(int ar[]);</code> — оголошення як безрозмірного масиву;</li>
+<li><code>func(int* ar);</code> — оголошення як указівника.</li>
+</ul>
+<p>Усі три способи породжують один і той же результат — указівник.</p>
+<h3 id="&#1044;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1103;&#1082;-&#1072;&#1088;&#1075;&#1091;&#1084;&#1077;&#1085;&#1090;&#1080;-&#1092;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;">&#1044;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110; &#1084;&#1072;&#1089;&#1080;&#1074;&#1080; &#1103;&#1082; &#1072;&#1088;&#1075;&#1091;&#1084;&#1077;&#1085;&#1090;&#1080; &#1092;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;<a class="anchor-link" href="#&#1044;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1110;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1103;&#1082;-&#1072;&#1088;&#1075;&#1091;&#1084;&#1077;&#1085;&#1090;&#1080;-&#1092;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;"> </a></h3><p>У випадку використання як аргумента функції багатовимірного масиву найліпше вказувати масив з усіма його розмірами, наприклад:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">mult</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span> <span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span> <span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">]);</span>
+</pre></div>
+<p>Розгляньмо декілька прикладів для ілюстрації викладеного матеріалу.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-49">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.9">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.9<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.9"> </a></h4><p>Сортування масивів.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define N 10</span>
+
+<span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span> <span class="c1">// пртотип функції</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span> <span class="p">};</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Перед сортуванням</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">N</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Після сортування</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d &quot;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">sort</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-410">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.10">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.10<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.10"> </a></h4><p>Із заданої матриці сформувати нову матрицю шляхом викреслювання заданих рядка та стовпця.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 4</span>
+<span class="cp">#define COLS 5</span>
+
+<span class="cm">/* друк матриці за рядками */</span>
+<span class="kt">void</span> <span class="nf">print_matrix</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%3d &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* із матриці викреслюємо задані рядок s та стовпець с */</span>
+<span class="kt">void</span> <span class="nf">remove_from_matrix</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">[][</span><span class="n">COLS</span><span class="p">],</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">[][</span><span class="n">COLS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+<span class="p">{</span>
+    <span class="cm">/* col - лічильник числа стовпців;</span>
+<span class="cm">       row - лічильник числа рядків */</span>
+    <span class="kt">int</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">COLS</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">row</span><span class="p">)</span> <span class="o">+</span> <span class="n">col</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+            <span class="n">col</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">row</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="cm">/* вихідна матриця */</span>
+    <span class="kt">int</span> <span class="n">m</span><span class="p">[][</span><span class="n">COLS</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="p">{</span>  <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">},</span>
+        <span class="p">{</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">},</span>
+        <span class="p">{</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">},</span>
+        <span class="p">{</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">}</span>
+    <span class="p">};</span>
+    <span class="kt">int</span> <span class="n">m1</span><span class="p">[</span><span class="n">ROWS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">COLS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span> <span class="cm">/* матриця–результат */</span>
+
+    <span class="n">print_matrix</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">ROWS</span><span class="p">,</span> <span class="n">COLS</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">row</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть номер видаленого рядка від 0 до %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ROWS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">row</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">col</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть номер видаленого стовпця від 0 до %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">COLS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">col</span><span class="p">);</span>
+
+    <span class="n">remove_from_matrix</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">ROWS</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">m1</span><span class="p">);</span>
+    <span class="n">print_matrix</span><span class="p">(</span><span class="o">&amp;</span><span class="n">m1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">ROWS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">COLS</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-411">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.11">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.11<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.11"> </a></h4><p>Знайти середнє арифметичне значення елементів матриці, не рівних ні найбільшому, ні найменшому з її елементів.
+У нижченаведеному фрагменті використано функцію <code>prmatr()</code> з попереднього прикладу, але для дійсних чисел.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 4</span>
+<span class="cp">#define COLS 5</span>
+
+<span class="kt">void</span> <span class="nf">print_matrix</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">min_max</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span><span class="p">);</span>
+<span class="kt">float</span> <span class="nf">mean_value</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">float</span><span class="p">,</span> <span class="kt">float</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">;</span>
+    <span class="kt">float</span><span class="o">*</span> <span class="n">matrix</span><span class="p">;</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть кількість рядків і стовпців</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nrows</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncols</span><span class="p">);</span>
+
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="n">nrows</span> <span class="o">*</span> <span class="n">ncols</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">matrix</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Недостатньо пам&#39;яті</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nrows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">ncols</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть matrix[%d][%d]</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">matrix</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="n">print_matrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">);</span>
+
+    <span class="kt">float</span> <span class="n">min_el</span> <span class="o">=</span> <span class="mf">3.14e+38</span><span class="p">,</span> <span class="n">max_el</span> <span class="o">=</span> <span class="mf">3.14e-38</span><span class="p">;</span>
+    <span class="n">min_max</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">min_el</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">max_el</span><span class="p">);</span>
+
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;min_el = %7.2f, max_el = %7.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">min_el</span><span class="p">,</span> <span class="n">max_el</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;mean = %7.2f&quot;</span><span class="p">,</span> <span class="n">mean_value</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">,</span> <span class="n">min_el</span><span class="p">,</span> <span class="n">max_el</span><span class="p">));</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/* друк матриці за рядками */</span>
+<span class="kt">void</span> <span class="nf">print_matrix</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%7.2f &quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">i</span><span class="o">*</span><span class="n">m</span> <span class="o">+</span> <span class="n">j</span><span class="p">));</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="cm">/* пошук мінімального і максимального елементів */</span>
+<span class="kt">void</span> <span class="nf">min_max</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">pa</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nrows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ncols</span><span class="p">,</span> 
+             <span class="kt">float</span><span class="o">*</span> <span class="n">pmin</span><span class="p">,</span> <span class="kt">float</span><span class="o">*</span> <span class="n">pmax</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nrows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">ncols</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="o">*</span><span class="n">pmin</span><span class="p">)</span>
+            <span class="o">*</span><span class="n">pmin</span> <span class="o">=</span> <span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">*</span><span class="n">pmax</span><span class="p">)</span>
+            <span class="o">*</span><span class="n">pmax</span> <span class="o">=</span> <span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="cm">/* обчислення середнього арифметичного значення */</span>
+<span class="kt">float</span> <span class="nf">mean_value</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span> <span class="n">pa</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nrows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">ncols</span><span class="p">,</span>
+                 <span class="kt">float</span> <span class="n">pmin</span><span class="p">,</span> <span class="kt">float</span> <span class="n">pmax</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">s</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">nrows</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">ncols</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pmin</span> <span class="o">&amp;&amp;</span> <span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="n">pmax</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">s</span> <span class="o">+=</span> <span class="n">pa</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">ncols</span> <span class="o">+</span> <span class="n">j</span><span class="p">];</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="k">return</span> <span class="n">s</span> <span class="o">/</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#1056;&#1077;&#1082;&#1091;&#1088;&#1089;&#1110;&#1103;">&#1056;&#1077;&#1082;&#1091;&#1088;&#1089;&#1110;&#1103;<a class="anchor-link" href="#&#1056;&#1077;&#1082;&#1091;&#1088;&#1089;&#1110;&#1103;"> </a></h2><p><em>Рекурсія</em> — це спосіб організації допоміжного алгоритму у вигляді підпрограми (процедури або функції), за якого вона в ході виконання звертається сама до себе. Рекурсивним називають будь-який об’єкт, який частково визначається через себе.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab4-Example-412">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.12">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.12<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.12"> </a></h4><p>Простим прикладом рекурсії є функція <code>fact_recursive()</code>, яка обчислює факторіал цілого числа <code>n</code> — добуток усіх цілих чисел від 1 до <code>n</code>.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">fact_recursive</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">fact_recursive</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">fact</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">*</span> <span class="n">i</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">fact_recursive</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Робота нерекурсивної версії функції <code>fact()</code> зрозуміла: вона використовує цикл, який починається з 1, закінчується на заданому числі та послідовно примножує на кожне число зростаючий добуток.</p>
+<p>Робота рекурсивної функції <code>fact_recursive()</code> складніша. Якщо <code>fact_recursive()</code> викликають з аргументом, рівним 1, функція повертає 1. Якщо її викликають із будь-яким іншим аргументом, вона повертає добуток <code>fact_recursive(n - 1)*n</code>. Для обчислення цього виразу <code>fact_recursive()</code> викликається з <code>n - 1</code> рекурсивно. Цей процес триває доти, доки <code>n</code> не стане рівним 1. Для обчислення факторіалу 2 перше звернення до <code>fact_recursive()</code> вимагає другого звернення з аргументом, рівним 1. Це друге звернення поверне 1, яка потім множиться на 2 (початкове значення <code>n</code>). Відповідь у такому випадку дорівнює 2. Можна вставити у функцію <code>fact_recursive()</code> оператори <code>printf()</code>, щоб подивитися, на якому рівні знаходиться кожне звернення та які проміжні результати одержуються на кожному рівні.</p>
+<p>Звернення до рекурсивної функції не відрізняється від виклику будь-якої іншої функції. При цьому за кожного нового рекурсивного звернення до пам’яті створюється нова копія локальних змінних. Такі копії будуть породжуватися до виходу на граничну умову. Очевидно, що в разі відсутності граничної умови необмежене зростання числа таких копій призведе до аварійного завершення програми через переповнення стека.</p>
+<p>Коли функція викликає саму себе, комп’ютер розподіляє пам’ять для нових локальних змінних і параметрів у стеку та виконує код функції з цими новими змінними спочатку.</p>
+<p>Рекурсивне звернення не створює нової копії функції. Новими є тільки аргументи. По мірі того, як кожне рекурсивне звернення повертається, комп’ютер видаляє зі стека старі локальні змінні й параметри та відновлює виконання з точки виклику функції всередині функції. Можна казати, що рекурсивні функції висовуються та повертаються назад, як телескопи.</p>
+<p>Породження все нових копій рекурсивної функції до виходу на граничну умову називають <em>рекурсивним спуском</em>. Максимальну кількість копій рекурсивної функції, які одночасно можуть перебувати в пам’яті, називають <em>глибиною рекурсії</em>. Завершення роботи рекурсивних функцій, аж до найпершої, яка ініціювала рекурсивні виклики, називають <em>рекурсивним підйомом</em>.</p>
+<p>Основна перевага рекурсивних функцій полягає в тому, що їх можна використовувати для створення якісніших і простіших версій деяких алгоритмів, наприклад, для програмування задач штучного інтелекту.</p>
+<p>Для написання рекурсивної функції в її тілі повинен фігурувати оператор <code>if</code>, щоб змусити функцію повертатися без виконання рекурсивного звернення. Якщо цього не зробити, то після звернення до такої функції вона ніколи не поверне управління. Це найпоширеніша помилка, яка зустрічається в написанні рекурсивних функцій. Рекурсивна функція обов’язково повинна містити в собі умову закінчення рекурсивності, щоб не викликати зациклення програми.</p>
+<p>Перевагою рекурсій є компактний запис, а вадою — витрати часу й пам’яті на повторні виклики функції й передачу їй копій параметрів.</p>
+<p><em>Порада</em>: у процесі розроблення корисно використовувати функції <code>printf()</code> і <code>getch()</code>, щоб можна було стежити за тим, що відбувається, і припинити виконання, якщо було допущено помилку.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
