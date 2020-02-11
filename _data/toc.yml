@@ -24,7 +24,7 @@
 - title: Вступ
   url: /intro/intro
   not_numbered: true
-  
+
 - header: Лабораторна робота №1
 - title: Базові типи даних, уведення-виведення, бітові операції, операції зсуву
   url: /lab1/intro
@@ -35,7 +35,7 @@
       url: /lab1/questions
     - title: Завдання
       url: /lab1/problems
-      
+
 - header: Лабораторна робота №2
 - title: Одновимірні й двовимірні масиви
   url: /lab2/intro
@@ -46,6 +46,17 @@
       url: /lab2/questions
     - title: Завдання
       url: /lab2/problems
+
+- header: Лабораторна робота №4
+- title: Указівники, функції, рекурсія
+  url: /lab4/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab4/theory
+    - title: Питання для самоперевірки
+      url: /lab4/questions
+    - title: Завдання
+      url: /lab4/problems
 
 - title: Example
   url: /example
