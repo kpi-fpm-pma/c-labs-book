@@ -1,0 +1,263 @@
+---
+interact_link: content/lab2/theory.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Теоретичні відомості
+prev_page:
+  url: /lab2/intro.html
+  title: |-
+    Одновимірні й двовимірні масиви
+next_page:
+  url: /lab2/questions.html
+  title: |-
+    Питання для самоперевірки
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;">&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110; &#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;<a class="anchor-link" href="#&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;"> </a></h1><h2 id="&#1057;&#1080;&#1085;&#1090;&#1072;&#1082;&#1089;&#1080;&#1089;-&#1086;&#1075;&#1086;&#1083;&#1086;&#1096;&#1077;&#1085;&#1085;&#1103;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1110;&#1074;-&#1091;-&#1084;&#1086;&#1074;&#1110;-&#1057;">&#1057;&#1080;&#1085;&#1090;&#1072;&#1082;&#1089;&#1080;&#1089; &#1086;&#1075;&#1086;&#1083;&#1086;&#1096;&#1077;&#1085;&#1085;&#1103; &#1084;&#1072;&#1089;&#1080;&#1074;&#1110;&#1074; &#1091; &#1084;&#1086;&#1074;&#1110; &#1057;<a class="anchor-link" href="#&#1057;&#1080;&#1085;&#1090;&#1072;&#1082;&#1089;&#1080;&#1089;-&#1086;&#1075;&#1086;&#1083;&#1086;&#1096;&#1077;&#1085;&#1085;&#1103;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1110;&#1074;-&#1091;-&#1084;&#1086;&#1074;&#1110;-&#1057;"> </a></h2><p>У загальному випадку масив — це набір елементів даних одного типу. Одновимірні масиви можна асоціювати з компонентами вектора, а двовимірні — компонентами матриці.
+Для оголошення масиву використовують такий синтаксис:</p>
+
+<pre><code>&lt;тип даних&gt; &lt;ім’я масиву&gt; [число елементів];</code></pre>
+<p>Наприклад:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">array_int</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span> <span class="cm">/*одновимірний масив зі 100 цілочисельних елементів*/</span>
+<span class="kt">double</span> <span class="n">array_d</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span> <span class="cm">/*одновимірний масив із 25 елементів*/</span>
+</pre></div>
+<p>Як видно з прикладів, оголошення масивів відрізняється від оголошення звичайних змінних наявністю квадратових дужок <code>[]</code>. Імена масивів вибирають за тими ж правилами, що й імена змінних. Звернення до окремого елемента масиву здійснюють за номером індексу елемента. Перший елемент масиву завжди має індекс 0, другий — 1, і т.д.</p>
+<p>Наступний фрагмент програми демонструє запис у масив значень лінійної функції <code>f(x)</code> і виведення їх на екран:</p>
+<div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">f</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%.2f&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-1">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>У мові С передбачено можливість ініціалізації масиву в момент його оголошення, наприклад, таким чином:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">powers</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
+</pre></div>
+<p>У цьому випадку елементу <code>powers[0]</code> присвоюється значення 1, <code>powers[1]</code> — 2, і т.д.</p>
+<p>Особливістю ініціалізації масивів є те, що їхній розмір можна задавати тільки константами, а не змінними. Наприклад, наступна програма призведе до помилки під час компіляції:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">array_f</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="cm">/*помилка, так не можна*/</span>
+</pre></div>
+<p>Тому під час оголошення масивів зазвичай використовують такий підхід:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define N 100</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">float</span> <span class="n">array_f</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+<p>Варто зазначити, що під час ініціалізації масивів число їхніх елементів повинно збігатися з розмірністю. Розгляньмо варіант, коли число елементів під час ініціалізації буде меншим за розмірність масиву:</p>
+<div class="highlight"><pre><span></span><span class="cp">#define SIZE 4</span>
+<span class="kt">int</span> <span class="n">data</span><span class="p">[</span><span class="n">SIZE</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">1024</span> <span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d, &quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</pre></div>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-2">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Результат роботи програми буде наступний: <code>512, 1024, 0, 0,</code>. З одержаного результату видно, що неініціалізовані елементи масиву приймаються рівними 0. У випадках, коли число елементів під час ініціалізації перевищує розмірність масиву, під час компіляції станеться помилка. Тому, коли наперед невідомо число елементів, доцільно використовувати таку конструкцію мови С:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">data</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">256</span> <span class="p">};</span>
+</pre></div>
+<p>У результаті ініціалізувався одновимірний масив розмірністю 6 елементів. При цьому у випадку, якщо значення індексу під час звернення до елемента масиву перевищить його розмірність, ні програма, ні компілятор не видадуть повідомлення про помилку, але при цьому в програмі можуть виникати непередбачені збої. Тому програмісту варто звертати особливу увагу на те, щоб під час звернення до елементів масиву індекси не виходили за його межі.</p>
+<p>Для зберігання деяких видів інформації, наприклад, зображень, зручно використовувати двовимірні масиви. Оголошення двовимірних масивів здійснюють так:</p>
+<div class="highlight"><pre><span></span><span class="err">і</span><span class="n">nt</span> <span class="n">array_2D</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span> <span class="cm">/*двовимірний масив зі 100 х 20 елементів*/</span>
+</pre></div>
+<p>Нумерація елементів у цьому випадку також починається з 0, тобто <code>array_2D[0][0]</code> відповідає елементу першого рядка першого стовпця, <code>array_2D[0][1]</code> — елементу першого рядка другого стовпця і т.д. Для початкової ініціалізації двовимірного масиву можна використовувати таку конструкцію:</p>
+<div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">array_2D</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">}</span> <span class="p">};</span>
+</pre></div>
+<p>або</p>
+<div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">array_2D</span><span class="p">[][]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">}</span> <span class="p">};</span>
+</pre></div>
+<p>У загальному випадку можна задати масив будь-якої розмірності. Правила роботи з такими масивами аналогічні правилам роботи з одновимірними й двовимірними масивами.</p>
+<h2 id="&#1059;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1103;-&#1074;&#1080;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1103;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1091;">&#1059;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1103;-&#1074;&#1080;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1103; &#1084;&#1072;&#1089;&#1080;&#1074;&#1091;<a class="anchor-link" href="#&#1059;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1103;-&#1074;&#1080;&#1074;&#1077;&#1076;&#1077;&#1085;&#1085;&#1103;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1091;"> </a></h2><p>Мова С не має вбудованих засобів для уведення-виведення масиву повністю, тому масив уводять і виводять поелементно за допомогою циклів, як, наприклад, у такій програмі:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+
+    <span class="c1">// уведення масиву</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть кількість чисел n = &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="p">(</span><span class="k">sizeof</span> <span class="n">arr</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Забагато елементів</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;arr[%d] = &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* оператори, які опрацьовують масив */</span>
+    <span class="c1">// ...</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+    <span class="c1">// виведення масиву</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;arr[%d] = %.2f</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-3">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Виведення масиву, що містить велику кількість елементів, бажано проводити в кілька рядків із зупинкою після заповнення екрана. Для цього зручно використовувати функції <code>getch()</code> і <code>clrscr()</code>.</p>
+<p>Уведення двовимірного масиву здійснюють поелементно за допомогою двох укладених циклів. Наступний фрагмент програми призначено для уведення за рядками двовимірного масиву елементів типу <code>double</code> розміром <code>n</code> рядків на <code>m</code> стовпців:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;a[%d][%d] = &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%lf&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+<p>Для уведення масиву за стовпцями достатньо поміняти місцями рядки програми, які є заголовками циклів.</p>
+<p>Виведення такого ж двовимірного масиву ілюструє такий фрагмент:</p>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%9.3lf&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+<p>У цьому фрагменті після виведення чергового рядка масиву здійснюється перехід на наступний рядок екрану.</p>
+<h2 id="&#1055;&#1086;&#1089;&#1080;&#1083;&#1072;&#1085;&#1085;&#1103;-&#1090;&#1072;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;">&#1055;&#1086;&#1089;&#1080;&#1083;&#1072;&#1085;&#1085;&#1103; &#1090;&#1072; &#1084;&#1072;&#1089;&#1080;&#1074;&#1080;<a class="anchor-link" href="#&#1055;&#1086;&#1089;&#1080;&#1083;&#1072;&#1085;&#1085;&#1103;-&#1090;&#1072;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1080;"> </a></h2><p>У мові С існує настільки сильний взаємозв’язок між посиланнями й масивами, що посилання й масиви фактично потрібно розглядати одночасно. Будь-яку дію, яка досягається індексуванням масиву, можна виконати й за допомогою посилань. Варіант із посиланнями буде швидший, але він важчий для розуміння, принаймні, для початківців.</p>
+<p>Опис <code>int a[10]</code> визначає масив a розміром у 10 елементів, тобто це блок із 10 послідовних об’єктів, іменованих <code>a[0], a[1], …, a[9]</code>. Запис <code>a[i]</code> позначає елемент в i-й позиції від початку.</p>
+<p>Якщо <code>pa</code> — це посилання на ціле значення, описане як <code>int* pa</code>, то присвоювання <code>pa = &amp;a[0]</code> установлює в <code>pa</code> посилання на перший елмент <code>a</code>, тобто pa містить адресу <code>a[0]</code>. Присвоювання <code>x = pa</code> копіює вміст <code>a[0]</code> в <code>x</code>.</p>
+<p>Якщо вміст <code>pa</code> вказує на окремий елемент масиву <code>a</code>, то за визначенням <code>pa + 1</code> указує на наступний елемент, <code>pa - i</code> — на i-й елемент перед <code>pa</code>, <code>pa + i</code> — на i-й елемент після <code>pa</code>. Таким чином, якщо <code>pa</code> вказує на <code>a[0]</code>, то <code>*(pa + 1)</code> відповідає вмісту <code>a[1]</code>, <code>pa + i</code> є адресою <code>a[i]</code>, a <code>*(pa + i)</code> — вмістом <code>a[i]</code>.</p>
+<p>Ці міркування справедливі незалежно від типу змінних у масиві <code>a</code>. Визначення операції «додавання 1 до посилання» та іншої посиланнєвої арифметики передбачає масштабування, пов’язане з розміром пам’яті для об’єкта, на який указує посилання. Таким чином, у <code>pa + i</code> значення <code>i</code>, перш ніж бути доданим до <code>pa</code>, буде помножено на розмір об’єкта, на який указує <code>pa</code>. Між індексуванням і посиланнєвою арифметикою зв’язок дуже тісний.</p>
+<p>Будь-яку згадку масиву транслятор сприймає як посилання на початок масиву, тобто ім’я масиву є посиланнєвий вираз. Це призводить до корисних наслідків:</p>
+<ul>
+<li>оскільки ім’я масиву є синонім для розташування першого елемента, то присвоювання <code>pa = &amp;a[0]</code> можна записати й у такому вигляді: <code>pa = a</code>;</li>
+<li>значення <code>a[i]</code> можна записати як <code>*(a + i)</code>. Обчислюючи <code>a[i]</code>, транслятор відразу переводить його в <code>*(a + i)</code>. Ці форми еквівалентні;</li>
+<li>застосовуючи операцію <code>&amp;</code> до обох частин вищенаведеної рівності, отримуємо, що <code>&amp;a[i]</code> і <code>a + i</code> ідентичні: <code>a + i</code>— це адреса i-го елемента відносно <code>а</code>;</li>
+<li>якщо <code>pa</code> — посилання, то його можна використовувати з індексом: <code>pa[i]</code> ідентично <code>*(pa + i)</code>.</li>
+</ul>
+<p>Іншими словами, будь-який масив та індексний вираз можна записати як посилання й зміщення, і навпаки. При цьому це можна робити навіть в одному операторі. Однак, між іменем масиву й посиланням є одна відмінність, про яку завжди варто пам’ятати. Посилання є змінна, отже <code>pa = a</code> і <code>pa++</code> — осмислені операції. Ім’я ж масиву — константа, а не змінна, тому конструкції на кшталт <code>a = pa</code>, <code>a++</code>, <code>p = &amp;a</code> неприпустимі.</p>
+<h3 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.1"> </a></h3><p>Програма друкування вмісту одновимірного масиву з використанням посилань. Масив проініціалізовано заздалегідь.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define SIZE 5</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">SIZE</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span> <span class="p">};</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span><span class="p">;</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="n">arr</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">SIZE</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;arr[%d] = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">i</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-21">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.2">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.2<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.2"> </a></h3><p>Програма, що реалізує заповнення двовимірного масиву випадковими елементами з використанням посилань.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#define ROWS 5</span>
+<span class="cp">#define COLUMNS 6</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="n">ROWS</span><span class="p">][</span><span class="n">COLUMNS</span><span class="p">],</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">COLUMNS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">rand</span><span class="p">();</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ROWS</span> <span class="o">*</span> <span class="n">COLUMNS</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;arr[%d] = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="o">*</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="n">i</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-22">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_remove_input tag_hide_output tag_full_width">
+
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="jb_output_wrapper }}">
+<div class="output_area">
+
+
+<div class="output_html rendered_html output_subarea ">
+
+<iframe
+    width="100%"
+    height="600"
+    src="https://repl.it/@GasperPaul/Lab2-Example-22?lite=true"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
