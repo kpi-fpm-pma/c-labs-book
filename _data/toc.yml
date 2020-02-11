@@ -35,7 +35,7 @@
       url: /lab1/questions
     - title: Завдання
       url: /lab1/problems
-      
+
 - header: Лабораторна робота №2
 - title: Одновимірні й двовимірні масиви
   url: /lab2/intro
@@ -46,6 +46,17 @@
       url: /lab2/questions
     - title: Завдання
       url: /lab2/problems
+
+- header: Лабораторна робота №5
+- title: Типи даних, визначені користувачем
+  url: /lab5/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab5/theory
+    - title: Питання для самоперевірки
+      url: /lab5/questions
+    - title: Завдання
+      url: /lab5/problems
 
 - title: Example
   url: /example
