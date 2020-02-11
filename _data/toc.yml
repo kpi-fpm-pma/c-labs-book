@@ -46,3 +46,7 @@
       url: /lab2/questions
     - title: Завдання
       url: /lab2/problems
+
+- title: Example
+  url: /example
+  not_numbered: true
