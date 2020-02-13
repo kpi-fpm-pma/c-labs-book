@@ -80,6 +80,17 @@
     - title: Завдання
       url: /lab5/problems
 
+- header: Лабораторна робота №6
+- title: Динамічні масиви
+  url: /lab6/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab6/theory
+    - title: Питання для самоперевірки
+      url: /lab6/questions
+    - title: Завдання
+      url: /lab6/problems
+
 - title: Example
   url: /example
   not_numbered: true
