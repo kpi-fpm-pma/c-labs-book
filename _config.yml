@@ -82,7 +82,8 @@ download_page_header: Made with Jupyter Book    # A header that will be displaye
 
 # Bibliography and citation settings. See https://github.com/inukshuk/jekyll-scholar#configuration for options
 scholar:
-  style: apa
+  style: ieee-with-url
+  locale: uk
 
 #######################################################################################
 # Option to add a Goggle analytics tracking code
