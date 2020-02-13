@@ -1,0 +1,196 @@
+---
+interact_link: content/lab7/theory.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Теоретичні відомості
+prev_page:
+  url: /lab7/intro.html
+  title: |-
+    Однозв'язні списки
+next_page:
+  url: /lab7/questions.html
+  title: |-
+    Питання для самоперевірки
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
+<span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">url</span><span class="p">):</span> <span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;">&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110; &#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;<a class="anchor-link" href="#&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;"> </a></h1><p><em>Список</em> — це послідовність структур, кожна з яких містить посилання, яке зв’язує її з іншою структурою. Для організації списків використовують структури, які складаються з двох частин — інформаційної та допоміжної:</p>
+<ul>
+<li>інформаційна частина містить інформацію, яка підлягає опрацюванню;</li>
+<li>додаткова частина містить указівники на наступну чи попередню структури списку.</li>
+</ul>
+<p>Елемент списку називають <em>вузлом</em> (node). Таким чином, список — це ланцюжок зв’язаних вузлів, від першого до останнього. Останній вузол не посилається на наступний елемент, тому його поле посилання має значення <code>NULL</code>. За однозв’язним списком можна рухатися тільки в одному напрямку — від заголовкового (першого, root) вузла до останнього.</p>
+<p>У даній лабораторній роботі для реалізації списку використовуватимемо структуру, яку називають <em>зв’язним списком</em> (linked list). Кожний його вузол містить поле даних <code>data</code> і вказівник на наступний вузол <code>next</code> (рисунок 7.1).</p>
+<p><img src="../images/lab71.png" alt="Структура зв’язного списку"></p>
+<p>Рисунок 7.1 – Структура зв’язного списку</p>
+<p>Перший елемент списку називаються <em>головою</em> (head), у роботі адресуватимемо його вказівником <code>head</code>. Останній елемент називаються <em>хвостом</em> (tail). Поле <code>next</code> хвоста списку має значення <code>NULL</code>. Програми, які працюють із таким списком, послідовно проходять вузлами, використовуючи вказівники <code>next</code>, починаючи з голови до хвоста, ознакою якого є <code>next == NULL</code>.</p>
+<p>На відміну від масиву, зв’язний список не вимагає безперервної області пам’яті: вузли можуть розташовуватися в ній довільним чином. Найчастіше вузли зв’язного списку є динамічними об’єктами, які створюють за потребою за допомогою функцій <code>malloc()</code> чи <code>calloc()</code> і знищують за допомогою функції <code>free()</code>.</p>
+<p>Процедури додавання й видалення вузлів зв’язного списку не вимагають копіювання даних, а обмежуються тільки зміною вказівників. Вставка вузла у зв’язний список зводиться до «налаштування» вказівників next двох вузлів: вставленого й попереднього. Видалення вузла полягає лише в зміні поля next вузла, попереднього тому вузлу, що видаляється.</p>
+<p>Розгляньмо спосіб опису структури однозв’язного списку:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">list</span><span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="k">struct</span> <span class="n">list</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span> <span class="cm">/*указівник на структуру*/</span>
+<span class="p">};</span>
+</pre></div>
+<p>Для опису вказівника використовується ще не описаний об’єкт <code>struct list* next</code>, який слугуватиме посиланням на наступний елемент списку. Найостанніший вузол у списку нікуди не вказує, тобто поле next повинно мати значення <code>NULL</code>.</p>
+<p>Виділяють типові операції над списками:</p>
+<ul>
+<li>додавання вузла в початок списку;</li>
+<li>видалення вузла з початку списку;</li>
+<li>додавання вузла в довільне місце списку, відмінне від початку (наприклад, після вузла, указівник на який задано);</li>
+<li>видалення вузла з довільного місця списку, відмінного від початку (наприклад, після вузла, указівник на який задано);</li>
+<li>перевірка, чи порожній список;</li>
+<li>очищення списку;</li>
+<li>друк списку.</li>
+</ul>
+<p>Цей набір операцій рекомендується реалізувати у вигляді окремого модуля. Підключивши цей модуль, можна вирішити більшість типових завдань.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab7-Example-71">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-7.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 7.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-7.1"> </a></h4><p>У нижченаведеній програмі продемонстровано створення й перегляд однозв’язного списку.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="k">typedef</span> <span class="k">struct</span> <span class="n">list</span> <span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="k">struct</span> <span class="n">list</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">list</span><span class="p">;</span>
+
+<span class="cm">/* функція створення списку */</span>
+<span class="k">struct</span> <span class="n">list</span><span class="o">*</span> <span class="nf">create</span><span class="p">(</span><span class="kt">void</span><span class="p">);</span>
+<span class="cm">/* функція перегляду списку */</span>
+<span class="kt">void</span> <span class="nf">show</span><span class="p">(</span><span class="n">list</span><span class="o">*</span> <span class="n">head</span><span class="p">);</span>
+<span class="cm">/* функція звільнення пам&#39;яті */</span>
+<span class="kt">void</span> <span class="nf">free_list</span><span class="p">(</span><span class="n">list</span><span class="o">*</span> <span class="n">head</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="n">list</span><span class="o">*</span> <span class="n">head</span> <span class="o">=</span> <span class="n">create</span><span class="p">();</span>
+    <span class="n">show</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+    <span class="n">free_list</span><span class="p">(</span><span class="n">head</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">struct</span> <span class="n">list</span><span class="o">*</span> <span class="nf">create</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="cm">/* змінна адреси голови списку */</span>
+    <span class="n">list</span><span class="o">*</span> <span class="n">head</span><span class="p">;</span>
+    <span class="cm">/* р    - указівник на поточну структуру,</span>
+<span class="cm">       prev - указівник на попередню структуру */</span>
+    <span class="n">list</span> <span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">*</span><span class="n">prev</span><span class="p">;</span> 
+
+    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="k">do</span> <span class="p">{</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">list</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="n">list</span><span class="p">));</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">p</span><span class="p">)</span> <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+        <span class="c1">// якщо це перший запис - це голова</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">head</span><span class="p">)</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">prev</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Уведіть ім&#39;я: &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">prev</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">prev</span> <span class="o">=</span> <span class="n">p</span><span class="p">;</span>
+
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Закінчити? y/n&quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot; %c&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ch</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">ch</span> <span class="o">!=</span> <span class="sc">&#39;y&#39;</span><span class="p">);</span>
+
+    <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">show</span><span class="p">(</span><span class="n">list</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// указівник, яким проходитимемо список </span>
+    <span class="n">list</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* поки не кінець списку */</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Ім&#39;я: %s&quot;</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">);</span>
+        <span class="cm">/* переходимо на наступний елемент списку */</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">free_list</span><span class="p">(</span><span class="n">list</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">list</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+
+    <span class="k">while</span> <span class="p">(</span><span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">p</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="p">}</span> 
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Добрий приклад роботи зі структурою списку представлено в [1].</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

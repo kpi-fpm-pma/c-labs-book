@@ -1,0 +1,206 @@
+---
+interact_link: content/lab5/theory.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Теоретичні відомості
+prev_page:
+  url: /lab5/intro.html
+  title: |-
+    Типи даних, визначені користувачем
+next_page:
+  url: /lab5/questions.html
+  title: |-
+    Питання для самоперевірки
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;">&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110; &#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;<a class="anchor-link" href="#&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;"> </a></h1><p>Програміст під час написання програми мовою С може створювати дані п’ятьох типів:</p>
+<ul>
+<li>структуру (structure);</li>
+<li>об’єднання (union);</li>
+<li>перераховуваний тип (enumeration);</li>
+<li>поля бітів (bit fields);</li>
+<li>нове ім’я (псевдонім) для вже існуючого типу (за допомогою оператора <code>typedef</code>).</li>
+</ul>
+<h2 id="&#1057;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1072;">&#1057;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1072;<a class="anchor-link" href="#&#1057;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1072;"> </a></h2><p>У розробленні програм важливим є вибір ефективного способу подання інформації. У багатьох випадках недостатньо оголосити просту змінну чи масив: потрібна гнучкіша форма подання. Таким елементом може бути <em>структура</em>, яка дає змогу включати в себе дані різних типів, а також інші структури. Структуру задають у мові С за допомогою ключового слова struct, за яким слідує її ім’я.</p>
+<p>Структура об’єднує декілька змінних, можливо, різного типу. Змінні, об’єднані структурою, називають її <em>членами</em>, <em>елементами</em> чи <em>полями</em>.
+Приклад визначення структури:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">student</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">group</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">scholarship</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>Оголошення структури є оператором, тому після нього ставлять крапку з комою. При цьому потрібно розуміти, що на даному етапі жодної змінної не оголошено, оскільки не відбулося виділення пам’яті під змінні. У прикладі під іменем student задано вид структури, інакше кажучи, її <em>шаблон</em>, і визначено новий тип <code>struct student</code>. Щоб оголосити конкретні змінні типу <code>struct student</code>, можна записати:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">student</span> <span class="n">stud1</span><span class="p">,</span> <span class="n">stud2</span><span class="p">;</span>
+</pre></div>
+<p>Тепер оголошено дві змінні — <code>stud1</code> і <code>stud2</code>. Компілятор автоматично виділить під них безперервну ділянку пам’яті комп’ютера, що дає можливість працювати зі структурою як із єдиним об’єктом даних, який має в даному прикладі чотири поля: <code>name</code>, <code>year</code>, <code>group</code>, <code>scholarship</code>. Створення шаблона структури й оголошення змінних можна здійснювати й в одному операторі:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">student</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">group</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">scholarship</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">stud1</span><span class="p">,</span> <span class="n">stud2</span><span class="p">;</span>
+</pre></div>
+<p>У цьому випадку одночасно задається структура з іменем student та оголошуються змінні <code>stud1</code> і <code>stud2</code>.</p>
+<p>Доступ до конкретного елемента (поля) структури здійснюють за допомогою операції <code>.</code> («крапка», dot), наприклад:</p>
+<div class="highlight"><pre><span></span><span class="n">strcpy</span><span class="p">(</span><span class="n">stud1</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="s">&quot;Кузина А. А.&quot;</span><span class="p">);</span>
+</pre></div>
+<p>Якщо потрібно надрукувати вміст третього поля змінної <code>stud2</code> структури <code>student</code>, то треба записати:</p>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">stud2</span><span class="p">.</span><span class="n">group</span><span class="p">);</span>
+</pre></div>
+<p>Структури, як і змінні інших типів, можна об’єднувати в масиви структур. Щоб оголосити масив структур, потрібно спочатку задати шаблон структури, а потім оголосити сам масив:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">student</span> <span class="n">stud1year</span><span class="p">[</span><span class="mi">200</span><span class="p">];</span>
+</pre></div>
+<p>Цей оператор створить у пам’яті 200 змінних типу структури з шаблоном <code>student</code> та іменами <code>stud1year[0]</code>, <code>stud1year[1]</code> і т.д. Для доступу до поля <code>year</code>, наприклад, 35-го елемента масиву потрібно використати <code>stud1year[34].year</code>.</p>
+<p>Якщо оголошено дві змінні типу структури з одним шаблоном, можна виконувати присвоювання: <code>stud1 = stud2</code>. При цьому відбудеться побітове копіювання кожного поля однієї змінної у відповідне поле іншої. Не можна використовувати операцію присвоювання змінних типу структури, шаблони яких описано під різними іменами, нехай навіть зовсім ідентично. Тим не менше, у такому випадку можливе присвоювання для окремих полів однакового типу.</p>
+<p>Змінна типу структури може бути глобальною, локальною змінною та формальним параметром. Структуру чи її поле можна використовувати як параметр функції, наприклад, <code>func1(right.a)</code> або <code>func2(&amp;left.b)</code>. Варто зауважити, що <code>&amp;</code> ставлять перед іменем структури, а не перед іменем поля.</p>
+<p>Як формальний параметр можна передати за значенням усю структуру. Також можна створити вказівник на структуру й передавати аргумент типу структури за посиланням. Оголосити вказівник на структуру можна так:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">stru</span><span class="o">*</span> <span class="n">adr_pointer</span><span class="p">;</span>
+</pre></div>
+<p>де <code>adr_pointer</code> — змінна-вказівник на структуру <code>struct stru</code>.</p>
+<p>Якщо структуру передають за значенням, то всі поля структури заносять у стек. Якщо структура проста й містить мало елементів, то це не так істотно. Якщо ж структура як своє поле містить масив, то стек може переповнитися. Натомість, у випадку передачі за посиланням у стек заносять тільки адресу структури, її копіювання не відбувається. Додатково з’являється можливість змінювати вміст полів структури.</p>
+<p>Розгляньмо відповідний приклад:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">complex</span>
+<span class="p">{</span>
+    <span class="kt">float</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">float</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">}</span> <span class="err">с</span><span class="mi">1</span><span class="p">,</span> <span class="n">c2</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">complex</span><span class="o">*</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">c1</span><span class="p">;</span>
+</pre></div>
+<p>У цьому прикладі вказівнику а присвоюється адреса змінної <code>с1</code>. Одержати значення поля <code>х</code> змінної <code>с1</code> можна так: <code>(*a).x</code>.</p>
+<p>Використання вказівників на структуру зустрічається досить часто, наприклад, у програмуванні завдань зі створення й опрацювання динамічних зв’язаних структур даних (черги, стеки, дерева тощо). Тому, крім способу одержати значення поля структури, використовуючи <code>(*a).x</code>, можна використовувати інший спосіб — використовуючи спеціальну операцію мови С -&gt; («стрілка», arrow).</p>
+<p>Операцію «стрілка» вживають замість операції «крапка», коли потрібно використати значення поля структури з застосуванням змінної вказівника. Тоді, замість <code>(*a).x</code> можна використовувати <code>a-&gt;x</code>. Цей спосіб застосовують найчастіше.</p>
+<p>Як поля структури можна використовувати масиви, структури й масиви структур, наприклад:</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">addr</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">city</span><span class="p">[</span><span class="mi">34</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">street</span><span class="p">[</span><span class="mi">76</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">house</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">fulladdr</span>
+<span class="p">{</span>
+    <span class="k">struct</span> <span class="n">addr</span> <span class="n">address</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">room</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">48</span><span class="p">];</span>
+<span class="p">}</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+</pre></div>
+<p>де <code>addr</code> — шаблон структури, визначений перед оголошенням структури <code>fulladdr</code> та оголошенням змінної а типу структури <code>fulladdr</code>. Для присвоєння значення полю <code>house</code> структури <code>address</code> змінної а потрібно використати <code>a.adress.house = 234</code>.</p>
+<h2 id="&#1044;&#1086;&#1089;&#1090;&#1091;&#1087;-&#1076;&#1086;-&#1086;&#1082;&#1088;&#1077;&#1084;&#1080;&#1093;-&#1073;&#1110;&#1090;&#1110;&#1074;">&#1044;&#1086;&#1089;&#1090;&#1091;&#1087; &#1076;&#1086; &#1086;&#1082;&#1088;&#1077;&#1084;&#1080;&#1093; &#1073;&#1110;&#1090;&#1110;&#1074;<a class="anchor-link" href="#&#1044;&#1086;&#1089;&#1090;&#1091;&#1087;-&#1076;&#1086;-&#1086;&#1082;&#1088;&#1077;&#1084;&#1080;&#1093;-&#1073;&#1110;&#1090;&#1110;&#1074;"> </a></h2><p>На відміну від багатьох інших мов програмування, мова С забезпечує доступ до одного чи декількох бітів у байті чи слові. У конкретних задачах часто буває потрібно, щоб деяка змінна набувала тільки двох значень. Для цього достатньо використовувати тільки один біт пам’яті. За своїм змістовним сенсом така змінна є деякою ознакою (прапорцем).</p>
+<p>Один із методів, убудованих у мову C, який дає змогу одержати доступ до біта, — це поля бітів. <em>Поля бітів</em> — це спеціальний тип членів структури, у якому визначено, зі скількох бітів складається кожне поле. Основна форма оголошення подібної структури така:</p>
+
+<pre><code>struct &lt;ім’я_структури&gt;
+{
+    &lt;тип&gt; &lt;ім’я1&gt; : &lt;довжина в бітах&gt;;
+    &lt;тип&gt; &lt;ім’я2&gt; : &lt;довжина в бітах&gt;;
+    ...
+    &lt;тип&gt; &lt;ім’яN&gt; : &lt;довжина в бітах&gt;;
+};</code></pre>
+<p>де</p>
+<ul>
+<li><code>&lt;тип&gt;</code> може бути одним із таких: <code>int</code>, <code>unsigned</code>, <code>signed</code>;</li>
+<li>будь-яке з <code>&lt;імен&gt;</code> може бути пропущено, і тоді відповідна кількість бітів не використується (пропускається).</li>
+</ul>
+<p>Довжина структури завжди кратна 8. Так, якщо вказати</p>
+<div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">onebit</span>
+<span class="p">{</span>
+    <span class="kt">unsigned</span> <span class="nl">one_bit</span> <span class="p">:</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">obj</span><span class="p">;</span>
+</pre></div>
+<p>то для змінної <code>obj</code> буде виділено 8 бітів, але використовуватиметься тільки перший. У структурі може бути змішано звичайні змінні та поля бітів.</p>
+<h2 id="&#1054;&#1073;&#8217;&#1108;&#1076;&#1085;&#1072;&#1085;&#1085;&#1103;">&#1054;&#1073;&#8217;&#1108;&#1076;&#1085;&#1072;&#1085;&#1085;&#1103;<a class="anchor-link" href="#&#1054;&#1073;&#8217;&#1108;&#1076;&#1085;&#1072;&#1085;&#1085;&#1103;"> </a></h2><p>У мові С визначено ще один тип для розміщення в пам’яті декількох змінних різного типу — <em>об’єднання</em>. Цей засіб дає можливість зберігати в окремі моменти часу в одному й тому самому місці пам’яті дані різних типів. Об’єднання дають змогу працювати в одній і тій самій області пам’яті з даними різного вигляду, не вносячи до програми інформації, залежної від машини.</p>
+<p>Об’єднання описують так само, як і структури, але замість ключового слова <code>struct</code> використовують ключове слово <code>union</code>. Як і для структур, можна визначити шаблон об’єднання з іменем типу й задати в цьому ж операторі одну чи декілька змінних об’єднання. Або ж опис змінних можна відокремити від визначення шаблону.</p>
+<p>Розгляньмо приклад шаблону об’єднання з іменем типу <code>u</code>:</p>
+<div class="highlight"><pre><span></span><span class="k">union</span> <span class="n">u</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
+    <span class="kt">long</span> <span class="kt">int</span> <span class="n">l</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+<p>Це оголошення задає шаблон об’єднання. Можна оголосити змінні:</p>
+<div class="highlight"><pre><span></span><span class="k">union</span> <span class="n">u</span> <span class="n">alfa</span><span class="p">,</span> <span class="n">beta</span><span class="p">;</span>
+</pre></div>
+<p>На відміну від структури, для змінної типу union місця в пам’яті виділяється рівно стільки, скільки потрібно полю об’єднання, що має найбільший розмір у байтах. У наведеному вище прикладі під змінну <code>alfa</code> буде виділено 4 байти пам’яті, оскільки поле i вимагає 2 байти, поле <code>ch</code> — 1 байт, поле <code>l</code> — 4 байти. Усі змінні розташовуватимуться в тому ж місці пам’яті. Програміст повинен самостійно стежити за типом даних, який записується в об’єднання в даний момент.</p>
+<p>Синтаксис використання полів об’єднання такий самий, як і для структури, наприклад, <code>u.ch = 'N'</code>. Для об’єднання також дозволено операцію <code>-&gt;</code>, якщо звернення до об’єднання здійснюють за допомогою вказівника. Для змінних типу об’єднання також можна використовувати операції взяття адреси та одержання елемента через указівник.</p>
+<h2 id="&#1055;&#1077;&#1088;&#1077;&#1088;&#1072;&#1093;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;">&#1055;&#1077;&#1088;&#1077;&#1088;&#1072;&#1093;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;<a class="anchor-link" href="#&#1055;&#1077;&#1088;&#1077;&#1088;&#1072;&#1093;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;"> </a></h2><p><em>Перерахування</em> — це конструйований тип даних, під час опису якого задають ім’я типу даних і значення, яких можуть набувати змінні цього типу.</p>
+<p>Опис перерахованого типу даних здійснюють оператором виду:</p>
+
+<pre><code>enum &lt;ім’я_типу&gt; {&lt;список_значень&gt;} &lt;список змінних&gt;;
+`</code></pre>
+<p>де</p>
+<ul>
+<li><code>&lt;ім’я_типу&gt;</code> задають ідентифікатором С на розсуд програміста;</li>
+<li><code>&lt;список_значень&gt;</code> задають у вигляді: <code>&lt;елемент1&gt;, &lt;елемент2&gt;, ..., &lt;елементN&gt;</code>, де будь-який із елементів є або <code>&lt;ім’я&gt;</code>, або <code>&lt;ім’я&gt; = &lt;константний_вираз&gt;</code>. Як <code>&lt;ім’я&gt;</code> використовують ідентифікатор мовою С;</li>
+<li><code>&lt;список_змінних&gt;</code> — імена змінних типу перерахування, відокремлені один від одного комами.</li>
+</ul>
+<p>Семантично опис перерахування задає ім’я типу, визначає іменовані константи та імена змінних, які можуть набувати значень іменованих констант. Значення кожної іменованої константи зі списку значень є ціле число. Вирази з константами, якщо їх використовують, повинні бути цілими та можуть бути від’ємними. Якщо вирази з константами відсутні, то за замовчуванням першому імені списку значень відповідає 0, другому — 1 і т.д.</p>
+<p>Використання в програмі іменованої константи рівнозначно використанню її значення. Явна ініціалізація іменованої константи константним виразом перевизначає послідовність значень, заданих за замовчуванням. Ім’я, наступне за перевизначеним іменем, набуває значення, збільшеного на 1, якщо тільки його значення не задано явно іншою величиною.</p>
+<p>Приклад визначення перерахованого типу і змінної даного типу:</p>
+<div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">season</span> <span class="p">{</span><span class="n">win</span><span class="p">,</span> <span class="n">spr</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="n">aut</span><span class="p">};</span>
+<span class="k">enum</span> <span class="n">season</span> <span class="n">s</span><span class="p">;</span>
+</pre></div>
+<p>Ключем до розуміння сутності перерахованого типу є те, що кожне з імен <code>win</code>, <code>spr</code>, <code>sum</code>, <code>aut</code> є цілою величиною. Якщо ці величини не визначено інакше, то за замовчуванням вони дорівнюють 0, 1, 2 і 3, відповідно.</p>
+<p>Оператор <code>printf("%d%d", win, aut);</code> видасть на екран числа <code>0 3</code>. Під час оголошення типу можна одному або декільком символам привласнити інші значення, наприклад:</p>
+<div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">value</span> <span class="p">{</span> <span class="n">one</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">two</span><span class="p">,</span> <span class="n">three</span><span class="p">,</span> <span class="n">ten</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">twenty</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">next</span><span class="p">};</span>
+</pre></div>
+<p>Якщо тепер надрукувати значення <code>printf("%d%d%d%d%d\n", one, two, ten, twenty, next);</code>, то на екрані з’являться числа <code>1 2 10 20 21</code>, тобто кожний наступний символ збільшується на 1 порівняно з попереднім, якщо немає іншого присвоювання.</p>
+<p>Список значень може містити повторювані значення імен, але самі імена повинні бути різні. Список змінних в описі перерахованого типу можна опустити. У цьому випадку опис задає лише тип перерахування, що має задане ім’я та список допустимих значень. Змінні в цьому випадку повинно бути описано за допомогою певного перерахованого типу.</p>
+<p>Цей спосіб опису використовує ім’я типу перерахування (яке іноді зивають тегом (ярликом) перерахування), яке посилається на раніше описаний тип і використовує його список перерахування, наприклад:</p>
+<div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">day</span> <span class="p">{</span> <span class="n">saturday</span><span class="p">,</span> <span class="n">sunday</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">monday</span><span class="p">,</span> <span class="n">tuesday</span><span class="p">,</span> <span class="n">wednesday</span><span class="p">,</span> <span class="n">thursday</span><span class="p">,</span> <span class="n">friday</span> <span class="p">}</span> <span class="n">workday</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">day</span> <span class="n">nextday</span><span class="p">;</span>
+<span class="k">enum</span> <span class="n">day</span> <span class="n">today</span> <span class="o">=</span> <span class="n">monday</span><span class="p">;</span>
+<span class="n">day</span> <span class="n">vacancy</span><span class="p">;</span>
+</pre></div>
+<p>У першому випадку визначено тип перерахування <code>day</code>, оголошено змінну перерахування <code>workday</code>. Іменовані константи одержують такі значення: <code>saturday</code> — 0 (за замовчуванням), <code>sunday</code> — 0 (явно), інші імена отримують значення від 1 до 5.</p>
+<p>У другому випадку оголошено змінну <code>nextday</code> типу <code>enum day</code>. Оскільки тип <code>enum day</code> було оголошено раніше, то достатньо лише на нього послатися. У третьому випадку оголошено змінну <code>today</code> типу <code>enum day</code>, і її ініціалізовано значенням <code>monday</code> зі списку значень.</p>
+<p>Можна оголошувати й масиви перерахованого типу, наприклад:</p>
+<div class="highlight"><pre><span></span><span class="k">enum</span> <span class="n">day</span> <span class="n">week</span><span class="p">[</span><span class="mi">6</span><span class="p">];</span>
+</pre></div>
+<p>Зі змінними перераховуваного типу можна проводити такі операції:</p>
+<ul>
+<li>присвоїти змінну типу enum іншій змінній того ж типу;</li>
+<li>провести порівняння на рівність або нерівність;</li>
+<li>арифметичні операції з константами типу <code>enum(i = win + aut)</code>.</li>
+</ul>
+<p>Не можна до змінних типу <code>enum</code> використовувати арифметичні операції та операції <code>++</code> і <code>--</code>.</p>
+<p>Основна причина використання перераховуваного типу — поліпшення читовності програм.</p>
+<h2 id="&#1055;&#1077;&#1088;&#1077;&#1081;&#1084;&#1077;&#1085;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;-&#1090;&#1080;&#1087;&#1110;&#1074;">&#1055;&#1077;&#1088;&#1077;&#1081;&#1084;&#1077;&#1085;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103; &#1090;&#1080;&#1087;&#1110;&#1074;<a class="anchor-link" href="#&#1055;&#1077;&#1088;&#1077;&#1081;&#1084;&#1077;&#1085;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;-&#1090;&#1080;&#1087;&#1110;&#1074;"> </a></h2><p>Мова С дає змогу дати нову назву вже існуючому типу даних. Для цього використовують ключове слово <code>typedef</code>. При цьому створюється новий тип даних. Наприклад:</p>
+<div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="kt">char</span> <span class="n">SYMBOL</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">unsigned</span> <span class="n">UNSIGN</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">float</span> <span class="n">real</span><span class="p">;</span>
+</pre></div>
+<p>Досить часто використовують оператор <code>typedef</code> із застосуванням структур:</p>
+<div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">st_tag</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">40</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">year</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">group</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">scholarship</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">STUDENT</span><span class="p">;</span>
+</pre></div>
+<p>Тепер для визначення змінної можна використовувати як <code>struct st_tag avar</code>, так і <code>STUDENT avar</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
