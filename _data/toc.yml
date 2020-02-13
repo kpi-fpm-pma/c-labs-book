@@ -91,6 +91,17 @@
     - title: Завдання
       url: /lab6/problems
 
+- header: Лабораторна робота №7
+- title: Однозв'язні списки
+  url: /lab7/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab7/theory
+    - title: Питання для самоперевірки
+      url: /lab7/questions
+    - title: Завдання
+      url: /lab7/problems
+
 - title: Example
   url: /example
   not_numbered: true
