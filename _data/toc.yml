@@ -102,6 +102,18 @@
     - title: Завдання
       url: /lab7/problems
 
+- header: Додатки
+- title: Додаток А. Рекомендації зі створення інтерфейсу
+  url: /outro/appendixA
+- title: Додаток Б. Титульний лист лабораторної роботи
+  url: /outro/appendixB
+- title: Додаток В. Приклад програмування бітових операцій і операцій зсуву
+  url: /outro/appendixC
+- title: Додаток Г. Алгоритми сортування та пошуку
+  url: /outro/appendixD
+- title: Рекомендована література
+  url: /outro/bibliography
+
 - title: Example
   url: /example
   not_numbered: true

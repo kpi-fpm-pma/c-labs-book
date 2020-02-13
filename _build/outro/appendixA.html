@@ -1,0 +1,180 @@
+---
+redirect_from:
+  - "/outro/appendixa"
+interact_link: content/outro/appendixA.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Додаток А. Рекомендації зі створення інтерфейсу
+prev_page:
+  url: /lab2/problems.html
+  title: |-
+    Завдання
+next_page:
+  url: /outro/appendixB.html
+  title: |-
+    Додаток Б. Титульний лист лабораторної роботи
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
+<span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">url</span><span class="p">):</span> <span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1044;&#1086;&#1076;&#1072;&#1090;&#1086;&#1082;-&#1040;.-&#1056;&#1077;&#1082;&#1086;&#1084;&#1077;&#1085;&#1076;&#1072;&#1094;&#1110;&#1111;-&#1079;&#1110;-&#1089;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1085;&#1103;-&#1110;&#1085;&#1090;&#1077;&#1088;&#1092;&#1077;&#1081;&#1089;&#1091;">&#1044;&#1086;&#1076;&#1072;&#1090;&#1086;&#1082; &#1040;. &#1056;&#1077;&#1082;&#1086;&#1084;&#1077;&#1085;&#1076;&#1072;&#1094;&#1110;&#1111; &#1079;&#1110; &#1089;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1085;&#1103; &#1110;&#1085;&#1090;&#1077;&#1088;&#1092;&#1077;&#1081;&#1089;&#1091;<a class="anchor-link" href="#&#1044;&#1086;&#1076;&#1072;&#1090;&#1086;&#1082;-&#1040;.-&#1056;&#1077;&#1082;&#1086;&#1084;&#1077;&#1085;&#1076;&#1072;&#1094;&#1110;&#1111;-&#1079;&#1110;-&#1089;&#1090;&#1074;&#1086;&#1088;&#1077;&#1085;&#1085;&#1103;-&#1110;&#1085;&#1090;&#1077;&#1088;&#1092;&#1077;&#1081;&#1089;&#1091;"> </a></h1><h2 id="&#1054;&#1073;&#1082;&#1083;&#1072;&#1076;&#1080;&#1085;&#1082;&#1072;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1054;&#1073;&#1082;&#1083;&#1072;&#1076;&#1080;&#1085;&#1082;&#1072; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1054;&#1073;&#1082;&#1083;&#1072;&#1076;&#1080;&#1085;&#1082;&#1072;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h2><p>Кожна програма повинна мати «обкладинку» вигляду, представленого на рисунку А.1. У кожній програмі потрібно вказати потрібні номер і тему роботи, групу, прізвище та ініціали студента, рік виконання роботи, вибрати правильну форму написання слова «виконав» залежно від статі студента.</p>
+<p><img src="../images/appA1" alt="Обкладинка програми"></p>
+<p>Рисунок А.1 – Обкладинка програми</p>
+<p>Для створення обкладинки потрібно:</p>
+<ol>
+<li>Підключити бібліотеки <code>stdio.h</code> та <code>conio.h</code>.</li>
+<li>Очистити екран.</li>
+<li>Для креслення рамки використати символи з такими кодами ASCII: 218 (лівий верхній кут), 196 (горизонтальна лінія), 191 (правий верхній кут), 179 (вертикальна лінія), 192 (лівий нижній кут), 217 (правий нижній кут);</li>
+<li>Використовувати функцію <code>void gotoxy(int x, int y)</code>, яка поміщає курсор текстового екрана в точку з координатами <code>х, у</code>;</li>
+<li>Поставити очікування уведення будь-якого символу й вивести рядок, наприклад, <code>"Для завершення натисніть Enter"</code>.</li>
+</ol>
+<h2 id="&#1054;&#1088;&#1075;&#1072;&#1085;&#1110;&#1079;&#1072;&#1094;&#1110;&#1103;-&#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1075;&#1086;-&#1084;&#1077;&#1085;&#1102;">&#1054;&#1088;&#1075;&#1072;&#1085;&#1110;&#1079;&#1072;&#1094;&#1110;&#1103; &#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1075;&#1086; &#1084;&#1077;&#1085;&#1102;<a class="anchor-link" href="#&#1054;&#1088;&#1075;&#1072;&#1085;&#1110;&#1079;&#1072;&#1094;&#1110;&#1103;-&#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1075;&#1086;-&#1084;&#1077;&#1085;&#1102;"> </a></h2><p>Майже в усіх завданнях користувачу надають вибір із декількох варіантів. Наприклад, для демонстрації роботи програм можна використовувати випадкові числа, а можна — числа, уведені з клавіатури. Вибір користувача часто реалізують у вигляді меню. Просте меню виглядає так:</p>
+
+<pre><code>Виберіть один із варіантів:
+1. Уведення чисел із клавіатури
+2. Генерація випадкових чисел
+3. Вихід із програми
+Уведіть номер вибраного пункту:</code></pre>
+<p>Розгляньмо використання меню на наступному прикладі.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/AppendixA-Example-A1">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-&#1040;.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; &#1040;.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-&#1040;.1"> </a></h4><p>За трьома сторонами трикутника обчислити його площу.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">clrscr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+  <span class="n">system</span><span class="p">(</span><span class="s">&quot;clr||clear&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">draw_menu</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Виберіть один із варіантів:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;1. Уведення чисел із клавіатури</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;2. Генерація випадкових чисел</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;3. Вихід із програми</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть номер вибраного пункту:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">get_user_selection</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">ch</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">&quot; %c&quot;</span><span class="p">,</span> <span class="n">ch</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span> <span class="c1">// очищуємо буфер вводу</span>
+<span class="p">}</span>
+
+<span class="kt">_Bool</span> <span class="nf">is_valid_input</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;1&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;2&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;3&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="cm">/*сторони трикутника*/</span>
+  <span class="kt">float</span> <span class="n">p</span><span class="p">;</span>       <span class="cm">/*напівпериметр трикутника*/</span>
+  <span class="kt">float</span> <span class="n">s</span><span class="p">;</span>       <span class="cm">/*площа трикутника*/</span>
+
+  <span class="n">clrscr</span><span class="p">();</span>
+
+  <span class="cm">/*нескінченний цикл*/</span>
+  <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">draw_menu</span><span class="p">();</span>
+
+    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span> <span class="cm">/*обраний пункт меню*/</span>
+    <span class="n">get_user_selection</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">);</span>
+
+    <span class="cm">/*якщо увели неправильний параметр – знову меню*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_valid_input</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">clrscr</span><span class="p">();</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ви увели неправильний номер.</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">case</span> <span class="sc">&#39;1&#39;</span><span class="o">:</span> <span class="cm">/*уведення з клавіатури*/</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть сторони трикутника:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;a = &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b = &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;c = &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="sc">&#39;2&#39;</span><span class="o">:</span> <span class="cm">/*генерація випадкових значень*/</span>
+        <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+        <span class="cm">/*для згенерованих чисел виконується умова:</span>
+<span class="cm">        будь-яка зі сторін менша за суму двох інших*/</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//a = [6..10]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//b = [6..10]</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//c = [6..10]</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="sc">&#39;3&#39;</span><span class="o">:</span> <span class="cm">/*вихід із програми*/</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">c</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Площа трикутника S = %f</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
