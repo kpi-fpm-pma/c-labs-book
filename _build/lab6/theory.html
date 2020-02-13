@@ -1,0 +1,399 @@
+---
+interact_link: content/lab6/theory.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Теоретичні відомості
+prev_page:
+  url: /lab6/intro.html
+  title: |-
+    Динамічні масиви
+next_page:
+  url: /lab6/questions.html
+  title: |-
+    Питання для самоперевірки
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
+<span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">url</span><span class="p">):</span> <span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;">&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110; &#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;<a class="anchor-link" href="#&#1058;&#1077;&#1086;&#1088;&#1077;&#1090;&#1080;&#1095;&#1085;&#1110;-&#1074;&#1110;&#1076;&#1086;&#1084;&#1086;&#1089;&#1090;&#1110;"> </a></h1><h2 id="&#1056;&#1086;&#1079;&#1087;&#1086;&#1076;&#1110;&#1083;-&#1086;&#1087;&#1077;&#1088;&#1072;&#1090;&#1080;&#1074;&#1085;&#1086;&#1111;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110;-&#1082;&#1086;&#1084;&#1087;&#8217;&#1102;&#1090;&#1077;&#1088;&#1072;">&#1056;&#1086;&#1079;&#1087;&#1086;&#1076;&#1110;&#1083; &#1086;&#1087;&#1077;&#1088;&#1072;&#1090;&#1080;&#1074;&#1085;&#1086;&#1111; &#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110; &#1082;&#1086;&#1084;&#1087;&#8217;&#1102;&#1090;&#1077;&#1088;&#1072;<a class="anchor-link" href="#&#1056;&#1086;&#1079;&#1087;&#1086;&#1076;&#1110;&#1083;-&#1086;&#1087;&#1077;&#1088;&#1072;&#1090;&#1080;&#1074;&#1085;&#1086;&#1111;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110;-&#1082;&#1086;&#1084;&#1087;&#8217;&#1102;&#1090;&#1077;&#1088;&#1072;"> </a></h2><p>Увесь об’єм пам’яті комп’ютера можна умовно розділити на:</p>
+<ul>
+<li><em>системну область</em> — пам’ять, яку займає операційна система разом із сервісами та драйверами;</li>
+<li><em>призначену для користувача область</em> — пам’ять, яка використовується для зберігання програм та їхніх даних, завантажених користувачем;</li>
+<li><em>вільну пам’ять</em> — усю іншу пам’ять.</li>
+</ul>
+<p>Область вільної пам’яті розташовано між програмою, із її постійною областю пам’яті, та стеком. Динамічне розміщення зручне, коли невідомо, скільки елементів даних опрацьовуватиметься. Запропонований стандарт ANSI визначає, що інформація, потрібна системі динамічного розподілу, знаходитиметься в <code>stdlib.h</code>. Прототипи функцій для роботи з динамічною пам’яттю містяться у файлі <code>alloc.h</code>. Розподіл пам’яті представлено на рисунку 6.1.</p>
+<p><img src="../images/lab61.png" alt="Розподіл оперативної пам’яті для програм мовою С"></p>
+<p>Рисунок 6.1 – Розподіл оперативної пам’яті для програм мовою С</p>
+<p>По мірі використання програмою стекова область збільшується вниз, тобто програма самостійно визначає об’єм стекової пам’яті. Наприклад, програма з великим числом рекурсивних функцій займе більше стекової пам’яті від програми, яка не має рекурсивних функцій узагалі, оскільки локальні змінні й адреси повернення зберігаються саме в стеках. Пам’ять під саму програму та глобальні змінні виділяється на весь час виконання програми.</p>
+<h2 id="&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;">&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111; &#1076;&#1083;&#1103; &#1088;&#1086;&#1073;&#1086;&#1090;&#1080; &#1079; &#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102; &#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;<a class="anchor-link" href="#&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;"> </a></h2><p>Із вільної області пам’ять можна виділити за допомогою функції <code>malloc()</code>. Пам’ять виділяється області, розташованої безпосередньо над областю глобальних змінних, при цьому адресація зростає в бік стекової області. Таким чином, в екстремальних випадках стекова область може накластися на область динамічного розміщення.</p>
+<p>Динамічна пам’ять виділяється під час <em>роботи</em> програми, а не під час її <em>створення</em>. Над динамічною пам’яттю можна виконувати дві основні дії — <em>виділяти</em> та <em>вивільняти</em>.</p>
+<p>Розгляньмо описи функцій мови С для роботи з динамічною пам’яттю:</p>
+<ol>
+<li><div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="nf">malloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для виділення <code>size</code> байтів динамічної пам’яті. Наприклад, виділити пам’ять під масив із 10 чисел типу <code>int</code> можна так:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+</li>
+<li><div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="nf">calloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">num</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+<p>Цю функцію зроблено спеціально для виділення пам’яті під масив (хоча так можна виділяти пам’ять не тільки під масив). Виділяючи область пам’яті, ця функція заповнює її нулями. 
+Розгляньмо попередній приклад із застосуванням цієї функції:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+<p>Обидві вищенаведені функції виділення пам’яті повертають адресу початку виділеної області, або ж нульовий вказівник (<code>NULL</code>) у випадку відсутності вільної пам’яті запитуваного розміру.</p>
+</li>
+<li><div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="nf">realloc</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">memblock</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">size</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для зміни розміру блока раніше виділеної динамічної пам’яті, тобто перерозподілу раніше виділеної пам’яті. При цьому новий розмір масиву може бути як менший від попереднього, так і більший. Якщо система виділить пам’ять у новому місці, то всі попередні значення, до яких програма зверталася за вказівником, буде переписано на нове місце автоматично. Розгляньмо приклад застосування функції для збільшення цілочисельного масиву до 30-ти елементів:</p>
+<div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span> <span class="n">realloc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">30</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</pre></div>
+</li>
+<li><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">free</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">memblock</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для вивільнення раніше виділеної області динамічної пам’яті. Для вищенаведених прикладів із масивом ця функція має такий вигляд:</p>
+<div class="highlight"><pre><span></span><span class="n">free</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+</pre></div>
+</li>
+</ol>
+<p>Процедура вивільнення пам’яті не чистить указівник, що вказував на початок вивільнюваного сегменту. Запис за таким указівником після повернення пам’яті призводить до помилок, які важко виявити. Тому до правил доброго стилю програмування належить скидання вказівників після вивільнення динамічно запитуваної пам’яті: <code>m = NULL</code>.</p>
+<p>Інше правило полягає в перевірці, чи виділено запитувану пам’ять після звернення до відповідної функції. Мова С не контролює запис за нульовою адресою, тому після стирання декількох перших елементів неіснуючого масиву відбувається зависання операційної системи.</p>
+<p>Крім описаних функцій для роботи з динамічною пам’яттю в мові С часто використовують деякі інші функції:</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="nf">memcpy</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="kr">restrict</span> <span class="n">targetbuf</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="kr">restrict</span> <span class="n">sourcebuf</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для копіювання <code>size_t</code> байтів пам’яті з <code>sourcebuf</code> у <code>targetbuf</code>.</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="nf">memmove</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">targetbuf</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">sourcebuf</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для переміщення <code>size_t</code> байтів умісту блока пам’яті з <code>sourcebuf</code> у <code>targetbuf</code>.</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="nf">memcmp</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">buff1</span><span class="p">,</span> <span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">buff2</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для порівняння двох блоків пам’яті: якщо вони рівні, функція поверне 0.</p>
+<div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span> <span class="nf">memset</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">buff</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="kt">size_t</span> <span class="n">num</span><span class="p">);</span>
+</pre></div>
+<p>Ця функція слугує для заповнення блока динамічної пам’яті даними.</p>
+<h2 id="&#1042;&#1080;&#1076;&#1110;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1111;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110;-&#1076;&#1083;&#1103;-&#1086;&#1076;&#1085;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086;-&#1081;-&#1076;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1110;&#1074;">&#1042;&#1080;&#1076;&#1110;&#1083;&#1077;&#1085;&#1085;&#1103; &#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1111; &#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110; &#1076;&#1083;&#1103; &#1086;&#1076;&#1085;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086; &#1081; &#1076;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086; &#1084;&#1072;&#1089;&#1080;&#1074;&#1110;&#1074;<a class="anchor-link" href="#&#1042;&#1080;&#1076;&#1110;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1111;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1110;-&#1076;&#1083;&#1103;-&#1086;&#1076;&#1085;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086;-&#1081;-&#1076;&#1074;&#1086;&#1074;&#1080;&#1084;&#1110;&#1088;&#1085;&#1086;&#1075;&#1086;-&#1084;&#1072;&#1089;&#1080;&#1074;&#1110;&#1074;"> </a></h2><p><em>Статичним масивом</em> називають набір даних, для зберігання якого перед початком функціювання програми виділяється фіксоване місце в пам’яті, яке вивільняється після завершення роботи програми.</p>
+<p>На відміну від цього місце для зберігання <em>динамічних масивів</em> виділяється та вивільняється в процесі виконання програми. В одних випадках виділення та вивільнення пам’яті система здійснює автоматично. Наприклад, коли відводиться пам’ять для зберігання локальних масивів у процедурах і функціях. В інших випадках користувачеві надається можливість запросити ділянку пам’яті потрібного розміру та вивільнити її згодом. Тільки в такий спосіб у програмах можна завести масив змінного розміру.</p>
+<p>За динамічного розподілу пам’яті, як один із варіантів, для масивів потрібно описати відповідний указівник і просвоїти йому значення за допомогою функції <code>calloc()</code>. Розгляньмо відповідний приклад.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab6-Example-61">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 6.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.1"> </a></h4><p>У нижченаведеному фрагменті показано, як створити одновимірний масив <code>a[10]</code> з елементів типу <code>float</code>:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kt">float</span><span class="o">*</span> <span class="n">arr</span><span class="p">;</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+    <span class="c1">//arr = (float*) malloc(10 * sizeof(float));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* вихід за межі пам&#39;яті */</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Недостатньо пам&#39;яті!&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Аналогічно можна розподілити пам’ять і для двовимірного масиву розмірністю <code>n x m</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="n">m</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">);</span>
+<span class="cm">/*arr = (float*) malloc(n * m * sizeof(float));*/</span>
+</pre></div>
+<p>У цьому випадку двовимірний масив розглядається як аналог одновимірного масиву з <code>n x m</code> елементів.</p>
+<p>Щоб створити двовимірний масиву по-справжньому, спочатку потрібно розподілити пам’ять для масиву вказівників на одномірні масиви, а потім розподіляти пам’ять для відповідних одновимірних масивів. Розгляньмо відповідний приклад.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab6-Example-62">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.2">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 6.2<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.2"> </a></h4><p>У нижченаведеному фрагменті показано, як створити масив <code>a[n][m]</code>:</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kt">double</span><span class="o">**</span> <span class="n">arr</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть кількість рядків і стовпців</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">nrows</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ncols</span><span class="p">);</span>
+
+    <span class="c1">// перевірку пам&#39;яті опущено для спрощення</span>
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="o">**</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="n">ncols</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="o">*</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">ncols</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">double</span><span class="o">*</span><span class="p">)</span> <span class="n">calloc</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Розгляньмо приклад формування одновимірного динамічного масиву з використанням функції <code>malloc()</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab6-Example-63">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.3">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 6.3<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.3"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="kt">float</span><span class="o">*</span> <span class="n">arr</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть довжину: &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">);</span>
+
+    <span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Недостатньо пам&#39;яті&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;arr[%d] = &quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// робимо щось із масивом</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">arr[%d] = %6.2f&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="n">free</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Доступ до ділянок виділеної пам’яті в прикладі виконується за допомогою операції індексування <code>p[i]</code>. Кожний елемент масиву може бути, у свою чергу, масивом. Саме так конструюють динамічні багатовимірні масиви.</p>
+<p>Розгляньмо алгоритм створення та опрацювання двовимірного массиву:</p>
+<ol>
+<li>визначити вказівник на масив указівників, що задає адреси початку рядків матриці: </li>
+</ol>
+<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;</span> <span class="o">**</span><span class="n">uk</span><span class="p">;</span>
+</pre></div>
+<ol>
+<li>увести розміри матриці <code>n</code>, <code>m</code>;</li>
+<li>створити динамічний масив указівників на вказівники початку рядків: </li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">uk</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;**</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;*</span><span class="p">));</span>
+</pre></div>
+<ol>
+<li>у циклі виділити пам’ять під <code>n</code> масивів — рядків по <code>m</code> елементів у кожному:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">uk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;</span><span class="p">));</span>
+</pre></div>
+<ol>
+<li>опрацювати масив (робота з індексованими елементами <code>uk[i][j]</code>);</li>
+<li>у циклі вивільнити пам’ять, зайняту під <code>n</code> масивів — рядків:</li>
+</ol>
+<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">uk</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</pre></div>
+<ol>
+<li>вивільнити пам’ять, зайняту під масив указівників: </li>
+</ol>
+<div class="highlight"><pre><span></span><span class="n">free</span><span class="p">(</span><span class="n">uk</span><span class="p">)</span>
+</pre></div>
+<p>Розгляньмо приклад опрацювання двовимірного динамічного масиву з використанням функції <code>malloc()</code>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/Lab6-Example-64">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.4">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 6.4<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-6.4"> </a></h4><p>Скласти програму, що створює динамічну матрицю розміром <code>n x n</code>, заповнити матрицю випадковими числами. Обчислити суму кожного рядка й помістити суми рядків в одновимірний динамічний масив.</p>
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt; // srand, rand</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;   // time</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">check_memory</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">ptr</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ptr</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Недостатньо пам&#39;яті&#39;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>   
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="cm">/* оголошуємо вказівники на матрицю та результуючий масив */</span>
+    <span class="kt">float</span><span class="o">**</span> <span class="n">matrix</span><span class="p">;</span>
+    <span class="kt">float</span><span class="o">*</span> <span class="n">result</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">length</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть розмірність квадратної матриці: &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">);</span>
+
+    <span class="c1">// виділяємо пам&#39;ять під масив-результат</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+    <span class="n">check_memory</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+
+    <span class="c1">// виділяємо пам&#39;ять під матрицю</span>
+    <span class="n">matrix</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">**</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">));</span>
+    <span class="n">check_memory</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
+
+    <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// виділяємо пам&#39;ять під і-й рядок</span>
+        <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="kt">float</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">length</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+        <span class="n">check_memory</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// рахуємо результат</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+    <span class="p">}</span>
+
+  <span class="c1">// виводимо масив і результати</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+            <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\t</span><span class="s">%6.2f&quot;</span><span class="p">,</span> <span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">сума %d-го рядка: %8.2f&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">result</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+
+    <span class="c1">// звільняємо пам&#39;ять від рядків</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">free</span><span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="c1">// звільняємо пам&#39;ять під матрицю</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
+    <span class="c1">// звільняємо пам&#39;ять від результатів</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
