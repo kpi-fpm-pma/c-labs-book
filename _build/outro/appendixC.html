@@ -1,0 +1,315 @@
+---
+redirect_from:
+  - "/outro/appendixc"
+interact_link: content/outro/appendixC.ipynb
+kernel_name: python3
+has_widgets: false
+title: |-
+  Додаток В. Приклад програмування бітових операцій і операцій зсуву
+prev_page:
+  url: /outro/appendixB.html
+  title: |-
+    Додаток Б. Титульний лист лабораторної роботи
+next_page:
+  url: /outro/appendixD.html
+  title: |-
+    Додаток Г. Алгоритми сортування та пошуку
+suffix: .ipynb
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="k">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">IFrame</span>
+<span class="k">def</span> <span class="nf">example</span><span class="p">(</span><span class="n">url</span><span class="p">):</span> <span class="n">display</span><span class="p">(</span><span class="n">IFrame</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="s2">&quot;100%&quot;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="&#1044;&#1086;&#1076;&#1072;&#1090;&#1086;&#1082;-&#1042;.-&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;-&#1073;&#1110;&#1090;&#1086;&#1074;&#1080;&#1093;-&#1086;&#1087;&#1077;&#1088;&#1072;&#1094;&#1110;&#1081;-&#1110;-&#1086;&#1087;&#1077;&#1088;&#1072;&#1094;&#1110;&#1081;-&#1079;&#1089;&#1091;&#1074;&#1091;">&#1044;&#1086;&#1076;&#1072;&#1090;&#1086;&#1082; &#1042;. &#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103; &#1073;&#1110;&#1090;&#1086;&#1074;&#1080;&#1093; &#1086;&#1087;&#1077;&#1088;&#1072;&#1094;&#1110;&#1081; &#1110; &#1086;&#1087;&#1077;&#1088;&#1072;&#1094;&#1110;&#1081; &#1079;&#1089;&#1091;&#1074;&#1091;<a class="anchor-link" href="#&#1044;&#1086;&#1076;&#1072;&#1090;&#1086;&#1082;-&#1042;.-&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;-&#1073;&#1110;&#1090;&#1086;&#1074;&#1080;&#1093;-&#1086;&#1087;&#1077;&#1088;&#1072;&#1094;&#1110;&#1081;-&#1110;-&#1086;&#1087;&#1077;&#1088;&#1072;&#1094;&#1110;&#1081;-&#1079;&#1089;&#1091;&#1074;&#1091;"> </a></h1><h2 id="&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1072;-&#1091;&#1087;&#1072;&#1082;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;">&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1072; &#1091;&#1087;&#1072;&#1082;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;<a class="anchor-link" href="#&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1072;-&#1091;&#1087;&#1072;&#1082;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;"> </a></h2><p>Слово стану пристрою в системі уведення-виведення подається у вигляді:</p>
+<table>
+<thead><tr>
+<th style="text-align:center">№ розрядів</th>
+<th style="text-align:center">15</th>
+<th style="text-align:center">14</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">09</th>
+<th style="text-align:center">08</th>
+<th style="text-align:center">07</th>
+<th style="text-align:center">06</th>
+<th style="text-align:center">05</th>
+<th style="text-align:center">04</th>
+<th style="text-align:center">03</th>
+<th style="text-align:center">02</th>
+<th style="text-align:center">01</th>
+<th style="text-align:center">00</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Значення</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">C</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">F</td>
+<td style="text-align:center">B</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul>
+<li><code>C..C</code> — код стану;</li>
+<li><code>F</code> — ознака помилки (1 або 0);</li>
+<li><code>B</code> — ознака зайнятості (1 або 0);</li>
+<li><code>N..N</code> — кількість байтів, переданих в останню операцію.</li>
+</ul>
+<h3 id="&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1072;&#1083;&#1075;&#1086;&#1088;&#1080;&#1090;&#1084;&#1091;-&#1088;&#1086;&#1079;&#1074;&#8217;&#1103;&#1079;&#1072;&#1085;&#1085;&#1103;">&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103; &#1072;&#1083;&#1075;&#1086;&#1088;&#1080;&#1090;&#1084;&#1091; &#1088;&#1086;&#1079;&#1074;&#8217;&#1103;&#1079;&#1072;&#1085;&#1085;&#1103;<a class="anchor-link" href="#&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1072;&#1083;&#1075;&#1086;&#1088;&#1080;&#1090;&#1084;&#1091;-&#1088;&#1086;&#1079;&#1074;&#8217;&#1103;&#1079;&#1072;&#1085;&#1085;&#1103;"> </a></h3><ol>
+<li>Уведення значень складових частин слова стану пристрою. Для кожної частини потрібно вивести запрошення на уведення та увести дані.</li>
+<li>Занесення в слово стану пристрою коду стану. У змінній, яка зберігає значення коду стану, потрібно виділити 5 молодших розрядів, виконавши операцію побітового логічного <code>І</code> між значенням змінної та двійковою константою <code>00011111</code> (шістнадцятковою константою <code>0x1F</code>). Одержане значення потрібно зсунути на 11 розрядів уліво.</li>
+<li>Занесення в слово стану пристрою ознаки помилки. У змінній — ознаці помилки — потрібно виділити один молодший розряд, виконавши операцію побітового логічного <code>І</code> з константою 1. Одержане значення потрібно зсунути на 9 розрядів уліво. Щоб додати одержаний код до коду, одержаного на попередньому кроці, потрібно виконати операцію побітового логічного <code>АБО</code> між попереднім значенням слова стану пристрою та одержаним кодом.</li>
+<li>Занесення в слово стану пристрою ознаки зайнятості. У змінній — ознаці зайнятості — потрібно виділити один молодший розряд у спосіб, описаний вище. Одержане значення потрібно зсунути на 8 розрядів уліво та додати до коду, одержаного на попередньому кроці, у спосіб, описаний вище.</li>
+<li>Занесення в слово стану пристрою кількості байтів. У змінній — кількості байтів — потрібно виділити 8 молодших розрядів виконавши операцію побітового логічного <code>І</code> з константою <code>0xFF</code>. Одержане значення потрібно додати до коду, одержаного на попередньому кроці.</li>
+</ol>
+<p>Якщо значення складових частин коду, уведені оператором, не виходять за діапазон допустимих для них значень, операція виділення молодших байтів зайва. Але її потрібно передбачити на випадок помилок оператора.</p>
+<h3 id="&#1042;&#1080;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103;-&#1079;&#1084;&#1110;&#1085;&#1085;&#1080;&#1093;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1042;&#1080;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103; &#1079;&#1084;&#1110;&#1085;&#1085;&#1080;&#1093; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1042;&#1080;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103;-&#1079;&#1084;&#1110;&#1085;&#1085;&#1080;&#1093;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>Для роботи програми потрібні змінні для збереження складових частин коду. Для кожної складової частини достатньо 1 байту, тому тип цих змінних може бути <code>char</code> або <code>unsigned char</code>. Діапазони можливих значень цих змінних такі:</p>
+<ul>
+<li><code>c</code> (код стану) — від 0 до 31;</li>
+<li><code>f</code> (ознака помилки) — від 0 до 1;</li>
+<li><code>b</code> (ознака зайнятості) — від 0 до 1;</li>
+<li><code>n</code> (кількість байтів) — від 0 до 255.</li>
+</ul>
+<p>У змінних <code>с</code>, <code>f</code>, <code>b</code> старший розряд байта не використовується, тому немає значення, якого типу вони будуть, <code>char</code> або <code>unsigned char</code>. У змінній <code>n</code> старший розряд використовується, тому вона обов’язково повинна бути типу <code>unsigned char</code>.</p>
+<p>Окремо потрібна змінна для збереження результуючого коду слова стану пристрою — двобайтова змінна, у якій старший розряд використовують як кодовий, а не як знаковий. Тому ця змінна повинна бути типу <code>unsigned int</code>.</p>
+<h3 id="&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1090;&#1077;&#1082;&#1089;&#1090;&#1091;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103; &#1090;&#1077;&#1082;&#1089;&#1090;&#1091; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1090;&#1077;&#1082;&#1089;&#1090;&#1091;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>Текст програми починається з підключення в програму файлу <code>stdio.h</code>: <code>#include &lt;stdio.h&gt;</code>. У ньому містяться описи стандартних функцій уведення-виведення, які неодмінно використовуватимуться в програмі. Далі йдуть заголовок функції <code>main()</code>:</p>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+</pre></div>
+<p>та оголошення змінних:</p>
+<div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">f</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">b</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">UnitStateWord</span><span class="p">;</span>
+</pre></div>
+<p>Уведення коду стану складається з виводу на екран запрошення:</p>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть код стану (0-31): &quot;</span><span class="p">);</span>
+</pre></div>
+<p>та, власне, уведення значення в змінну <code>с</code>:</p>
+<div class="highlight"><pre><span></span><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%hhd&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+</pre></div>
+<p>Аналогічні пари операторів повторюються для уведення значень <code>f</code>, <code>b</code>, <code>n</code>. Усі значення уводять як десяткові числа, використовуючи <code>%hhd</code> в специфікаціях формату. <code>hh</code> тут означає розмір цілого числа (1 байт).</p>
+<p>Далі йде формування упакованого коду, яке точно повторює описані кроки алгоритму:</p>
+<div class="highlight"><pre><span></span><span class="n">UnitStateWord</span> <span class="o">=</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n">c</span> <span class="o">&amp;</span> <span class="mh">0x1F</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">11</span><span class="p">;</span>
+</pre></div>
+<p>Перетворення типу змінної <code>c</code> в <code>unsigned char</code> потрібне, інакше зсув 8-розрядного коду на 11 розрядів призведе до втрати потрібних кодів.</p>
+<p>Далі продовжується формування коду:</p>
+<div class="highlight"><pre><span></span><span class="n">UnitStateWord</span> <span class="o">|=</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n">f</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">9</span><span class="p">;</span>
+<span class="n">UnitStateWord</span> <span class="o">|=</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">UnitStateWord</span> <span class="o">|=</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+</pre></div>
+<p>Виведення результату виконує оператор</p>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Слово стану пристрою = %04x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">UnitStateWord</span><span class="p">);</span>
+</pre></div>
+<p>Результат виводять як шістнадцяткове число з 4 цифр (що відповідає 2 байтам), обов’язково виводячи провідні нулі.</p>
+<p>Повний текст програми наведено нижче.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/AppendixC-Example-C1">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span> <span class="cm">/*код стану*/</span>
+    <span class="kt">char</span> <span class="n">f</span><span class="p">;</span> <span class="cm">/*ознака помилки*/</span>
+    <span class="kt">char</span> <span class="n">b</span><span class="p">;</span> <span class="cm">/*ознака зайнятості*/</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">n</span><span class="p">;</span> <span class="cm">/*кількість байтів*/</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">UnitStateWord</span><span class="p">;</span> <span class="cm">/*слово стану*/</span>
+
+    <span class="cm">/*уведення складових частин*/</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть код стану (0-31): &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%hhd&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть ознаку помилки (0/1): &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%hhd&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">f</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть ознаку зайнятості (0/1): &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%hhd&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть кількість переданих байтів (0-255): &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%hhd&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+
+    <span class="cm">/*формування упакованого коду*/</span>
+    <span class="n">UnitStateWord</span>  <span class="o">=</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n">c</span> <span class="o">&amp;</span> <span class="mh">0x1F</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">11</span><span class="p">;</span>
+    <span class="n">UnitStateWord</span> <span class="o">|=</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n">f</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">9</span><span class="p">;</span>
+    <span class="n">UnitStateWord</span> <span class="o">|=</span> <span class="p">((</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="n">b</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">UnitStateWord</span> <span class="o">|=</span> <span class="n">n</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+
+    <span class="cm">/*виведення результату*/</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">Слово стану пристрою = %04x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">UnitStateWord</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#1042;&#1110;&#1076;&#1083;&#1072;&#1075;&#1086;&#1076;&#1078;&#1077;&#1085;&#1085;&#1103;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1042;&#1110;&#1076;&#1083;&#1072;&#1075;&#1086;&#1076;&#1078;&#1077;&#1085;&#1085;&#1103; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1042;&#1110;&#1076;&#1083;&#1072;&#1075;&#1086;&#1076;&#1078;&#1077;&#1085;&#1085;&#1103;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>Відлагодження програми можна вести в покроковому режимі з відстеженням значень змінних — складових частин — під час їх уведення, а також коду-результату — на кроках його формування. Для останнього може виникнути незручність, тому що в режимі налагодження значення змінної <code>UnitStateWord</code> буде подано як десяткове число, хоча для завдання зручніше бачити його як шістнадцяткове або двійкове. Для такого відстеження зручніше вставити у відповідні місця тексту програми виклики функції printf, які виводитимуть проміжні значення коду в шістнадцятковому форматі.</p>
+<h3 id="&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1080;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1080; &#1088;&#1086;&#1073;&#1086;&#1090;&#1080; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1080;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>За результатами роботи програми на екран буде виведено результати, схожі на наведені нижче:</p>
+
+<pre><code>Уведіть код стану (0-31): 27
+Уведіть ознаку помилки (0/1): 1
+Уведіть ознаку зайнятості (0/1): 1
+Уведіть кількість переданих байтів (0-255): 74
+
+Слово стану пристрою = db4a</code></pre>
+<h2 id="&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1072;-&#1088;&#1086;&#1079;&#1087;&#1072;&#1082;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;">&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1072; &#1088;&#1086;&#1079;&#1087;&#1072;&#1082;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;<a class="anchor-link" href="#&#1055;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1072;-&#1088;&#1086;&#1079;&#1087;&#1072;&#1082;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;"> </a></h2><h3 id="&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1072;&#1083;&#1075;&#1086;&#1088;&#1080;&#1090;&#1084;&#1091;-&#1088;&#1086;&#1079;&#1074;&#8217;&#1103;&#1079;&#1072;&#1085;&#1085;&#1103;">&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103; &#1072;&#1083;&#1075;&#1086;&#1088;&#1080;&#1090;&#1084;&#1091; &#1088;&#1086;&#1079;&#1074;&#8217;&#1103;&#1079;&#1072;&#1085;&#1085;&#1103;<a class="anchor-link" href="#&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1072;&#1083;&#1075;&#1086;&#1088;&#1080;&#1090;&#1084;&#1091;-&#1088;&#1086;&#1079;&#1074;&#8217;&#1103;&#1079;&#1072;&#1085;&#1085;&#1103;"> </a></h3><p>Алгоритм програми лінійний і складається з таких кроків:</p>
+<ol>
+<li>Уведення значення слова стану пристрою.</li>
+<li>Виділення зі слова стану пристрою коду стану. Код слова стану пристрою потрібно зсунути на 11 розрядів управо й виділити 5 молодших розрядів, виконавши операцію побітового логічного <code>І</code> з константою <code>0x1F</code>. Слово стану пристрою залишається незмінним, а одержане значення записується в змінну для коду стану.</li>
+<li>Виділення зі слова стану пристрою ознаки помилки. Код слова стану пристрою потрібно зсунути на 9 розрядів управо й виділити 1 молодший розряд, виконавши операцію побітового логічного І з константою 1. Слово стану пристрою залишається незмінним, а одержане значення записується в змінну для ознаки помилки.</li>
+<li>Виділення зі слова стану пристрою ознаки зайнятості. Код слова стану пристрою потрібно зсунути на 9 розрядів управо й виділити 1 молодший розряд у спосіб, описаний вище. Слово стану пристрою залишається незмінним, а одержане значення записується в змінну для ознаки зайнятості.</li>
+<li>Виділення зі слова стану пристрою кількості байтів. У коді слова стану пристрою потрібно виділити 8 молодших розрядів, виконавши операцію побітового логічного <code>І</code> з константою <code>0xFF</code>. Одержане значення записується в змінну для кількості байтів.</li>
+</ol>
+<h3 id="&#1042;&#1080;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103;-&#1079;&#1084;&#1110;&#1085;&#1085;&#1080;&#1093;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1042;&#1080;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103; &#1079;&#1084;&#1110;&#1085;&#1085;&#1080;&#1093; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1042;&#1080;&#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103;-&#1079;&#1084;&#1110;&#1085;&#1085;&#1080;&#1093;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>Для роботи програми потрібні такі самі змінні, як і в попередній задачі.</p>
+<h3 id="&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1090;&#1077;&#1082;&#1089;&#1090;&#1091;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103; &#1090;&#1077;&#1082;&#1089;&#1090;&#1091; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1056;&#1086;&#1079;&#1088;&#1086;&#1073;&#1083;&#1077;&#1085;&#1085;&#1103;-&#1090;&#1077;&#1082;&#1089;&#1090;&#1091;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>Початок програми складається з заголовку й визначення змінних.
+Далі йде формування упакованого коду, яке точно повторює кроки вищенаведеного алгоритму:</p>
+<div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">UnitStateWord</span> <span class="o">&gt;&gt;</span> <span class="mi">11</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x1F</span><span class="p">;</span>
+<span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">UnitStateWord</span> <span class="o">&gt;&gt;</span>  <span class="mi">9</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">UnitStateWord</span> <span class="o">&gt;&gt;</span>  <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">n</span> <span class="o">=</span> <span class="n">UnitStateWord</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+</pre></div>
+<p>Далі йде виведення коду стану за допомогою оператора</p>
+<div class="highlight"><pre><span></span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Код стану = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+</pre></div>
+<p>Подібними операторами виконується й виведення інших результатів.</p>
+<p>Повний текст програми наведено нижче.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell tag_popout">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/AppendixC-Example-C2">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">c</span><span class="p">;</span> <span class="cm">/*код стану*/</span>
+    <span class="kt">char</span> <span class="n">f</span><span class="p">;</span> <span class="cm">/*ознака помилки*/</span>
+    <span class="kt">char</span> <span class="n">b</span><span class="p">;</span> <span class="cm">/*ознака зайнятості*/</span>
+    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">n</span><span class="p">;</span> <span class="cm">/*кількість байтів*/</span>
+    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">UnitStateWord</span><span class="p">;</span> <span class="cm">/*слово стану*/</span>
+
+    <span class="cm">/*уведення слова стану пристрою*/</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть cлово стану пристрою</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;(16-кове число від 0 до 0xFFFF): &quot;</span><span class="p">);</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%x&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">UnitStateWord</span><span class="p">);</span>
+
+    <span class="cm">/*виділення складових частин*/</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">UnitStateWord</span> <span class="o">&gt;&gt;</span> <span class="mi">11</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0x1F</span><span class="p">;</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">UnitStateWord</span> <span class="o">&gt;&gt;</span>  <span class="mi">9</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="n">UnitStateWord</span> <span class="o">&gt;&gt;</span>  <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">UnitStateWord</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">;</span>
+
+    <span class="cm">/*виведення результатів*/</span>
+    <span class="n">putchar</span><span class="p">(</span><span class="sc">&#39;\n&#39;</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Код стану = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ознака помилки = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ознака зайнятості= %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Кількість переданих байтів = %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1080;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;">&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1080; &#1088;&#1086;&#1073;&#1086;&#1090;&#1080; &#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;<a class="anchor-link" href="#&#1056;&#1077;&#1079;&#1091;&#1083;&#1100;&#1090;&#1072;&#1090;&#1080;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1087;&#1088;&#1086;&#1075;&#1088;&#1072;&#1084;&#1080;"> </a></h3><p>За результатами роботи програми на екран буде виведено результати, схожі на наведені нижче:
+```Уведіть cлово стану пристрою
+(16-кове число від 0 до 0xFFFF): cb42</p>
+<p>Код стану = 25
+Ознака помилки = 1
+Ознака зайнятості = 1
+Кількість переданих байтів = 66
+```</p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

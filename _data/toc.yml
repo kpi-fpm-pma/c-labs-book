@@ -24,7 +24,7 @@
 - title: Вступ
   url: /intro/intro
   not_numbered: true
-  
+
 - header: Лабораторна робота №1
 - title: Базові типи даних, уведення-виведення, бітові операції, операції зсуву
   url: /lab1/intro
@@ -47,6 +47,61 @@
     - title: Завдання
       url: /lab2/problems
 
+- header: Лабораторна робота №3
+- title: Опрацювання символьних даних
+  url: /lab3/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab3/theory
+    - title: Питання для самоперевірки
+      url: /lab3/questions
+    - title: Завдання
+      url: /lab3/problems
+
+- header: Лабораторна робота №4
+- title: Указівники, функції, рекурсія
+  url: /lab4/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab4/theory
+    - title: Питання для самоперевірки
+      url: /lab4/questions
+    - title: Завдання
+      url: /lab4/problems
+
+- header: Лабораторна робота №5
+- title: Типи даних, визначені користувачем
+  url: /lab5/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab5/theory
+    - title: Питання для самоперевірки
+      url: /lab5/questions
+    - title: Завдання
+      url: /lab5/problems
+
+- header: Лабораторна робота №6
+- title: Динамічні масиви
+  url: /lab6/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab6/theory
+    - title: Питання для самоперевірки
+      url: /lab6/questions
+    - title: Завдання
+      url: /lab6/problems
+
+- header: Лабораторна робота №7
+- title: Однозв'язні списки
+  url: /lab7/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab7/theory
+    - title: Питання для самоперевірки
+      url: /lab7/questions
+    - title: Завдання
+      url: /lab7/problems
+
 - header: Лабораторна робота №8
 - title: Робота з бінарними й текстовими файлами
   url: /lab8/intro
@@ -57,6 +112,18 @@
       url: /lab8/questions
     - title: Завдання
       url: /lab8/problems
+
+- header: Додатки
+- title: Додаток А. Рекомендації зі створення інтерфейсу
+  url: /outro/appendixA
+- title: Додаток Б. Титульний лист лабораторної роботи
+  url: /outro/appendixB
+- title: Додаток В. Приклад програмування бітових операцій і операцій зсуву
+  url: /outro/appendixC
+- title: Додаток Г. Алгоритми сортування та пошуку
+  url: /outro/appendixD
+- title: Рекомендована література
+  url: /outro/bibliography
 
 - title: Example
   url: /example
