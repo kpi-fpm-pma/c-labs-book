@@ -102,6 +102,17 @@
     - title: Завдання
       url: /lab7/problems
 
+- header: Лабораторна робота №8
+- title: Робота з бінарними й текстовими файлами
+  url: /lab8/intro
+  sections:
+    - title: Теоретичні відомості
+      url: /lab8/theory
+    - title: Питання для самоперевірки
+      url: /lab8/questions
+    - title: Завдання
+      url: /lab8/problems
+
 - header: Додатки
 - title: Додаток А. Рекомендації зі створення інтерфейсу
   url: /outro/appendixA
