@@ -31,6 +31,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <span class="kt">double</span> <span class="n">array_d</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span> <span class="cm">/*одновимірний масив із 25 елементів*/</span>
 </pre></div>
 <p>Як видно з прикладів, оголошення масивів відрізняється від оголошення звичайних змінних наявністю квадратових дужок <code>[]</code>. Імена масивів вибирають за тими ж правилами, що й імена змінних. Звернення до окремого елемента масиву здійснюють за номером індексу елемента. Перший елемент масиву завжди має індекс 0, другий — 1, і т.д.</p>
+<p>Наступний фрагмент програми демонструє запис у масив значень лінійної функції <code>f(x)</code> і виведення їх на екран:</p>
 
 </div>
 </div>
@@ -41,7 +42,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-1">посиланням</a>.</p>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-21">посиланням</a>.</p>
 
 </div>
 </div>
@@ -52,8 +53,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Наступний фрагмент програми демонструє запис у масив значень лінійної функції <code>f(x)</code> і виведення їх на екран:</p>
-<div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.1"> </a></h4><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">10.0</span><span class="p">;</span>
 <span class="kt">double</span> <span class="n">f</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
@@ -81,14 +81,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <span class="kt">float</span> <span class="n">array_f</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="cm">/*помилка, так не можна*/</span>
 </pre></div>
 <p>Тому під час оголошення масивів зазвичай використовують такий підхід:</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-<span class="cp">#define N 100</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-  <span class="kt">float</span> <span class="n">array_f</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</pre></div>
 
 </div>
 </div>
@@ -99,7 +91,25 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-2">посиланням</a>.</p>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-22">посиланням</a>.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.2">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.2<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.2"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#define N 100</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">float</span> <span class="n">array_f</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
 </div>
 </div>
@@ -131,7 +141,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </pre></div>
 <p>У результаті ініціалізувався одновимірний масив розмірністю 6 елементів. При цьому у випадку, якщо значення індексу під час звернення до елемента масиву перевищить його розмірність, ні програма, ні компілятор не видадуть повідомлення про помилку, але при цьому в програмі можуть виникати непередбачені збої. Тому програмісту варто звертати особливу увагу на те, щоб під час звернення до елементів масиву індекси не виходили за його межі.</p>
 <p>Для зберігання деяких видів інформації, наприклад, зображень, зручно використовувати двовимірні масиви. Оголошення двовимірних масивів здійснюють так:</p>
-<div class="highlight"><pre><span></span><span class="err">і</span><span class="n">nt</span> <span class="n">array_2D</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span> <span class="cm">/*двовимірний масив зі 100 х 20 елементів*/</span>
+<div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">array_2D</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">20</span><span class="p">];</span> <span class="cm">/*двовимірний масив зі 100 х 20 елементів*/</span>
 </pre></div>
 <p>Нумерація елементів у цьому випадку також починається з 0, тобто <code>array_2D[0][0]</code> відповідає елементу першого рядка першого стовпця, <code>array_2D[0][1]</code> — елементу першого рядка другого стовпця і т.д. Для початкової ініціалізації двовимірного масиву можна використовувати таку конструкцію:</p>
 <div class="highlight"><pre><span></span><span class="kt">long</span> <span class="n">array_2D</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span> <span class="p">},</span> <span class="p">{</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span> <span class="p">}</span> <span class="p">};</span>
@@ -151,7 +161,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-3">посиланням</a>.</p>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-23">посиланням</a>.</p>
 
 </div>
 </div>
@@ -162,7 +172,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.3">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.3<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.3"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
     <span class="kt">double</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
@@ -242,7 +252,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-21">посиланням</a>.</p>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-24">посиланням</a>.</p>
 
 </div>
 </div>
@@ -253,7 +263,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.1">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.1<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.1"> </a></h3><p>Програма друкування вмісту одновимірного масиву з використанням посилань. Масив проініціалізовано заздалегідь.</p>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.4">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.4<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.4"> </a></h4><p>Програма друкування вмісту одновимірного масиву з використанням посилань. Масив проініціалізовано заздалегідь.</p>
 <div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#define SIZE 5</span>
 
@@ -278,7 +288,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-22">посиланням</a>.</p>
+<p>Запустити цей код можна за <a href="https://repl.it/@GasperPaul/Lab2-Example-25">посиланням</a>.</p>
 
 </div>
 </div>
@@ -289,7 +299,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.2">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.2<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.2"> </a></h3><p>Програма, що реалізує заповнення двовимірного масиву випадковими елементами з використанням посилань.</p>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.5">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 2.5<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-2.5"> </a></h4><p>Програма, що реалізує заповнення двовимірного масиву випадковими елементами з використанням посилань.</p>
 <div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;time.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
