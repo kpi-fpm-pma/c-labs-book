@@ -23,7 +23,6 @@
 
 - title: Вступ
   url: /intro/intro
-  not_numbered: true
 
 - header: Лабораторна робота №1
 - title: Базові типи даних, уведення-виведення, бітові операції, операції зсуву
@@ -124,7 +123,3 @@
   url: /outro/appendixD
 - title: Рекомендована література
   url: /outro/bibliography
-
-- title: Example
-  url: /example
-  not_numbered: true

@@ -4,3 +4,7 @@
     margin-right: 5px;
     float: left;
 }
+
+.c-sidebar__title {
+    text-align: center;
+}
