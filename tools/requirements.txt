@@ -1,3 +1,0 @@
-jupyter
-jupyterlab
-jupyter-book==0.6.3
