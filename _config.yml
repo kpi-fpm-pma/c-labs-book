@@ -20,8 +20,7 @@ title: Основи програмування <br/> мовою С
 author: Громова В.В.
 email: vikvikgrom@gmail.com
 description: >-
-  Методичні вказівки до виконання лабораторних
-  робіт
+  Методичні вказівки до виконання лабораторних робіт
   із кредитного модуля "Програмування-2. С"
 
 baseurl: /c-labs-book # the subpath of your site, e.g. /blog. If there is no subpath for your site, use an empty string ""
@@ -37,7 +36,7 @@ footer_text: This page was created by <a href="https://github.com/gasperpaul/c-l
 # Sidebar settings
 show_sidebar: true                # Show the sidebar. Only set to false if your only wish to host a single page.
 collapse_inactive_chapters: true  # Whether to collapse the inactive chapters in the sidebar
-collapse_inactive_sections: true  # Whether to collapse the sub-sections within a non-active section in the sidebar
+collapse_inactive_sections: false  # Whether to collapse the sub-sections within a non-active section in the sidebar
 textbook_logo: images/logo/logo.png               # A logo to be displayed at the top of your textbook sidebar. Should be square
 textbook_logo_link: https://gasperpaul.github.io/c-labs-book/   # A link for the logo.
 sidebar_footer_text: Громова В.В., 2020
@@ -47,7 +46,7 @@ number_toc_chapters: false        # Whether to add numbers to chapterse in your 
 search_max_words_in_content: 100   # In the search function, use at most this many words (too many words will make search slow)
 
 # Controlling page information
-page_titles: infer                      # Either `None`, `infer`, or `toc`
+page_titles: None                      # Either `None`, `infer`, or `toc`
 page_authors: None                     # Either `None` or `infer`
 filename_title_split_character: _     # If inferring titles based on filename, splt on this character.
 
