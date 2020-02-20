@@ -63,14 +63,12 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 </ol>
 <ul>
 <li><code>p</code> — значення вказівника;</li>
-<li><code>n</code> — деяке ціле.</li>
+<li><code>n</code> — деяке ціле.
+У загальному випадку додавання (віднімання) цілого числа до вказівника збільшує (зменшує) адресу, що міститься в ньому, на добуток цього цілого числа на розмір в байтах того об’єкта, на який цей указівник указує.</li>
 </ul>
-<p>У загальному випадку додавання (віднімання) цілого числа до вказівника збільшує (зменшує) адресу, що міститься в ньому, на добуток цього цілого числа на розмір в байтах того об’єкта, на який цей указівник указує.</p>
 <ol>
-<li>Віднімання (указівник – указівник).</li>
-</ol>
-<p>Якщо <code>р1</code> і <code>р2</code> — указівники на елементи одного й того ж масиву, то операція <code>р1 - р2</code> дає такий же результат, що й віднімання індексів відповідних елементів масивів.</p>
-<ol>
+<li>Віднімання (указівник – указівник).
+Якщо <code>р1</code> і <code>р2</code> — указівники на елементи одного й того ж масиву, то операція <code>р1 - р2</code> дає такий же результат, що й віднімання індексів відповідних елементів масивів.</li>
 <li>Приріст (збільшення або зменшення): <code>++</code>, <code>--</code>.
 Указівник після кожного збільшення буде вказувати на наступний елемент базового типу. Це стосується як додатного, так і від’ємного приросту.</li>
 </ol>
@@ -86,7 +84,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <p>Звернення до, наприклад, п’ятого елемента масиву можна записати так:</p>
 <div class="highlight"><pre><span></span><span class="n">array</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
 <span class="o">*</span><span class="p">(</span><span class="n">array</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
-<span class="o">*</span><span class="p">(</span><span class="err">р</span><span class="n">tr</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
+<span class="o">*</span><span class="p">(</span><span class="n">ptr</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span>
 </pre></div>
 <p>Усі ці оператори повернуть п’ятий елемент масиву. Таким чином, мова С дає два способи звернення до елемента масиву:</p>
 <ul>
@@ -188,7 +186,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <h3 id="&#1052;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1110;&#1074;">&#1052;&#1072;&#1089;&#1080;&#1074;&#1080; &#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1110;&#1074;<a class="anchor-link" href="#&#1052;&#1072;&#1089;&#1080;&#1074;&#1080;-&#1074;&#1082;&#1072;&#1079;&#1110;&#1074;&#1085;&#1080;&#1082;&#1110;&#1074;"> </a></h3><p>У мові С допускається організовувати масиви вказівників. Щоб оголосити масив цілих указівників розміром 10, потрібно записати:</p>
 <div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
 </pre></div>
-<p>що читається як масив ([]) указівників (<code>*</code>) на об’єкти типу <code>int</code>.</p>
+<p>що читається як масив (<code>[]</code>) указівників (<code>*</code>) на об’єкти типу <code>int</code>.</p>
 <p>Щоб присвоїти адресу цілої змінної з іменем <code>var</code>, наприклад, третьому елементу масиву вказівників, потрібно записати <code>х[2] = &amp;var</code>. Для одержання значення змінної <code>var</code> потрібно записати <code>*х[2]</code>.</p>
 <p>У програмуванні часто доводиться використовувати масиви рядків. Для створення масиву рядків потрібно використовувати двовимірний масив, у якому розмір лівого індексу визначає число рядків, а розмір правого індексу — довжину кожного рядка. Наприклад, нижче оголошується масив із 30 рядків, у якому кожний рядок має довжину 80 символів:</p>
 <div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">str_array</span><span class="p">[</span><span class="mi">30</span><span class="p">][</span><span class="mi">80</span><span class="p">];</span>
@@ -541,8 +539,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Оскільки вказівник на вказівник — це те саме, що й масив указівників, то дозволено запис, наведений у наступному фрагменті.</p>
-<p>Приклад 4.8</p>
-<div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<h4 id="&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.8">&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076; 4.8<a class="anchor-link" href="#&#1055;&#1088;&#1080;&#1082;&#1083;&#1072;&#1076;-4.8"> </a></h4><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#define ROWS 2</span>
 <span class="cp">#define COLS 3</span>
 
@@ -594,7 +591,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;">&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;<a class="anchor-link" href="#&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;"> </a></h2><p><em>Функція</em> — це деяка логічно завершена сукупність операторів мови, яка виконує певну задачу, і яку можна викликати для виконання потрібну кількість разів. Основна форма опису функції має вигляд:</p>
 
-<pre><code>&lt;тип&gt; &lt;ім’я функції&gt; (&lt;формальні параметри&gt;) {&lt;тіло функції&gt;}</code></pre>
+<pre><code>&lt;тип&gt; &lt;ім’я функції&gt; (&lt;формальні параметри&gt;) { &lt;тіло функції&gt; }</code></pre>
 <p>де</p>
 <ul>
 <li><code>&lt;тип&gt;</code> визначає тип значення, яке повертає функція за допомогою оператора <code>return</code>. Якщо тип не вказано, то за замовчуванням передбачається, що функція повертає ціле значення (типу <code>int</code>). Якщо з іменем функції не пов’язано результату, то потрібно вказати тип функції <code>void</code>;</li>
