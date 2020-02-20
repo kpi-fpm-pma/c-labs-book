@@ -28,11 +28,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <li><em>призначену для користувача область</em> — пам’ять, яка використовується для зберігання програм та їхніх даних, завантажених користувачем;</li>
 <li><em>вільну пам’ять</em> — усю іншу пам’ять.</li>
 </ul>
-<p>Область вільної пам’яті розташовано між програмою, із її постійною областю пам’яті, та стеком. Динамічне розміщення зручне, коли невідомо, скільки елементів даних опрацьовуватиметься. Запропонований стандарт ANSI визначає, що інформація, потрібна системі динамічного розподілу, знаходитиметься в <code>stdlib.h</code>. Прототипи функцій для роботи з динамічною пам’яттю містяться у файлі <code>alloc.h</code>. Розподіл пам’яті представлено на рисунку 6.1.</p>
+<p>Область вільної пам’яті розташовано між програмою, із її постійною областю пам’яті, та стеком. Динамічне розміщення зручне, коли невідомо, скільки елементів даних опрацьовуватиметься. Запропонований стандарт ANSI визначає, що інформація, потрібна системі динамічного розподілу, знаходитиметься в <code>stdlib.h</code>. Розподіл пам’яті представлено на рисунку 6.1.</p>
 <p><img src="../images/lab61.png" alt="Розподіл оперативної пам’яті для програм мовою С"></p>
 <p>Рисунок 6.1 – Розподіл оперативної пам’яті для програм мовою С</p>
 <p>По мірі використання програмою стекова область збільшується вниз, тобто програма самостійно визначає об’єм стекової пам’яті. Наприклад, програма з великим числом рекурсивних функцій займе більше стекової пам’яті від програми, яка не має рекурсивних функцій узагалі, оскільки локальні змінні й адреси повернення зберігаються саме в стеках. Пам’ять під саму програму та глобальні змінні виділяється на весь час виконання програми.</p>
-<h2 id="&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;">&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111; &#1076;&#1083;&#1103; &#1088;&#1086;&#1073;&#1086;&#1090;&#1080; &#1079; &#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102; &#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;<a class="anchor-link" href="#&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;"> </a></h2><p>Із вільної області пам’ять можна виділити за допомогою функції <code>malloc()</code>. Пам’ять виділяється області, розташованої безпосередньо над областю глобальних змінних, при цьому адресація зростає в бік стекової області. Таким чином, в екстремальних випадках стекова область може накластися на область динамічного розміщення.</p>
+<h2 id="&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;">&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111; &#1076;&#1083;&#1103; &#1088;&#1086;&#1073;&#1086;&#1090;&#1080; &#1079; &#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102; &#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;<a class="anchor-link" href="#&#1060;&#1091;&#1085;&#1082;&#1094;&#1110;&#1111;-&#1076;&#1083;&#1103;-&#1088;&#1086;&#1073;&#1086;&#1090;&#1080;-&#1079;-&#1076;&#1080;&#1085;&#1072;&#1084;&#1110;&#1095;&#1085;&#1086;&#1102;-&#1087;&#1072;&#1084;&#8217;&#1103;&#1090;&#1090;&#1102;"> </a></h2><p>Із вільної області пам’ять можна виділити за допомогою функції <code>malloc()</code>. Пам’ять виділяється з області, розташованої безпосередньо над областю глобальних змінних, при цьому адресація зростає в бік стекової області. Таким чином, в екстремальних випадках стекова область може накластися на область динамічного розміщення.</p>
 <p>Динамічна пам’ять виділяється під час <em>роботи</em> програми, а не під час її <em>створення</em>. Над динамічною пам’яттю можна виконувати дві основні дії — <em>виділяти</em> та <em>вивільняти</em>.</p>
 <p>Розгляньмо описи функцій мови С для роботи з динамічною пам’яттю:</p>
 <ol>
@@ -251,34 +251,26 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <p>Доступ до ділянок виділеної пам’яті в прикладі виконується за допомогою операції індексування <code>p[i]</code>. Кожний елемент масиву може бути, у свою чергу, масивом. Саме так конструюють динамічні багатовимірні масиви.</p>
 <p>Розгляньмо алгоритм створення та опрацювання двовимірного массиву:</p>
 <ol>
-<li>визначити вказівник на масив указівників, що задає адреси початку рядків матриці: </li>
-</ol>
-<div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;</span> <span class="o">**</span><span class="n">uk</span><span class="p">;</span>
+<li>визначити вказівник на масив указівників, що задає адреси початку рядків матриці: <div class="highlight"><pre><span></span><span class="err">тип</span> <span class="o">**</span><span class="n">uk</span><span class="p">;</span>
 </pre></div>
-<ol>
+</li>
 <li>увести розміри матриці <code>n</code>, <code>m</code>;</li>
-<li>створити динамічний масив указівників на вказівники початку рядків: </li>
-</ol>
-<div class="highlight"><pre><span></span><span class="n">uk</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;**</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;*</span><span class="p">));</span>
+<li>створити динамічний масив указівників на вказівники початку рядків: <div class="highlight"><pre><span></span><span class="n">uk</span> <span class="o">=</span> <span class="p">(</span><span class="err">тип</span><span class="o">**</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">n</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="err">тип</span><span class="o">*</span><span class="p">));</span>
 </pre></div>
-<ol>
-<li>у циклі виділити пам’ять під <code>n</code> масивів — рядків по <code>m</code> елементів у кожному:</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">uk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="o">&lt;</span><span class="err">тип</span><span class="o">&gt;</span><span class="p">));</span>
+</li>
+<li>у циклі виділити пам’ять під <code>n</code> масивів — рядків по <code>m</code> елементів у кожному:<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ <span class="n">uk</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="err">тип</span><span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="n">m</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="err">тип</span><span class="p">));</span>
 </pre></div>
-<ol>
+</li>
 <li>опрацювати масив (робота з індексованими елементами <code>uk[i][j]</code>);</li>
-<li>у циклі вивільнити пам’ять, зайняту під <code>n</code> масивів — рядків:</li>
-</ol>
-<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="n">free</span><span class="p">(</span><span class="n">uk</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<li>у циклі вивільнити пам’ять, зайняту під <code>n</code> масивів — рядків:<div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+ <span class="n">free</span><span class="p">(</span><span class="n">uk</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
 </pre></div>
-<ol>
-<li>вивільнити пам’ять, зайняту під масив указівників: </li>
-</ol>
-<div class="highlight"><pre><span></span><span class="n">free</span><span class="p">(</span><span class="n">uk</span><span class="p">)</span>
+</li>
+<li>вивільнити пам’ять, зайняту під масив указівників: <div class="highlight"><pre><span></span><span class="n">free</span><span class="p">(</span><span class="n">uk</span><span class="p">)</span>
 </pre></div>
+</li>
+</ol>
 <p>Розгляньмо приклад опрацювання двовимірного динамічного масиву з використанням функції <code>malloc()</code>.</p>
 
 </div>
