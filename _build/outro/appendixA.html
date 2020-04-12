@@ -3,24 +3,23 @@ redirect_from:
   - "/outro/appendixa"
 interact_link: content/outro/appendixA.ipynb
 kernel_name: python3
-kernel_path: content/outro
 has_widgets: false
 title: |-
   Додаток А. Рекомендації зі створення інтерфейсу
-pagenum: 33
 prev_page:
   url: /lab8/problems.html
+  title: |-
+    Завдання
 next_page:
   url: /outro/appendixB.html
+  title: |-
+    Додаток Б. Титульний лист лабораторної роботи
 suffix: .ipynb
-search: printf n ch c h b void p include scanf s f net int clrscr char float case break rand conio ncurses sourceforge projects stdio drawmenu getuserselection while isvalidinput return images appa png windows invisible island conioforlinux linux conioh ascii gotoxy x y enter repl gasperpaul appendixa example stdlib math system clrclear getchar bool main continue switch srand null exit sqrt
 
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
 ---
 
     <main class="jupyter-page">
-    <div id="page-info"><div id="page-title">Додаток А. Рекомендації зі створення інтерфейсу</div>
-</div>
     <div class="jb_cell">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
@@ -36,9 +35,10 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="jb_cell tag_popout">
 
-<div class="cell border-box-sizing text_cell rendered tag_popout"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>conio.h</code> доступний лише на Windows. На інших ОС варто використовувати бібліотеку <a href="https://invisible-island.net/ncurses/"><code>ncurses</code></a> або одну із бібліотек сумісності, наприклад <a href="sourceforge.net/projects/conioforlinux/">цю</a> чи <a href="https://sourceforge.net/projects/linux-conioh/">цю</a>.</p>
+<p><code>conio.h</code> доступний лише у деяких компіляторах на Windows. На інших ОС варто використовувати бібліотеку <a href="https://invisible-island.net/ncurses/"><code>ncurses</code></a> або одну із бібліотек сумісності, наприклад <a href="sourceforge.net/projects/conioforlinux/">цю</a> чи <a href="https://sourceforge.net/projects/linux-conioh/">цю</a>.</p>
+<p>Для спрощення розробки обкладинки ви можете скорситатися нашою простою бібліотекою, що дає кросплатформенний доступ до функцій <code>gotoxy</code> та <code>clrscr</code>: <a href="https://gist.github.com/GasperPaul/68d4d9209aa9895aa89eefd09d418eec"><code>terminal.h</code></a></p>
 
 </div>
 </div>
@@ -49,12 +49,29 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Маніпуляції з консолью вимагають підключення додаткових бібліотек, що залежать від вашої операційної системи. Для Windows це може бути <code>conio.h</code> чи <code>windows.h</code>. На Linux та інших Unix-подібних системах традиційно використовують бібліотеку <a href="https://invisible-island.net/ncurses/"><code>ncurses</code></a>.</p>
+<p>Для кросплатформенної розробки можна використовувати бібліотеку <a href="https://github.com/wmcbrine/PDCurses"><code>pdcurses</code></a>.</p>
 <p>Для створення обкладинки потрібно:</p>
 <ol>
-<li>Підключити бібліотеки <code>stdio.h</code> та <code>conio.h</code>.</li>
+<li>Підключити бібліотеку <code>stdio.h</code> та бібліотеку для маніпуляцій консолью.</li>
 <li>Очистити екран.</li>
-<li>Для креслення рамки використати символи з такими кодами ASCII: 218 (лівий верхній кут), 196 (горизонтальна лінія), 191 (правий верхній кут), 179 (вертикальна лінія), 192 (лівий нижній кут), 217 (правий нижній кут);</li>
-<li>Використовувати функцію <code>void gotoxy(int x, int y)</code>, яка поміщає курсор текстового екрана в точку з координатами <code>х, у</code>;</li>
+<li><p>Для креслення рамки використайте символи з такими кодами ASCII:</p>
+<ul>
+<li>218 (лівий верхній кут),</li>
+<li>196 (горизонтальна лінія),</li>
+<li>191 (правий верхній кут),</li>
+<li>179 (вертикальна лінія),</li>
+<li>192 (лівий нижній кут),</li>
+<li>217 (правий нижній кут).</li>
+</ul>
+<p>| | | |
+| --- | --- | --- |
+| <code>┌</code> 218 | <code>─</code> 196 | <code>┐</code> 191 |
+| <code>│</code> 179 |         | <code>│</code> 179 |
+| <code>└</code> 192 | <code>─</code> 196 | <code>┘</code> 217 |</p>
+</li>
+<li><p>Використовуйте функцію <code>void gotoxy(int x, int y)</code>, яка поміщає курсор текстового екрана в точку з координатами <code>х, у</code>. (Стандартний розмір терміналу — 80 х 25.)</p>
+</li>
 <li>Поставити очікування уведення будь-якого символу й вивести рядок, наприклад, <code>"Для завершення натисніть Enter"</code>.</li>
 </ol>
 <h2 id="&#1054;&#1088;&#1075;&#1072;&#1085;&#1110;&#1079;&#1072;&#1094;&#1110;&#1103;-&#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1075;&#1086;-&#1084;&#1077;&#1085;&#1102;">&#1054;&#1088;&#1075;&#1072;&#1085;&#1110;&#1079;&#1072;&#1094;&#1110;&#1103; &#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1075;&#1086; &#1084;&#1077;&#1085;&#1102;<a class="anchor-link" href="#&#1054;&#1088;&#1075;&#1072;&#1085;&#1110;&#1079;&#1072;&#1094;&#1110;&#1103;-&#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1075;&#1086;-&#1084;&#1077;&#1085;&#1102;"> </a></h2><p>Майже в усіх завданнях користувачу надають вибір із декількох варіантів. Наприклад, для демонстрації роботи програм можна використовувати випадкові числа, а можна — числа, уведені з клавіатури. Вибір користувача часто реалізують у вигляді меню. Просте меню виглядає так:</p>
@@ -73,7 +90,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="jb_cell tag_popout">
 
-<div class="cell border-box-sizing text_cell rendered tag_popout"><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Запустити цей приклад можна за <a href="https://repl.it/@GasperPaul/AppendixA-Example-A1">посиланням</a>.</p>
 
@@ -94,7 +111,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <span class="kt">void</span> <span class="nf">clrscr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
 <span class="p">{</span>
-  <span class="n">system</span><span class="p">(</span><span class="s">&quot;clr||clear&quot;</span><span class="p">);</span>
+  <span class="n">system</span><span class="p">(</span><span class="s">&quot;cls||clear&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="nf">draw_menu</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
