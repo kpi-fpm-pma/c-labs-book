@@ -1,0 +1,36 @@
+name: deploy-book
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # Install dependencies
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+          
+      - name: Install packages
+        run: pip install -r tools/requirements.txt
+      
+      - name: Build book
+        run: jupyter-book build .
+
+      # Push to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@3.6.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_build/html
+          
