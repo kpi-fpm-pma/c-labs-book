@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання &#8212; Основи програмування &lt;br/&gt; мовою С</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/lab7/problems.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Вступ" href="../lab8/intro.html" />
+    <link rel="prev" title="Контрольні питання" href="questions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://gasperpaul.github.io/c-labs-book/content/lab7/problems.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Завдання" />
+<meta property="og:description" content="Завдання  Узагальнене формулювання завдання до лабораторної роботи  Відповідно до індивідуального завдання потрібно створити програму для обслуговування однозв’" />
+<meta property="og:image"       content="https://gasperpaul.github.io/c-labs-book/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Основи програмування <br/> мовою С</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/intro.html">
+   Вступ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab1/intro.html">
+   Базові типи даних, уведення-виведення, бітові операції, операції зсуву
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab2/intro.html">
+   Одновимірні й двовимірні масиви
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab3/intro.html">
+   Опрацювання символьних даних
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab4/intro.html">
+   Указівники, функції, рекурсія
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab5/intro.html">
+   Типи даних, визначені користувачем
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №6
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab6/intro.html">
+   Динамічні масиви
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №7
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   Однозв'язні списки
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="theory.html">
+     Теоретичні відомості
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="questions.html">
+     Питання для самоперевірки
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Завдання
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №8
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab8/intro.html">
+   Робота з бінарними й текстовими файлами
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Додатки
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixA.html">
+   Додаток А. Рекомендації зі створення інтерфейсу
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixB.html">
+   Додаток Б. Титульний лист лабораторної роботи
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixC.html">
+   Додаток В. Приклад програмування бітових операцій і операцій зсуву
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixD.html">
+   Додаток Г. Алгоритми сортування та пошуку
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/bibliography.html">
+   Рекомендована література
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>, 2020
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/lab7/problems.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Узагальнене формулювання завдання до лабораторної роботи
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Постановка першого завдання
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id4">
+   Постановка другого завдання
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Варіанти завдань до лабораторної роботи
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Операції для роботи зі списком, який складається із найпростіших елементів
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#o5">
+     Операції для роботи зі списком, елементами якого є шаблони структур із відповідного варіанту для Лабораторної роботи №5
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Завдання<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Узагальнене формулювання завдання до лабораторної роботи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Відповідно до індивідуального завдання потрібно створити програму для обслуговування однозв’язного списку, розміщеного в динамічній пам’яті.</p>
+<p>Завдання складається з двох частин:</p>
+<ul class="simple">
+<li><p>операції для роботи зі списком, який складається з найпростіших елементів;</p></li>
+<li><p>операції для роботи зі списком, елементами якого є шаблони структур із відповідного варіанту для Лабораторної роботи №5.</p></li>
+</ul>
+<p>Програма повинна задовольняти такі вимоги:</p>
+<ol class="simple">
+<li><p>Указані в завданні дії має бути оформлено як окремі функції.</p></li>
+<li><p>Пам’ять під черговий елемент динамічної структури даних потрібно виділяти динамічно.</p></li>
+<li><p>Виконання дій з обслуговування динамічної структури даних повинно виконуватися в режимі діалогу з користувачем.</p></li>
+<li><p>Уведення структур можна реалізувати одним із таких механізмів:</p>
+<ul class="simple">
+<li><p>уведення заздалегідь вибраної кількості структур (не менше за 5);</p></li>
+<li><p>уведення до появи заданої ознаки закінчення уведення структур;</p></li>
+<li><p>діалог із користувачем про потребу продовжувати уведення.</p></li>
+</ul>
+</li>
+</ol>
+<div class="section" id="id3">
+<h3>Постановка першого завдання<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Для того, щоб створити список, потрібно створити спочатку перший елемент списку, а потім у циклі додати до нього інші елементи. Додавання може виконуватися як на початок, так і в кінець списку. Має бути визначена ознака кінця формування списку. Не можна задавати спочатку кількість елементів списку.</p>
+<p>Для зручності роботи і правильного пересування по списку рекомендується працювати з трьома вказівниками:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">head</span></code> — вказівник на голову списку;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">current</span></code> — вказівник на поточний елемент списку;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tail</span></code> — вказівник на останній елемент списку.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Постановка другого завдання<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Для кожного варіанту потрібно взяти шаблон структури із варіанту для Лабораторної роботи №5 з відповідним номером.</p>
+<p>У кожному варіанті потрібно виконати всі дії зі структурами, перераховані в попередній роботі, з урахуванням технології роботи з однозв’язним списком, розміщеним у динамічній пам’яті. Написану програму потрібно доповнити функціями з наступних пунктів.</p>
+<p>Для кожного з варіантів завдання потрібно розробити такі функції:</p>
+<ul class="simple">
+<li><p>створення списку;</p></li>
+<li><p>додавання елемента в список:</p>
+<ul>
+<li><p>у початок списку;</p></li>
+<li><p>у кінець списку;</p></li>
+<li><p>після елемента з заданим номером;</p></li>
+<li><p>після елемента з заданим ключем;</p></li>
+</ul>
+</li>
+<li><p>видалення елемента зі списку:</p>
+<ul>
+<li><p>з початку списку;</p></li>
+<li><p>з кінця списку;</p></li>
+<li><p>із заданим номером;</p></li>
+<li><p>із заданим ключем;</p></li>
+</ul>
+</li>
+<li><p>виведення вмісту списку на екран;</p></li>
+<li><p>упорядкування елементів списку за вибраною ознакою.</p></li>
+</ul>
+<p>Виведення вмісту списку (за відповідним пунктом меню) потрібно виконати у вигляді таблиці, стовпці якої відповідають полям шаблону варіанту структури, а рядки — вмісту кожного екземпляра структури зі сформованого списку. Поля під час виведення повинно бути відформатовано за допомогою табуляції.</p>
+</div>
+<div class="section" id="id5">
+<h2>Варіанти завдань до лабораторної роботи<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Операції для роботи зі списком, який складається із найпростіших елементів<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Вилучити з першого списку і перемістити в другій список все від’ємні числа.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Видалити зі списку всі елементи, що знаходяться між його максимальним і мінімальним елементами.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Перемістити в другий список елементи, що повторюються в першому списку більш ніж один раз.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Перетворити його в два списки: перший список повинен містити тільки парні числа, другий - непарні.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> дійсних чисел. Розташувати елементи списку в зворотному порядку.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел, впорядкованих за зростанням. Перемістити всі дані в третій список, видаляючи повторювані значення.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел впорядкованих за зростанням. Перемістити в третій список елементи зі значеннями, які зустрічаються і в першому і в другому списках.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Від’ємні елементи видалити, а парні перенести в другий список.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> символів латинського алфавіту і символів арифметичних операцій. Перемістити символи арифметичних операцій в другий список.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> символів латинського алфавіту. Перемістити всі дані в третій список таким чином, щоб спочатку йшли всі рядкові символи з обох списків, а потім - прописні.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Перемістити в другій список елементи, значення яких більше середнього значення елементів першого списку.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> символів латинського алфавіту. Видалити зі списку елементи з повторюваними більш ніж один раз значеннями.</p></li>
+<li><p>Створити два однонаправлених списку, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел, впорядкованих за зростанням. Перетворити їх в третій список, який буде впорядкований по спадаючій.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> символів латинського алфавіту. Перетворити його в два списки: перший список повинен містити прописні символи, другий - рядкові.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Вставити нові елементи в початок, кінець і після зазначеного елементу списку.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Перевірити на рівність двох списків і визначити, чи входить перший список у другий.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Вставити в список новий елемент за кожним входженням зазначеного (уведеного) елементу списку.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Вставити в кінець першого списку всі елементи другого списку і перенести останній елемент в початок нового списку.</p></li>
+<li><p>Створити два однонаправлених списку, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Створити третій список, включивши в нього по одному разу елементи, які входять одночасно в обидва списки.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Створити третій список, включивши в нього по одному разу елементи, які входять в один зі списків, але в той же час не входять в інший.</p></li>
+<li><p>Створити два однонаправлених списка, що складаються з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел, впорядкованих за неспаданням. Об’єднати в один упорядкований по неспаданню список.</p></li>
+<li><p>Створити однонаправлений список, що складається з додатних і від’ємних чисел типу <code class="docutils literal notranslate"><span class="pre">float</span></code>. Вставити після кожного від’ємного числа елемент зі значенням 0.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Видалити з нього елемент із заданим номером, додати <code class="docutils literal notranslate"><span class="pre">К</span></code> елементів, починаючи з заданого номера.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Видалити з нього К елементів, починаючи з заданого номера, додати ці <code class="docutils literal notranslate"><span class="pre">К</span></code> елементів піля іншого заданого номера.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Видалити зі списку всі елементи з парними номерами (2, 4, 6 і. т. д.), записавши їх в новий список.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Всі елементи, що повторюються подвоїти. Визначити розмір списку.</p></li>
+<li><p>Створити три однонаправлених списка. Знайти входження другого списку в перший і замінити на третій.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Видалити з нього елемент, який знаходиться за кожним входженням заданого елементу списку (якщо такий є).</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Знайти суму останнього і передостаннього елементів списку і зробити цю суму першим елементом списку.</p></li>
+<li><p>Створити однонаправлений список, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> цілих чисел. Перевернути список, тобто змінити вказівники на наступний елемент у цьому списку так, щоб його елементи виявилися розташованими в зворотному порядку.</p></li>
+</ol>
+</div>
+<div class="section" id="o5">
+<h3>Операції для роботи зі списком, елементами якого є шаблони структур із відповідного варіанту для Лабораторної роботи №5<a class="headerlink" href="#o5" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="../lab5/problems.html#%D0%92%D0%B0%D1%80%D1%96%D0%B0%D0%BD%D1%82%D0%B8-%D0%B7%D0%B0%D0%B2%D0%B4%D0%B0%D0%BD%D1%8C-%D0%B4%D0%BE-%D0%BB%D0%B0%D0%B1%D0%BE%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%BD%D0%BE%D1%97-%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D0%B8"><em>Див. варіанти структур в Лабораторній роботі №5</em></a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/lab7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="questions.html" title="previous page">Контрольні питання</a>
+    <a class='right-next' id="next-link" href="../lab8/intro.html" title="next page">Вступ</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Громова В.В.<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

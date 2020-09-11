@@ -1,0 +1,2496 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Завдання &#8212; Основи програмування &lt;br/&gt; мовою С</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/lab1/problems.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Вступ" href="../lab2/intro.html" />
+    <link rel="prev" title="Контрольні питання" href="questions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://gasperpaul.github.io/c-labs-book/content/lab1/problems.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Завдання" />
+<meta property="og:description" content="Завдання  Узагальнене формулювання завдання до лабораторної роботи  Завдання складається з двох частин:  програмування операцій уведення-виведення для обчисленн" />
+<meta property="og:image"       content="https://gasperpaul.github.io/c-labs-book/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Основи програмування <br/> мовою С</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/intro.html">
+   Вступ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №1
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intro.html">
+   Базові типи даних, уведення-виведення, бітові операції, операції зсуву
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="theory.html">
+     Теоретичні відомості
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="questions.html">
+     Питання для самоперевірки
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Завдання
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab2/intro.html">
+   Одновимірні й двовимірні масиви
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab3/intro.html">
+   Опрацювання символьних даних
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab4/intro.html">
+   Указівники, функції, рекурсія
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab5/intro.html">
+   Типи даних, визначені користувачем
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №6
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab6/intro.html">
+   Динамічні масиви
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №7
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab7/intro.html">
+   Однозв'язні списки
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №8
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab8/intro.html">
+   Робота з бінарними й текстовими файлами
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Додатки
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixA.html">
+   Додаток А. Рекомендації зі створення інтерфейсу
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixB.html">
+   Додаток Б. Титульний лист лабораторної роботи
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixC.html">
+   Додаток В. Приклад програмування бітових операцій і операцій зсуву
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/appendixD.html">
+   Додаток Г. Алгоритми сортування та пошуку
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../outro/bibliography.html">
+   Рекомендована література
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>, 2020
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/lab1/problems.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Узагальнене формулювання завдання до лабораторної роботи
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Постановка першого завдання
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Постановка другого завдання
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id5">
+   Варіанти завдань до лабораторної роботи
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id6">
+     Програмування операцій уведення-виведення для обчислення конкретних формул
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o1">
+       Варіант №1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o2">
+       Варіант №2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o3">
+       Варіант №3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o4">
+       Варіант №4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o5">
+       Варіант №5
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o6">
+       Варіант №6
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o7">
+       Варіант №7
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o8">
+       Варіант №8
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o9">
+       Варіант №9
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o10">
+       Варіант №10
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o11">
+       Варіант №11
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o12">
+       Варіант №12
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o13">
+       Варіант №13
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o14">
+       Варіант №14
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o15">
+       Варіант №15
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o16">
+       Варіант №16
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o17">
+       Варіант №17
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o18">
+       Варіант №18
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o19">
+       Варіант №19
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o20">
+       Варіант №20
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o21">
+       Варіант №21
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o22">
+       Варіант №22
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o23">
+       Варіант №23
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o24">
+       Варіант №24
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o25">
+       Варіант №25
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o26">
+       Варіант №26
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o27">
+       Варіант №27
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o28">
+       Варіант №28
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o29">
+       Варіант №29
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o30">
+       Варіант №30
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id7">
+     Програмування бітових операцій та операцій зсуву
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id8">
+       Варіант №1
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id9">
+       Варіант №2
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id10">
+       Варіант №3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id11">
+       Варіант №4
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id12">
+       Варіант №5
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id13">
+       Варіант №6
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id14">
+       Варіант №7
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id15">
+       Варіант №8
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id16">
+       Варіант №9
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id17">
+       Варіант №10
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id18">
+       Варіант №11
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id19">
+       Варіант №12
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id20">
+       Варіант №13
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id21">
+       Варіант №14
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id22">
+       Варіант №15
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id23">
+       Варіант №16
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id24">
+       Варіант №17
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id25">
+       Варіант №18
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id26">
+       Варіант №19
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id27">
+       Варіант №20
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-21">
+       Вариант № 21
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-22">
+       Вариант № 22
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-23">
+       Вариант № 23
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-24">
+       Вариант № 24
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-25">
+       Вариант № 25
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-26">
+       Вариант № 26
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-27">
+       Вариант № 27
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-28">
+       Вариант № 28
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-29">
+       Вариант № 29
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#o-30">
+       Вариант № 30
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Завдання<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Узагальнене формулювання завдання до лабораторної роботи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Завдання складається з двох частин:</p>
+<ul class="simple">
+<li><p>програмування операцій уведення-виведення для обчислення конкретних формул;</p></li>
+<li><p>програмування бітових операцій та операцій зсуву.</p></li>
+</ul>
+<div class="section" id="id3">
+<h3>Постановка першого завдання<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Завдання складається з двох задач. У програмі потрібно передбачити меню, яке даватиме можливість вибрати будь-яку з двох задач. Для програмування потрібно вибрати потрібну формулу з курсу геометрії (якщо у варіанті формулу не вказано явно).</p>
+<p>Програма повинна виконувати такі функції:</p>
+<ul class="simple">
+<li><p>Здійснити уведення з клавіатури потрібних значень (відповідно до формули та зазначеного типу) за попереднім запрошенням.</p></li>
+<li><p>Виконати перевірку відповідності типу уведеного числа типу зарезервованої змінної. У випадку помилки — повідомити користувача та очікувати на правильне уведення.</p></li>
+<li><p>Виконати обчислення за формулою.</p></li>
+<li><p>Вивести на екран результат із зазначенням формату.</p></li>
+<li><p>Повернутися в меню для можливості запуску другої задачі.</p></li>
+</ul>
+<p>Повинно бути передбачено можливість, не виходячи з програми, продовжити її випробування.</p>
+</div>
+<div class="section" id="id4">
+<h3>Постановка другого завдання<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Завдання складається з двох задач. У рамках завдання потрібно скласти дві підпрограми:</p>
+<ul class="simple">
+<li><p>перша підпрограма уводить складові частини структури даних, наведеної у відповідному варіанті індивідуального завдання, і формує з них задану упаковану структуру;</p></li>
+<li><p>друга підпрограма уводить упаковану структуру як шістнадцяткове число й виводить значення окремих її складових частин.</p></li>
+</ul>
+<p>Обидві підпрограми повинні задовольняти такі вимоги:</p>
+<ul class="simple">
+<li><p>Запускаються з однієї програми за пунктами меню.</p></li>
+<li><p>Уведення складових частин структури даних здійснюється з клавіатури за попереднім запрошенням.</p></li>
+<li><p>Результати виводяться на екран.</p></li>
+<li><p>Повинно бути передбачено можливість, не виходячи з програми, продовжити її випробування.</p></li>
+</ul>
+<p>Приклад реалізації цього завдання наведено в <span class="xref myst">додатку В</span>.</p>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Варіанти завдань до лабораторної роботи<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h3>Програмування операцій уведення-виведення для обчислення конкретних формул<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><em>УВАГА</em>: для всіх варіантів із цього циклу завдань перша задача працює з дійсними числами, а друга — з цілими.</p>
+<div class="section" id="o1">
+<h4>Варіант №1<a class="headerlink" href="#o1" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити периметр прямокутника.
+2. Обчислити об’єм прямої призми, в основі якої лежить рівносторонній трикутник зі стороною <span class="math notranslate nohighlight">\(a\)</span>. Висота призми — <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</div>
+<div class="section" id="o2">
+<h4>Варіант №2<a class="headerlink" href="#o2" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити площу прямокутника.
+2. Відомі координати вершин трикутника. Обчислити периметр і площу трикутника.</p>
+</div>
+<div class="section" id="o3">
+<h4>Варіант №3<a class="headerlink" href="#o3" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити площу трикутника за основою та висотою.
+2. Обчислити об’єм прямокутного паралелепіпеда за трьома сторонами.</p>
+</div>
+<div class="section" id="o4">
+<h4>Варіант №4<a class="headerlink" href="#o4" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити висоту паралелепіпеда.
+2. Обчислити Евклідову відстань між двома точками.</p>
+</div>
+<div class="section" id="o5">
+<h4>Варіант №5<a class="headerlink" href="#o5" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити <span class="math notranslate nohighlight">\((a+b)^3\)</span>.
+2. Відомі кількість жителів у державі та площа її території. Визначити щільність населення в цій державі.</p>
+</div>
+<div class="section" id="o6">
+<h4>Варіант №6<a class="headerlink" href="#o6" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити <span class="math notranslate nohighlight">\(1/a+2/a+\ldots+5/a\)</span>.
+2. Обчислити <span class="math notranslate nohighlight">\(f(x)=kx+b,~x=1,2,\ldots,5\)</span>.</p>
+</div>
+<div class="section" id="o7">
+<h4>Варіант №7<a class="headerlink" href="#o7" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити <span class="math notranslate nohighlight">\((a-b)^2\)</span>.
+2. Обчислити об’єм і повну поверхню куба, ребро якого дорівнює <span class="math notranslate nohighlight">\(b\)</span>.</p>
+</div>
+<div class="section" id="o8">
+<h4>Варіант №8<a class="headerlink" href="#o8" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити повну поверхню прямої призми, в основі якої лежить прямокутний трикутник із катетами <span class="math notranslate nohighlight">\(a\)</span> і <span class="math notranslate nohighlight">\(b\)</span>. Висота призми — <span class="math notranslate nohighlight">\(h\)</span>.
+2. Обчислити площу паралелограма за основою та висотою.</p>
+</div>
+<div class="section" id="o9">
+<h4>Варіант №9<a class="headerlink" href="#o9" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити 10% від тризначного числа.
+2. Обчислити <span class="math notranslate nohighlight">\(a_1b_1+a_2b_2+\ldots+a_5b_5\)</span>.</p>
+</div>
+<div class="section" id="o10">
+<h4>Варіант №10<a class="headerlink" href="#o10" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити об’єм прямої призми, в основі якої лежить прямокутний трикутник з катетами <span class="math notranslate nohighlight">\(a\)</span> і <span class="math notranslate nohighlight">\(b\)</span>. Висота призми — <span class="math notranslate nohighlight">\(h\)</span>.
+2. Обчислити <span class="math notranslate nohighlight">\(f(x)=x^2+b,~x=1,2,\ldots,5\)</span>.</p>
+</div>
+<div class="section" id="o11">
+<h4>Варіант №11<a class="headerlink" href="#o11" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити площу трапеції за висотою та середньою лінією.
+2. Обчислити площу ромба за його діагоналями.</p>
+</div>
+<div class="section" id="o12">
+<h4>Варіант №12<a class="headerlink" href="#o12" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити радіус кола, описаного навколо трикутника.
+2. Дано три числа, які є довжинами сторін трикутника. Визначити тип трикутника (рівносторонній, рівнобедрений, різносторонній).</p>
+</div>
+<div class="section" id="o13">
+<h4>Варіант №13<a class="headerlink" href="#o13" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити площу бічної поверхні циліндра.
+2. Дано катети прямокутного трикутника. Знайти його гіпотенузу.</p>
+</div>
+<div class="section" id="o14">
+<h4>Варіант №14<a class="headerlink" href="#o14" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити площу між колом радіуса <span class="math notranslate nohighlight">\(R\)</span> і вписаним усередині нього колом радіуса <span class="math notranslate nohighlight">\(r\)</span>.
+2. Знайти медіану трикутника, що сполучає вершину <span class="math notranslate nohighlight">\(A\)</span> з серединою протилежної сторони <span class="math notranslate nohighlight">\(a\)</span>.</p>
+</div>
+<div class="section" id="o15">
+<h4>Варіант №15<a class="headerlink" href="#o15" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити об’єм тора, утвореного обертанням кола радіуса <span class="math notranslate nohighlight">\(r\)</span> навколо вісі, яка відступає на відстань <span class="math notranslate nohighlight">\(R\)</span> від центру, за формулою <span class="math notranslate nohighlight">\(V=2\pi^2Rr^2\)</span>.
+2. Обчислити радіус уписаного в трикутник кола.</p>
+</div>
+<div class="section" id="o16">
+<h4>Варіант №16<a class="headerlink" href="#o16" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити площу правильного шестикутника за його стороною.
+2. Обчислити площу рівнобедреного трикутника за його основою та бічною стороною.</p>
+</div>
+<div class="section" id="o17">
+<h4>Варіант №17<a class="headerlink" href="#o17" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити відстань між двома точками з заданими координатами.
+2. Обчислити площу паралелограма за його основою та висотою.</p>
+</div>
+<div class="section" id="o18">
+<h4>Варіант №18<a class="headerlink" href="#o18" title="Permalink to this headline">¶</a></h4>
+<p>1. Дано два числа. Знайти середнє арифметичне кубів цих чисел і середнє геометричне модулів цих чисел.
+2. Обчислити об’єм прямокутного паралелепіпеда.</p>
+</div>
+<div class="section" id="o19">
+<h4>Варіант №19<a class="headerlink" href="#o19" title="Permalink to this headline">¶</a></h4>
+<p>1. Обчислити вагу тіла <span class="math notranslate nohighlight">\(P\)</span> на поверхні Землі за формулою <span class="math notranslate nohighlight">\(P=mm_2/R\)</span>, де <span class="math notranslate nohighlight">\(m_2\)</span> — маса Землі, <span class="math notranslate nohighlight">\(m\)</span> — маса тіла, <span class="math notranslate nohighlight">\(R\)</span> — радіус Землі.
+2. Обчислити площу трикутника за двома сторонами <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, і кутом <span class="math notranslate nohighlight">\(\alpha\)</span> між ними.</p>
+</div>
+<div class="section" id="o20">
+<h4>Варіант №20<a class="headerlink" href="#o20" title="Permalink to this headline">¶</a></h4>
+<p>1. Дано два числа. Знайти їх суму, різницю, добуток, частку від ділення першого числа на друге.
+2. Обчислити об’єм піраміди, в основі якої лежить квадрат зі стороною <span class="math notranslate nohighlight">\(b\)</span>. Висота піраміди — <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</div>
+<div class="section" id="o21">
+<h4>Варіант №21<a class="headerlink" href="#o21" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Обчислити <span class="math notranslate nohighlight">\(x=4y^2/(4z-2t^3)\)</span>. Ввести коефіцієнти <span class="math notranslate nohighlight">\(t\)</span> і <span class="math notranslate nohighlight">\(z\)</span>; <span class="math notranslate nohighlight">\(y = \sin t\)</span>.</p></li>
+<li><p>Обчислити площу рівностороннього трикутника по стороні.</p></li>
+</ol>
+</div>
+<div class="section" id="o22">
+<h4>Варіант №22<a class="headerlink" href="#o22" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Обчислити <span class="math notranslate nohighlight">\(x=4y^3-z/t\)</span>. Ввести коефіцієнти <span class="math notranslate nohighlight">\(t\)</span> i <span class="math notranslate nohighlight">\(z\)</span>; <span class="math notranslate nohighlight">\(y=\cos(t+z)\)</span>.</p></li>
+<li><p>Обчислити по гіпотенузі і катету прямокутного трикутника другий катет і радіус вписаного кола.</p></li>
+</ol>
+</div>
+<div class="section" id="o23">
+<h4>Варіант №23<a class="headerlink" href="#o23" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Обчислити тангенс кута прямокутного трикутника. Ввести довжини прилеглого і протилежного катетів.</p></li>
+<li><p>Обчислити <span class="math notranslate nohighlight">\(y =|2x-x^2|\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="o24">
+<h4>Варіант №24<a class="headerlink" href="#o24" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Обчислити поверхню усіченого конуса <span class="math notranslate nohighlight">\(s=\pi(R^2 + (R+r)L+ r^2)\)</span> і об’єм <span class="math notranslate nohighlight">\(v=1/3\pi(R^2+r^2+Rr)h\)</span>.</p></li>
+<li><p>Обчислити периметр і площу трикутника, заданого координатами своїх вершин.</p></li>
+</ol>
+</div>
+<div class="section" id="o25">
+<h4>Варіант №25<a class="headerlink" href="#o25" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Змішано <span class="math notranslate nohighlight">\(v_1\)</span> літрів води температури <span class="math notranslate nohighlight">\(t_1\)</span> з <span class="math notranslate nohighlight">\(v_2\)</span> літрами води температури <span class="math notranslate nohighlight">\(t_2\)</span>.  Знайти об’єм і температуру утвореної суміші.</p></li>
+<li><p>Цілої змінної <span class="math notranslate nohighlight">\(s\)</span> присвоїти суму цифр тризначного цілого числа <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="o26">
+<h4>Варіант №26<a class="headerlink" href="#o26" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Обчислити висоти трикутника за заданими сторонами.</p></li>
+<li><p>Ввести три числа. Збільшити перше число в два рази, друге число зменшити на 3, третє число звести в квадрат і потім знайти суму нових трьох чисел.</p></li>
+</ol>
+</div>
+<div class="section" id="o27">
+<h4>Варіант №27<a class="headerlink" href="#o27" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Ввести три числа. Знайти середнє арифметичне цих чисел, а також різницю подвоєної суми першого і третього чисел і потроєного другого числа.</p></li>
+<li><p>Відомо, що <span class="math notranslate nohighlight">\(x\)</span> кг цукерок коштують <span class="math notranslate nohighlight">\(a\)</span> гривень. Визначте, скільки коштує <span class="math notranslate nohighlight">\(y\)</span> кг цих цукерок, а також скільки кг цукерок можна купити на <span class="math notranslate nohighlight">\(k\)</span> гривень. Всі значення вводить користувач.</p></li>
+</ol>
+</div>
+<div class="section" id="o28">
+<h4>Варіант №28<a class="headerlink" href="#o28" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Вивести на екран поточну назву дня тижня, назву місяця і своє ім’я. Кожне слово має бути в окремому рядку.</p></li>
+<li><p>Ввести час в хвилинах і відстань в кілометрах. Знайти швидкість в м/c.</p></li>
+</ol>
+</div>
+<div class="section" id="o29">
+<h4>Варіант №29<a class="headerlink" href="#o29" title="Permalink to this headline">¶</a></h4>
+<ol class="simple">
+<li><p>Ввести три змінних <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> і <span class="math notranslate nohighlight">\(c\)</span>. Змінити значення цих змінних так, щоб в <span class="math notranslate nohighlight">\(a\)</span> зберігалося значення <span class="math notranslate nohighlight">\(a+b\)</span>, в <span class="math notranslate nohighlight">\(b\)</span> зберігалася різниця старих значень <span class="math notranslate nohighlight">\(c-a\)</span>, а в <span class="math notranslate nohighlight">\(c\)</span> зберігалося сума старих значень <span class="math notranslate nohighlight">\(a+b+c\)</span>.</p></li>
+<li><p>Знайти алгебраїчну суму для виразу: <span class="math notranslate nohighlight">\(1^k + 2^k + 3^k + \ldots + N^k\)</span>. <span class="math notranslate nohighlight">\(N\)</span> і ступінь <span class="math notranslate nohighlight">\(k\)</span> вводить користувач.</p></li>
+</ol>
+</div>
+<div class="section" id="o30">
+<h4>Варіант №30<a class="headerlink" href="#o30" title="Permalink to this headline">¶</a></h4>
+<p>Обчислити вираз <span class="math notranslate nohighlight">\(\ln(1 - \frac{a}{4})c\)</span>. Значення <span class="math notranslate nohighlight">\(a\)</span> і <span class="math notranslate nohighlight">\(c\)</span> ввести.</p>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>Програмування бітових операцій та операцій зсуву<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4>Варіант №1<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<p>Фізична адреса на диску подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">HH</span></code> — номер головки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T..T</span></code> — номер доріжки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — номер сектора.</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h4>Варіант №2<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<p>Слово стану програми в обчислювальній системі подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>K</p></td>
+<td class="text-align:center"><p>K</p></td>
+<td class="text-align:center"><p>K</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — маски каналів 0–3;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> — маска зовнішнього переривання;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I</span></code> — маска внутрішнього переривання;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> — маска програмного переривання;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">KKK</span></code> — ключ захисту пам’яті.</p></li>
+</ul>
+</div>
+<div class="section" id="id10">
+<h4>Варіант №3<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<p>Слово стану каналу в обчислювальній системі подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>P</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — номер каналу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> — ознака помилки;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — код причини переривання;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> — ознака завершення програми в каналі.</p></li>
+</ul>
+</div>
+<div class="section" id="id11">
+<h4>Варіант №4<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<p>Формат команди завантаження/збереження в обчислювальній системі має вигляд:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — напрямок передачі: у регістр (0)/у пам’ять (1);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R..R</span></code> — перший операнд (регістр);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A..A</span></code> — регістр адреси другого операнда.</p></li>
+</ul>
+</div>
+<div class="section" id="id12">
+<h4>Варіант №5<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+<p>Слово стану обладнання для обчислювальної системи подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>V</p></td>
+<td class="text-align:center"><p>V</p></td>
+<td class="text-align:center"><p>V</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">PPP</span></code> — кількість принтерів;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF</span></code> — кількість гнучких дисків;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">H..H</span></code> — тип жорсткого диска;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VVV</span></code> — тип відеоадаптера.</p></li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h4>Варіант №6<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+<p>Формат команди зсуву в обчислювальній системі має вигляд:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TT</span></code> — тип зсуву;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — напрям зсуву;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — кількість розрядів зсуву.</p></li>
+</ul>
+</div>
+<div class="section" id="id14">
+<h4>Варіант №7<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>Блок управління буфером кеша в обчислювальній системі подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SSS</span></code> — код системної області або 000;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — ознака «брудного» буфера;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> — ознака вільного буфера;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B..B</span></code> — номер блока, який відображено в буфері.</p></li>
+</ul>
+</div>
+<div class="section" id="id15">
+<h4>Варіант №8<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p>Елемент списку безпеки об’єкта в обчислювальної системі подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>X</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">U..U</span></code> — ідентифікатор користувача;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> — право читати;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code> — право писати;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E</span></code> — право виконувати програмний код;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">X</span></code> — явна заборона доступу.</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h4>Варіант №9<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>Формат команди каналу в системі уведення-виведення має вигляд:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">O..O</span></code> — код операції;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C</span></code> — ознака ланцюжка команд;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — ознака ланцюжка даних;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — кількість байтів для передачі.</p></li>
+</ul>
+</div>
+<div class="section" id="id17">
+<h4>Варіант №10<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+<p>Елемент профілю користувача в системі подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">G..G</span></code> — ідентифікатор групи, до якої належить користувач;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — код системи, яка завантажується для користувача;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> — ознака привілейованого користувача.</p></li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h4>Варіант №11<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+<p>Інформація про стан пристрою в системі уведення-виведення подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>B</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CCC</span></code> — номер каналу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">U..U</span></code> — номер пристрою в каналі;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E..E</span></code> — код стану;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code> — ознака зайнятості пристрою.</p></li>
+</ul>
+</div>
+<div class="section" id="id19">
+<h4>Варіант №12<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+<p>Формат команди додавання в обчислювальній системі має вигляд:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — додавання байтів/слів (0/1);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AAA</span></code> — регістр — перший операнд;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BBB</span></code> — регістр — другий операнд.</p></li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h4>Варіант №13<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+<p>Формат подання поточної дати в деяких системних структурах має вигляд:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+</tr>
+</tbody>
+</table>
+<p>де D..D — день;
+M..M — місяць;
+Y..Y — рік після 1980.</p>
+</div>
+<div class="section" id="id21">
+<h4>Варіант №14<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+<p>Формат подання поточного часу в деяких системних структурах має вигляд:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+<td class="text-align:center"><p>H</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — секунди/2;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M..M</span></code> — хвилини;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">H..H</span></code> — години.</p></li>
+</ul>
+</div>
+<div class="section" id="id22">
+<h4>Варіант №15<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+<p>Дескриптор сегмента для системи віртуальної пам’яті подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">F..F</span></code> — номер блока, з якого починається сегмент;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> — доступ для читання;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W</span></code> — доступ для запису;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — размір сегмента в блоках.</p></li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h4>Варіант №16<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+<p>Атрибут файлу у файловій системі подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p>I</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T..T</span></code> — код типу файлу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AAA</span></code> — код доступу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">I..I</span></code> — номер файлового індексу.</p></li>
+</ul>
+</div>
+<div class="section" id="id24">
+<h4>Варіант №17<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+<p>Блок управління пам’яттю в операційній системі має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">O..O</span></code> — ідентифікатор власника блока;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> — ознака програмного блока;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — розмір блока.</p></li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h4>Варіант №18<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+<p>Точка зображення на 16-кольоровому дисплеї з розміром екрану 64 х 64 описується у форматі:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>X</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>Y</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">X..X</span></code> — горизонтальна координата;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Y..Y</span></code> — вертикальна координата;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — колір.</p></li>
+</ul>
+</div>
+<div class="section" id="id26">
+<h4>Варіант №19<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+<p>Керуюче слово програмованого таймера має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CC</span></code> — номер каналу таймера;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">FF</span></code> — форма сигналу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D..D</span></code> — коефіцієнт ділення опорної частоти.</p></li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h4>Варіант №20<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+<p>Інформація про критичну помилку на диску подається у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>O</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">O</span></code> — тип операції — читання/запис (0/1);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AA</span></code> — код області диска;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RRR</span></code> — можливі реакції на помилку;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D..D</span></code> — номер диска.</p></li>
+</ul>
+</div>
+<div class="section" id="o-21">
+<h4>Вариант № 21<a class="headerlink" href="#o-21" title="Permalink to this headline">¶</a></h4>
+<p>Дескриптор повідомлення в системі телекомунікацій має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+<td class="text-align:center"><p>U</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — номер вузла, з якого прийшло повідомлення;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P..P</span></code> — пріорітет повідомлення;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">U..U</span></code> — ідентифікатор користувача - автора повідомлення.</p></li>
+</ul>
+</div>
+<div class="section" id="o-22">
+<h4>Вариант № 22<a class="headerlink" href="#o-22" title="Permalink to this headline">¶</a></h4>
+<p>Дескриптор семафора, який захищає пул ресурсів, має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>M</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+<td class="text-align:center"><p>W</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — поточна кількість вільних одиниць ресурсу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">M..M</span></code> — загальна кількість одиниць ресурсу;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — ознака блокування / розблокування семафора (1/0);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">W..W</span></code> — кількість процесів, які очікують доступу до ресурсу.</p></li>
+</ul>
+</div>
+<div class="section" id="o-23">
+<h4>Вариант № 23<a class="headerlink" href="#o-23" title="Permalink to this headline">¶</a></h4>
+<p>Заголовок кадру в системі передачі даних має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>D</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — адреса джерела;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">D..D</span></code> — адреса приймача;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CCC</span></code> — керуючий код.</p></li>
+</ul>
+</div>
+<div class="section" id="o-24">
+<h4>Вариант № 24<a class="headerlink" href="#o-24" title="Permalink to this headline">¶</a></h4>
+<p>Заголовок пакета в системі передачі даних має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>S</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">TTT</span></code> — тип пакета;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — ідентифікатор джерела;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — довжина пакета.</p></li>
+</ul>
+</div>
+<div class="section" id="o-25">
+<h4>Вариант № 25<a class="headerlink" href="#o-25" title="Permalink to this headline">¶</a></h4>
+<p>Поле управління диспетчером кадру в протоколі управління логічним каналом має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>P</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">CC</span></code> — керуючий код;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">P</span></code> — ознака запиту або завершення (0/1):</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — номер послідовності.</p></li>
+</ul>
+</div>
+<div class="section" id="o-26">
+<h4>Вариант № 26<a class="headerlink" href="#o-26" title="Permalink to this headline">¶</a></h4>
+<p>Формат заголовку пакета в системі ретрансляції кадрів такий:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>R</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — ідентифікатор каналу передачі;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">R</span></code> — ознака команди / відповіді (0/1);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E..E</span></code> — розширення адреси.</p></li>
+</ul>
+</div>
+<div class="section" id="o-27">
+<h4>Вариант № 27<a class="headerlink" href="#o-27" title="Permalink to this headline">¶</a></h4>
+<p>Формат елемента доступу до об’єкту в системі безпеки такий:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+<td class="text-align:center"><p>G</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AAA</span></code>— код доступу до об’єкту з групи PUBLIC;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">TTT</span></code> — доступ для читання і / або доступ для запису;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">G..G</span></code> — код групи доступу, до якої належить об’єкт.</p></li>
+</ul>
+</div>
+<div class="section" id="o-28">
+<h4>Вариант № 28<a class="headerlink" href="#o-28" title="Permalink to this headline">¶</a></h4>
+<p>Дескриптор масиву, який формується компілятором мови програмування, має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+<td class="text-align:center"><p>E</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — розмір елементу масиву;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B..B</span></code> — початковий індекс;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">E..E</span></code> — кінцевий індекс.</p></li>
+</ul>
+</div>
+<div class="section" id="o-29">
+<h4>Вариант № 29<a class="headerlink" href="#o-29" title="Permalink to this headline">¶</a></h4>
+<p>Блок керування сегментом пам’яті в системі з реальною пам’яттю має формат:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>T</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>A</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+<td class="text-align:center"><p>L</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T..T</span></code> — ідентифікатор завдання,  якому належить сегмент або 0 - для вільного сегмента;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code> — ознака активності завдання (1/0);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — довжина сегмента.</p></li>
+</ul>
+</div>
+<div class="section" id="o-30">
+<h4>Вариант № 30<a class="headerlink" href="#o-30" title="Permalink to this headline">¶</a></h4>
+<p>Слово стану пристрою в системі уведення-виведення представляється у вигляді:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>№ розряду</p></th>
+<th class="text-align:center head"><p>15</p></th>
+<th class="text-align:center head"><p>14</p></th>
+<th class="text-align:center head"><p>13</p></th>
+<th class="text-align:center head"><p>12</p></th>
+<th class="text-align:center head"><p>11</p></th>
+<th class="text-align:center head"><p>10</p></th>
+<th class="text-align:center head"><p>09</p></th>
+<th class="text-align:center head"><p>08</p></th>
+<th class="text-align:center head"><p>07</p></th>
+<th class="text-align:center head"><p>06</p></th>
+<th class="text-align:center head"><p>05</p></th>
+<th class="text-align:center head"><p>04</p></th>
+<th class="text-align:center head"><p>03</p></th>
+<th class="text-align:center head"><p>02</p></th>
+<th class="text-align:center head"><p>01</p></th>
+<th class="text-align:center head"><p>00</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>значення</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>C</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>F</p></td>
+<td class="text-align:center"><p>B</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+<td class="text-align:center"><p>N</p></td>
+</tr>
+</tbody>
+</table>
+<p>де</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — код стану;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">F</span></code> — ознака помилки(1/0);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code> — ознака зайнятості(0/1);</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">N</span></code> — кількість байт, переданих в останній операції.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content/lab1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="questions.html" title="previous page">Контрольні питання</a>
+    <a class='right-next' id="next-link" href="../lab2/intro.html" title="next page">Вступ</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Громова В.В.<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>
