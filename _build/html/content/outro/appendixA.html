@@ -1,0 +1,554 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Додаток А. Рекомендації зі створення інтерфейсу &#8212; Основи програмування &lt;br/&gt; мовою С</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/outro/appendixA.html" />
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Додаток Б. Титульний лист лабораторної роботи" href="appendixB.html" />
+    <link rel="prev" title="Завдання" href="../lab8/problems.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://gasperpaul.github.io/c-labs-book/content/outro/appendixA.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Додаток А. Рекомендації зі створення інтерфейсу" />
+<meta property="og:description" content="Додаток А. Рекомендації зі створення інтерфейсу  Обкладинка програми  Кожна програма повинна мати «обкладинку» вигляду, представленого на рисунку А.1. У кожній " />
+<meta property="og:image"       content="https://gasperpaul.github.io/c-labs-book/_static/logo.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Основи програмування <br/> мовою С</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro/intro.html">
+   Вступ
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №1
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab1/intro.html">
+   Базові типи даних, уведення-виведення, бітові операції, операції зсуву
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №2
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab2/intro.html">
+   Одновимірні й двовимірні масиви
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №3
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab3/intro.html">
+   Опрацювання символьних даних
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №4
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab4/intro.html">
+   Указівники, функції, рекурсія
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №5
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab5/intro.html">
+   Типи даних, визначені користувачем
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №6
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab6/intro.html">
+   Динамічні масиви
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №7
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab7/intro.html">
+   Однозв'язні списки
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Лабораторна робота №8
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lab8/intro.html">
+   Робота з бінарними й текстовими файлами
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Додатки
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Додаток А. Рекомендації зі створення інтерфейсу
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendixB.html">
+   Додаток Б. Титульний лист лабораторної роботи
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendixC.html">
+   Додаток В. Приклад програмування бітових операцій і операцій зсуву
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="appendixD.html">
+   Додаток Г. Алгоритми сортування та пошуку
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="bibliography.html">
+   Рекомендована література
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>, 2020
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/content/outro/appendixA.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/GasperPaul/c-labs-book/master?urlpath=lab/tree/content/outro/appendixA.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/GasperPaul/c-labs-book/blob/master/content/outro/appendixA.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Обкладинка програми
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Організація простого меню
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Приклад А.1
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="id1">
+<h1>Додаток А. Рекомендації зі створення інтерфейсу<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Обкладинка програми<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Кожна програма повинна мати «обкладинку» вигляду, представленого на рисунку А.1. У кожній програмі потрібно вказати потрібні номер і тему роботи, групу, прізвище та ініціали студента, рік виконання роботи, вибрати правильну форму написання слова «виконав» залежно від статі студента.</p>
+<p><img alt="Обкладинка програми" src="../../_images/appA1.png" /></p>
+<p>Рисунок А.1 – Обкладинка програми</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p><code class="docutils literal notranslate"><span class="pre">conio.h</span></code> доступний лише у деяких компіляторах на Windows. На інших ОС варто використовувати бібліотеку <a class="reference external" href="https://invisible-island.net/ncurses/"><code class="docutils literal notranslate"><span class="pre">ncurses</span></code></a> або одну із бібліотек сумісності, наприклад <span class="xref myst">цю</span> чи <a class="reference external" href="https://sourceforge.net/projects/linux-conioh/">цю</a>.</p>
+<p>Для спрощення розробки обкладинки ви можете скорситатися нашою простою бібліотекою, що дає кросплатформенний доступ до функцій <code class="docutils literal notranslate"><span class="pre">gotoxy</span></code> та <code class="docutils literal notranslate"><span class="pre">clrscr</span></code>: <a class="reference external" href="https://gist.github.com/GasperPaul/68d4d9209aa9895aa89eefd09d418eec"><code class="docutils literal notranslate"><span class="pre">terminal.h</span></code></a></p>
+</div>
+<p>Маніпуляції з консолью вимагають підключення додаткових бібліотек, що залежать від вашої операційної системи. Для Windows це може бути <code class="docutils literal notranslate"><span class="pre">conio.h</span></code> чи <code class="docutils literal notranslate"><span class="pre">windows.h</span></code>. На Linux та інших Unix-подібних системах традиційно використовують бібліотеку <a class="reference external" href="https://invisible-island.net/ncurses/"><code class="docutils literal notranslate"><span class="pre">ncurses</span></code></a>.</p>
+<p>Для кросплатформенної розробки можна використовувати бібліотеку <a class="reference external" href="https://github.com/wmcbrine/PDCurses"><code class="docutils literal notranslate"><span class="pre">pdcurses</span></code></a>.</p>
+<p>Для створення обкладинки потрібно:</p>
+<ol class="simple">
+<li><p>Підключити бібліотеку <code class="docutils literal notranslate"><span class="pre">stdio.h</span></code> та бібліотеку для маніпуляцій консолью.</p></li>
+<li><p>Очистити екран.</p></li>
+<li><p>Для креслення рамки використайте символи з такими кодами ASCII:</p></li>
+</ol>
+<ul class="simple">
+<li><p>218 (лівий верхній кут),</p></li>
+<li><p>196 (горизонтальна лінія),</p></li>
+<li><p>191 (правий верхній кут),</p></li>
+<li><p>179 (вертикальна лінія),</p></li>
+<li><p>192 (лівий нижній кут),</p></li>
+<li><p>217 (правий нижній кут).</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p></p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">┌</span></code> 218</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">─</span></code> 196</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">┐</span></code> 191</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">│</span></code> 179</p></td>
+<td><p></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">│</span></code> 179</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">└</span></code> 192</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">─</span></code> 196</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">┘</span></code> 217</p></td>
+</tr>
+</tbody>
+</table>
+<ol class="simple">
+<li><p>Використовуйте функцію <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">gotoxy(int</span> <span class="pre">x,</span> <span class="pre">int</span> <span class="pre">y)</span></code>, яка поміщає курсор текстового екрана в точку з координатами <code class="docutils literal notranslate"><span class="pre">х,</span> <span class="pre">у</span></code>. (Стандартний розмір терміналу — 80 х 25.)</p></li>
+<li><p>Поставити очікування уведення будь-якого символу й вивести рядок, наприклад, <code class="docutils literal notranslate"><span class="pre">&quot;Для</span> <span class="pre">завершення</span> <span class="pre">натисніть</span> <span class="pre">Enter&quot;</span></code>.</p></li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>Організація простого меню<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Майже в усіх завданнях користувачу надають вибір із декількох варіантів. Наприклад, для демонстрації роботи програм можна використовувати випадкові числа, а можна — числа, уведені з клавіатури. Вибір користувача часто реалізують у вигляді меню. Просте меню виглядає так:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Виберіть</span> <span class="n">один</span> <span class="n">із</span> <span class="n">варіантів</span><span class="p">:</span>
+<span class="mf">1.</span> <span class="n">Уведення</span> <span class="n">чисел</span> <span class="n">із</span> <span class="n">клавіатури</span>
+<span class="mf">2.</span> <span class="n">Генерація</span> <span class="n">випадкових</span> <span class="n">чисел</span>
+<span class="mf">3.</span> <span class="n">Вихід</span> <span class="n">із</span> <span class="n">програми</span>
+<span class="n">Уведіть</span> <span class="n">номер</span> <span class="n">вибраного</span> <span class="n">пункту</span><span class="p">:</span>
+</pre></div>
+</div>
+<p>Розгляньмо використання меню на наступному прикладі.</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/AppendixA-Example-A1">посиланням</a>.</p>
+</div>
+<div class="section" id="id4">
+<h3>Приклад А.1<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>За трьома сторонами трикутника обчислити його площу.</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;time.h&gt; </span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;math.h&gt;</span><span class="cp"></span>
+
+<span class="kt">void</span> <span class="nf">clrscr</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
+<span class="p">{</span>
+  <span class="n">system</span><span class="p">(</span><span class="s">&quot;cls||clear&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">draw_menu</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Виберіть один із варіантів:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;1. Уведення чисел із клавіатури</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;2. Генерація випадкових чисел</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;3. Вихід із програми</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть номер вибраного пункту:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">get_user_selection</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span> <span class="n">ch</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">scanf</span><span class="p">(</span><span class="s">&quot; %c&quot;</span><span class="p">,</span> <span class="n">ch</span><span class="p">);</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">getchar</span><span class="p">()</span> <span class="o">!=</span> <span class="sc">&#39;\n&#39;</span><span class="p">);</span> <span class="c1">// очищуємо буфер вводу</span>
+<span class="p">}</span>
+
+<span class="kt">_Bool</span> <span class="nf">is_valid_input</span><span class="p">(</span><span class="kt">char</span> <span class="n">ch</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;1&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;2&#39;</span> <span class="o">||</span> <span class="n">ch</span> <span class="o">==</span> <span class="sc">&#39;3&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">float</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="cm">/*сторони трикутника*/</span>
+  <span class="kt">float</span> <span class="n">p</span><span class="p">;</span>       <span class="cm">/*напівпериметр трикутника*/</span>
+  <span class="kt">float</span> <span class="n">s</span><span class="p">;</span>       <span class="cm">/*площа трикутника*/</span>
+
+  <span class="n">clrscr</span><span class="p">();</span>
+
+  <span class="cm">/*нескінченний цикл*/</span>
+  <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">draw_menu</span><span class="p">();</span>
+
+    <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span> <span class="cm">/*обраний пункт меню*/</span>
+    <span class="n">get_user_selection</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ch</span><span class="p">);</span>
+
+    <span class="cm">/*якщо увели неправильний параметр – знову меню*/</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">is_valid_input</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">clrscr</span><span class="p">();</span>
+      <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Ви увели неправильний номер.</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">);</span>
+      <span class="k">continue</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">ch</span><span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">case</span> <span class="sc">&#39;1&#39;</span><span class="o">:</span> <span class="cm">/*уведення з клавіатури*/</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Уведіть сторони трикутника:</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;a = &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;b = &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;c = &quot;</span><span class="p">);</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="sc">&#39;2&#39;</span><span class="o">:</span> <span class="cm">/*генерація випадкових значень*/</span>
+        <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+        <span class="cm">/*для згенерованих чисел виконується умова:</span>
+<span class="cm">        будь-яка зі сторін менша за суму двох інших*/</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//a = [6..10]</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//b = [6..10]</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="mi">6</span> <span class="o">+</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">5</span><span class="p">;</span> <span class="c1">//c = [6..10]</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="sc">&#39;3&#39;</span><span class="o">:</span> <span class="cm">/*вихід із програми*/</span>
+        <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">p</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">c</span><span class="p">));</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Площа трикутника S = %f</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./content\outro"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="../lab8/problems.html" title="previous page">Завдання</a>
+    <a class='right-next' id="next-link" href="appendixB.html" title="next page">Додаток Б. Титульний лист лабораторної роботи</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Громова В.В.<br/>
+        
+            &copy; Copyright 2020.<br/>
+          <div class="extra_footer">
+            This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,113 @@
+# This file contains the order and numbering for all sections in the book.
+
+- title: Вступ
+  file: content/intro/intro
+
+- part: Лабораторна робота №1
+  chapters: 
+  - title: Базові типи даних, уведення-виведення, бітові операції, операції зсуву
+    file: content/lab1/intro
+    sections:
+    - title: Теоретичні відомості
+      file: content/lab1/theory
+    - title: Питання для самоперевірки
+      file: content/lab1/questions
+    - title: Завдання
+      file: content/lab1/problems
+
+- part: Лабораторна робота №2
+  chapters:
+  - title: Одновимірні й двовимірні масиви
+    file: content/lab2/intro
+    sections:
+    - title: Теоретичні відомості
+      file: content/lab2/theory
+    - title: Питання для самоперевірки
+      file: content/lab2/questions
+    - title: Завдання
+      file: content/lab2/problems
+
+- part: Лабораторна робота №3
+  chapters:
+  - title: Опрацювання символьних даних
+    file: content/lab3/intro
+    sections:
+    - title: Теоретичні відомості
+      file: content/lab3/theory
+    - title: Питання для самоперевірки
+      file: content/lab3/questions
+    - title: Завдання
+      file: content/lab3/problems
+
+- part: Лабораторна робота №4
+  chapters:
+  - title: Указівники, функції, рекурсія
+    file: content/lab4/intro
+    sections:
+    - title: Теоретичні відомості
+      file: content/lab4/theory
+    - title: Питання для самоперевірки
+      file: content/lab4/questions
+    - title: Завдання
+      file: content/lab4/problems
+
+- part: Лабораторна робота №5
+  chapters:
+  - title: Типи даних, визначені користувачем
+    file: content/lab5/intro
+    sections:
+    - title: Теоретичні відомості
+      file: content/lab5/theory
+    - title: Питання для самоперевірки
+      file: content/lab5/questions
+    - title: Завдання
+      file: content/lab5/problems
+
+- part: Лабораторна робота №6
+  chapters:
+  - title: Динамічні масиви
+    file: content/lab6/intro
+    sections:
+      - title: Теоретичні відомості
+        file: content/lab6/theory
+      - title: Питання для самоперевірки
+        file: content/lab6/questions
+      - title: Завдання
+        file: content/lab6/problems
+
+- part: Лабораторна робота №7
+  chapters:
+  - title: Однозв'язні списки
+    file: content/lab7/intro
+    sections:
+      - title: Теоретичні відомості
+        file: content/lab7/theory
+      - title: Питання для самоперевірки
+        file: content/lab7/questions
+      - title: Завдання
+        file: content/lab7/problems
+
+- part: Лабораторна робота №8
+  chapters:
+  - title: Робота з бінарними й текстовими файлами
+    file: content/lab8/intro
+    sections:
+      - title: Теоретичні відомості
+        file: content/lab8/theory
+      - title: Питання для самоперевірки
+        file: content/lab8/questions
+      - title: Завдання
+        file: content/lab8/problems
+
+- part: Додатки
+  chapters:
+  - title: Додаток А. Рекомендації зі створення інтерфейсу
+    file: content/outro/appendixA
+  - title: Додаток Б. Титульний лист лабораторної роботи
+    file: content/outro/appendixB
+  - title: Додаток В. Приклад програмування бітових операцій і операцій зсуву
+    file: content/outro/appendixC
+  - title: Додаток Г. Алгоритми сортування та пошуку
+    file: content/outro/appendixD
+  - title: Рекомендована література
+    file: content/outro/bibliography
