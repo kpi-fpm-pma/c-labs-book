@@ -29,7 +29,7 @@ jobs:
 
       # Push to github-pages
       - name: GitHub Pages action
-        uses: peaceiris/actions-gh-pages@3.6.1
+        uses: peaceiris/actions-gh-pages@v3.6.4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_build/html
