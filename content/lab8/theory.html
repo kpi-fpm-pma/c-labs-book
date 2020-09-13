@@ -478,7 +478,7 @@
 <div class="section" id="id3">
 <h2>Відкриття та закриття потоку<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Для початку роботи з потоком його треба відкрити. При цьому потік зв’язується зі структурою типу <code class="docutils literal notranslate"><span class="pre">FILE</span></code>, визначення якої міститься в бібліотековому файлі <code class="docutils literal notranslate"><span class="pre">stdio.h</span></code>. У структурі знаходяться вказівник на буфер, указівник на поточну позицію файлу тощо. Після відкриття потоку повертається вказівник на нього, тобто на об’єкт типу <code class="docutils literal notranslate"><span class="pre">FILE</span></code>:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;;</span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1">;</span><span class="cp"></span>
 <span class="c1">//...</span>
 <span class="kt">FILE</span><span class="o">*</span> <span class="n">fp</span><span class="p">;</span>
 <span class="c1">//...</span>
@@ -535,7 +535,7 @@
 </div>
 <div class="section" id="id4">
 <h3>Приклад 8.1<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt; </span><span class="cp"></span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> 
@@ -735,7 +735,7 @@
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#define N 2</span>
 
-<span class="k">struct</span> <span class="n">tag_book</span>
+<span class="k">struct</span> <span class="nc">tag_book</span>
 <span class="p">{</span>
     <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
     <span class="kt">char</span> <span class="n">author</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
@@ -803,7 +803,7 @@
     <span class="k">if</span> <span class="p">(</span><span class="n">fp</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">char</span> <span class="n">ch</span><span class="p">;</span>
         
-        <span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mi">0L</span><span class="p">,</span> <span class="n">SEEK_END</span><span class="p">);</span>
+        <span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mf">0L</span><span class="p">,</span> <span class="n">SEEK_END</span><span class="p">);</span>
         <span class="kt">long</span> <span class="n">length</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
         
         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;length = %ld</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">length</span><span class="p">);</span>
@@ -956,7 +956,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp"></span>
 
-<span class="k">struct</span> <span class="n">good</span> <span class="p">{</span>
+<span class="k">struct</span> <span class="nc">good</span> <span class="p">{</span>
     <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
     <span class="kt">float</span> <span class="n">c</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">count</span><span class="p">;</span>
@@ -1132,7 +1132,7 @@
         <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Неможливо відкрити файл!&quot;</span><span class="p">);</span>
         <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mi">0L</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mf">0L</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">ftell</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span><span class="p">;</span>
     <span class="n">fclose</span><span class="p">(</span><span class="n">fp</span><span class="p">);</span>
     <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
@@ -1219,7 +1219,7 @@
                 <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">);</span>
                 <span class="n">s</span><span class="p">.</span><span class="n">res</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mi">0L</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+            <span class="n">fseek</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="mf">0L</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
             <span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">s</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">fp</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">}</span> <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
