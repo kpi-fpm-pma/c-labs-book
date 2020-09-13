@@ -1,3 +1,7 @@
+# Build artifacts
+_build/.*
+_build/jupyter_execute
+
 # Jekyll
 _site/
 .sass-cache

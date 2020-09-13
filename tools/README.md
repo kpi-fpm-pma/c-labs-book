@@ -41,5 +41,5 @@ This will recreate the static files associated with the book's content, ensuring
 Use this checklist before making a PR to ensure you're good to go:
 - Check that you've added all changes to the content
 - Check any code you touched runs correctly
-- If you added new files, check the `_data/toc.yaml` has a reference to it
+- If you added new files, check the `_toc.yaml` has a reference to it
 - Build the book
