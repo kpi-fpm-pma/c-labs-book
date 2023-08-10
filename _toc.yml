@@ -1,9 +1,8 @@
-# This file contains the order and numbering for all sections in the book.
-
-- title: Вступ
-  file: content/intro/intro
-
-- part: Лабораторна робота №1
+format: jb-book
+root: content/intro/intro
+title: Вступ
+parts:
+- caption: Лабораторна робота №1
   chapters: 
   - title: Базові типи даних, уведення-виведення, бітові операції, операції зсуву
     file: content/lab1/intro
@@ -15,7 +14,7 @@
     - title: Завдання
       file: content/lab1/problems
 
-- part: Лабораторна робота №2
+- caption: Лабораторна робота №2
   chapters:
   - title: Одновимірні й двовимірні масиви
     file: content/lab2/intro
@@ -27,7 +26,7 @@
     - title: Завдання
       file: content/lab2/problems
 
-- part: Лабораторна робота №3
+- caption: Лабораторна робота №3
   chapters:
   - title: Опрацювання символьних даних
     file: content/lab3/intro
@@ -39,7 +38,7 @@
     - title: Завдання
       file: content/lab3/problems
 
-- part: Лабораторна робота №4
+- caption: Лабораторна робота №4
   chapters:
   - title: Указівники, функції, рекурсія
     file: content/lab4/intro
@@ -51,7 +50,7 @@
     - title: Завдання
       file: content/lab4/problems
 
-- part: Лабораторна робота №5
+- caption: Лабораторна робота №5
   chapters:
   - title: Типи даних, визначені користувачем
     file: content/lab5/intro
@@ -63,7 +62,7 @@
     - title: Завдання
       file: content/lab5/problems
 
-- part: Лабораторна робота №6
+- caption: Лабораторна робота №6
   chapters:
   - title: Динамічні масиви
     file: content/lab6/intro
@@ -75,7 +74,7 @@
       - title: Завдання
         file: content/lab6/problems
 
-- part: Лабораторна робота №7
+- caption: Лабораторна робота №7
   chapters:
   - title: Однозв'язні списки
     file: content/lab7/intro
@@ -87,7 +86,7 @@
       - title: Завдання
         file: content/lab7/problems
 
-- part: Лабораторна робота №8
+- caption: Лабораторна робота №8
   chapters:
   - title: Робота з бінарними й текстовими файлами
     file: content/lab8/intro
@@ -99,7 +98,7 @@
       - title: Завдання
         file: content/lab8/problems
 
-- part: Додатки
+- caption: Додатки
   chapters:
   - title: Додаток А. Рекомендації зі створення інтерфейсу
     file: content/outro/appendixA
