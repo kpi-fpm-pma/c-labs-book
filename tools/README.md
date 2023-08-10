@@ -24,22 +24,28 @@ This folder contains two scripts (one for Windows and one for Linux and Mac) tha
 Running this script first time will create the environment in the `.venv` dir in the repo root folder, activate it and install all needed packages into, then run Jupyter for you. 
 Running it subsequently will just start Jupyter.
 
-We require Python >= 3.9
+We require Python >= 3.9.
 
 ## Building the book
 
-Before committing your book you can compile it by running the following code in the Jupyter Lab console:
+Before committing your book you can compile it by running:
+
+```
+.\tools\build-and-run
+```
+
+Or you can use the following code in the Jupyter Lab console:
 
 ```
 jupyter-book build ..\.
 ```
 
-This will recreate the static files associated with the book's content, ensuring you'll see this changes on the site after the merge.
+This will recreate the static files associated with the book's content, ensuring you'll see this changes on the site after the merge, and will open the local version of the book in your browser.
 
 ## Commit checklist
 
 Use this checklist before making a PR to ensure you're good to go:
-- Check that you've added all changes to the content
-- Check any code you touched runs correctly
-- If you added new files, check the `_toc.yaml` has a reference to it
-- Build the book
+- [ ] Check that you've added all changes to the content
+- [ ] Check any code you touched runs correctly
+- [ ] If you added new files, check the `_toc.yaml` has a reference to it
+- [ ] Build the book
