@@ -1,6 +1,8 @@
 @echo off
-set VENV_DIR=..\.venv
-set CONTENT_DIR=..\content
+setlocal
+
+set VENV_DIR=%~dp0..\.venv
+set CONTENT_DIR=%~dp0..\content
 
 if exist %VENV_DIR%\ (
     call %VENV_DIR%\Scripts\activate.bat

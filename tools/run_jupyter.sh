@@ -1,7 +1,8 @@
 #!/bin/bash
 
-venv_dir="../.venv"
-content_dir="../content"
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+venv_dir="$SCRIPT_DIR/.venv"
+content_dir="$SCRIPT_DIR/content"
 
 if [ -d $venv_dir ]; then
     source $venv_dir/bin/activate

@@ -1,8 +1,9 @@
 #######################################################################################
 # Book settings
 title: Основи програмування <br/> мовою С
-author: Громова В.В.
+author: <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
 logo: content/images/logo/logo.png
+copyright: "2020"
 
 exclude_patterns: [_*, .*, tools, README.md, content/LICENSE.md, content/example.ipynb]
 
@@ -14,8 +15,8 @@ exclude_patterns: [_*, .*, tools, README.md, content/LICENSE.md, content/example
 # Html settings
 html:
   favicon: content/images/logo/favicon.ico
-  extra_navbar: <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>, 2020
-  extra_footer: This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
+  extra_footer: >-
+    This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
   home_page_in_navbar: true
   baseurl: https://gasperpaul.github.io/c-labs-book
 
@@ -27,11 +28,16 @@ launch_buttons:
   thebe: false
 
 repository:
-  url: https://github.com/GasperPaul/c-labs-book
-  branch: master
+  url: https://github.com/kpi-fpm-pma/c-labs-book
+  branch: main
   path_to_book: ''
 
 #######################################################################################
 # Execution settings
 execute:
   execute_notebooks: cache
+  allow_errors: true
+
+#######################################################################################
+# Sphinx settings
+bibtex_bibfiles: references.bib
