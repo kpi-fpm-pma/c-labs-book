@@ -2,647 +2,474 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Завдання &#8212; Основи програмування &lt;br/&gt; мовою С</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../../_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-dropdown.css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab2/problems';</script>
     <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/lab2/problems.html" />
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Вступ" href="../lab3/intro.html" />
     <link rel="prev" title="Контрольні питання" href="questions.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://gasperpaul.github.io/c-labs-book/content/lab2/problems.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Завдання" />
-<meta property="og:description" content="Завдання  Узагальнене формулювання завдання до лабораторної роботи  Завдання складається з двох частин:  операції для роботи з одновимірними масивами (векторами" />
-<meta property="og:image"       content="https://gasperpaul.github.io/c-labs-book/_static/logo.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../../_static/logo.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro/intro.html">
   
   
-  <h1 class="site-logo" id="site-title">Основи програмування <br/> мовою С</h1>
   
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro/intro.html">
+                    Вступ
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab1/intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab1/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab1/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab1/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №2</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Одновимірні й двовимірні масиви</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab3/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab3/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab3/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №4</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab4/intro.html">Указівники, функції, рекурсія</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab4/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab4/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab4/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №5</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab5/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab5/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab5/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №6</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab6/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab6/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab6/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №7</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab7/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab7/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab7/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №8</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab8/intro.html">Робота з бінарними й текстовими файлами</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lab8/theory.html">Теоретичні відомості</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab8/questions.html">Питання для самоперевірки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lab8/problems.html">Завдання</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Додатки</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../outro/appendixA.html">Додаток А. Рекомендації зі створення інтерфейсу</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outro/appendixB.html">Додаток Б. Титульний лист лабораторної роботи</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outro/appendixC.html">Додаток В. Приклад програмування бітових операцій і операцій зсуву</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outro/appendixD.html">Додаток Г. Алгоритми сортування та пошуку</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../outro/bibliography.html">Рекомендована література</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/lab2/problems.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro/intro.html">
-   Вступ
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №1
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab1/intro.html">
-   Базові типи даних, уведення-виведення, бітові операції, операції зсуву
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №2
- </span>
-</p>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="intro.html">
-   Одновимірні й двовимірні масиви
-  </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="theory.html">
-     Теоретичні відомості
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="questions.html">
-     Питання для самоперевірки
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Завдання
-    </a>
-   </li>
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
   </ul>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №3
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab3/intro.html">
-   Опрацювання символьних даних
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №4
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab4/intro.html">
-   Указівники, функції, рекурсія
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №5
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab5/intro.html">
-   Типи даних, визначені користувачем
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №6
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab6/intro.html">
-   Динамічні масиви
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №7
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab7/intro.html">
-   Однозв'язні списки
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Лабораторна робота №8
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../lab8/intro.html">
-   Робота з бінарними й текстовими файлами
-  </a>
- </li>
-</ul>
-<p class="caption">
- <span class="caption-text">
-  Додатки
- </span>
-</p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../outro/appendixA.html">
-   Додаток А. Рекомендації зі створення інтерфейсу
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../outro/appendixB.html">
-   Додаток Б. Титульний лист лабораторної роботи
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../outro/appendixC.html">
-   Додаток В. Приклад програмування бітових операцій і операцій зсуву
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../outro/appendixD.html">
-   Додаток Г. Алгоритми сортування та пошуку
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../outro/bibliography.html">
-   Рекомендована література
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>, 2020
-</div>
-
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
     </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/content/lab2/problems.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
+  
 </div>
-        <!-- Source interaction buttons -->
+</div>
+              
+              
 
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-    </div>
-
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Завдання</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id2">
-   Узагальнене формулювання завдання до лабораторної роботи
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id3">
-   Варіанти завдань до лабораторної роботи
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
-     Опрацювання векторів
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o1">
-       Варіант №1
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o2">
-       Варіант №2
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o3">
-       Варіант №3
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o4">
-       Варіант №4
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o5">
-       Варіант №5
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o6">
-       Варіант №6
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o7">
-       Варіант №7
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o8">
-       Варіант №8
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o9">
-       Варіант №9
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o10">
-       Варіант №10
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o11">
-       Варіант №11
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o12">
-       Варіант №12
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o13">
-       Варіант №13
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o14">
-       Варіант №14
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o15">
-       Варіант №15
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o16">
-       Варіант №16
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o17">
-       Варіант №17
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o18">
-       Варіант №18
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o19">
-       Варіант №19
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o20">
-       Варіант №20
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o21">
-       Варіант №21
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o22">
-       Варіант №22
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o23">
-       Варіант №23
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o24">
-       Варіант №24
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o25">
-       Варіант №25
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o26">
-       Варіант №26
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o27">
-       Варіант №27
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o28">
-       Варіант №28
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o29">
-       Варіант №29
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#o30">
-       Варіант №30
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id5">
-     Опрацювання матриць
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id6">
-       Варіант №1
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id7">
-       Варіант №2*
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id8">
-       Варіант №3
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id9">
-       Варіант №4
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id10">
-       Варіант №5
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id11">
-       Варіант №6*
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id12">
-       Варіант №7
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id13">
-       Варіант №8
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id14">
-       Варіант №9*
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id15">
-       Варіант №10
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id16">
-       Варіант №11*
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id17">
-       Варіант №12
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id18">
-       Варіант №13
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id19">
-       Варіант №14
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id20">
-       Варіант №15
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id21">
-       Варіант №16
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id22">
-       Варіант №17
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id23">
-       Варіант №18
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id24">
-       Варіант №19*
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id25">
-       Варіант №20
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id26">
-       Варіант №21
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id27">
-       Варіант №22
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id28">
-       Варіант №23
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id29">
-       Варіант №24
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id30">
-       Варіант №25
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id31">
-       Варіант №26
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id32">
-       Варіант №27
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id33">
-       Варіант №28
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id34">
-       Варіант №29
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id35">
-       Варіант №30
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Узагальнене формулювання завдання до лабораторної роботи</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Варіанти завдань до лабораторної роботи</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Опрацювання векторів</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o1">Варіант №1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o2">Варіант №2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o3">Варіант №3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o4">Варіант №4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o5">Варіант №5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o6">Варіант №6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o7">Варіант №7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o8">Варіант №8</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o9">Варіант №9</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o10">Варіант №10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o11">Варіант №11</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o12">Варіант №12</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o13">Варіант №13</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o14">Варіант №14</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o15">Варіант №15</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o16">Варіант №16</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o17">Варіант №17</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o18">Варіант №18</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o19">Варіант №19</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o20">Варіант №20</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o21">Варіант №21</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o22">Варіант №22</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o23">Варіант №23</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o24">Варіант №24</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o25">Варіант №25</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o26">Варіант №26</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o27">Варіант №27</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o28">Варіант №28</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o29">Варіант №29</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o30">Варіант №30</a></li>
 </ul>
-
-        </nav>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Опрацювання матриць</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Варіант №1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Варіант №2*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Варіант №3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Варіант №4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Варіант №5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Варіант №6*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Варіант №7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Варіант №8</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Варіант №9*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Варіант №10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Варіант №11*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Варіант №12</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Варіант №13</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Варіант №14</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Варіант №15</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Варіант №16</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Варіант №17</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Варіант №18</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Варіант №19*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Варіант №20</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Варіант №21</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Варіант №22</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Варіант №23</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Варіант №24</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Варіант №25</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Варіант №26</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Варіант №27</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Варіант №28</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Варіант №29</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Варіант №30</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="id1">
-<h1>Завдання<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="id2">
-<h2>Узагальнене формулювання завдання до лабораторної роботи<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>Завдання<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>Узагальнене формулювання завдання до лабораторної роботи<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>Завдання складається з двох частин:</p>
 <ul class="simple">
 <li><p>операції для роботи з одновимірними масивами (векторами);</p></li>
@@ -652,363 +479,363 @@
 <ul class="simple">
 <li><p>Розмірності векторів і матриць уводять із клавіатури (якщо інше не обумовлено у варіанті завдання).</p></li>
 <li><p>Для статичних масивів можна за потреби визначити максимальну розмірність, а під час тестування запитувати в користувача, указавши при цьому максимально можливу зарезервовану в програмі розмірність.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Повинно бути передбачено варіанти заповнення масивів із клавіатури та за допомогою генератора псевдовипадкових чисел.</p></li>
 <li><p>Для одновимірних масивів виконати, згідно вимог, відповідні алгоритми сортування або пошуку.</p></li>
 </ol>
 </li>
 <li><p>У програми повинен бути «дружній» інтерфейс користувача: усі уведення користувача (діапазони, типи даних) повинні перевірятися. Кожну елементарну взаємодію з користувачем (запрошення до уведення, діагностика, виведення результатів роботи) повинно бути коректно оформлено, подано в однозначно зрозумілому форматі та виведено на екран.</p></li>
 <li><p>На екрані обов’язково повинні зберігатися як вихідний, так і результуючий масиви. Для завдань по одновимірним масивам додатково виводити масив після сортування.</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Своєчасно повинно виконуватися очищення екрану та встановлння курсора в потрібне знакомісце.</p></li>
 <li><p>Повинно бути передбачено можливість, не виходячи з програми, продовжити її випробування.</p></li>
 </ol>
 </li>
 </ul>
-</div>
-<div class="section" id="id3">
-<h2>Варіанти завдань до лабораторної роботи<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Опрацювання векторів<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="o1">
-<h4>Варіант №1<a class="headerlink" href="#o1" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id3">
+<h2>Варіанти завдань до лабораторної роботи<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="id4">
+<h3>Опрацювання векторів<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="o1">
+<h4>Варіант №1<a class="headerlink" href="#o1" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Вставити після кожного п’ятого елемента масиву <code class="docutils literal notranslate"><span class="pre">A(n)</span></code> значення, яке дорівнює загальній кількості трьох попередніх елементів.</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по зростанню.</p></li>
 </ul>
-</div>
-<div class="section" id="o2">
-<h4>Варіант №2<a class="headerlink" href="#o2" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o2">
+<h4>Варіант №2<a class="headerlink" href="#o2" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Визначити найбільший елемент у масиві <code class="docutils literal notranslate"><span class="pre">A</span></code> і найменший  елемент у масиві <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
 <li><p>Впорядкувати масив методом сортування Шелла по спадаючій.</p></li>
 </ul>
-</div>
-<div class="section" id="o3">
-<h4>Варіант №3<a class="headerlink" href="#o3" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o3">
+<h4>Варіант №3<a class="headerlink" href="#o3" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Переписати в одновимірний масив <code class="docutils literal notranslate"><span class="pre">B</span></code> всі елементи, розташовані між максимальним і мінімальним значеннями масиву <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
 <li><p>Впорядкувати масив методом швидкого сортування (метод Хоара).</p></li>
 </ul>
-</div>
-<div class="section" id="o4">
-<h4>Варіант №4<a class="headerlink" href="#o4" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o4">
+<h4>Варіант №4<a class="headerlink" href="#o4" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Визначити добуток найбільшого елемента в масиві <code class="docutils literal notranslate"><span class="pre">A</span></code> й найменшого елемента в масиві <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по спадаючій.</p></li>
 </ul>
-</div>
-<div class="section" id="o5">
-<h4>Варіант №5<a class="headerlink" href="#o5" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o5">
+<h4>Варіант №5<a class="headerlink" href="#o5" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Підрахувати максимальну кількість нулів, що йдуть поспіль.</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по зростанню.</p></li>
 </ul>
-</div>
-<div class="section" id="o6">
-<h4>Варіант №6<a class="headerlink" href="#o6" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o6">
+<h4>Варіант №6<a class="headerlink" href="#o6" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Визначити різницю найбільшого і найменшого елементів у масиві <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
 <li><p>Впорядкувати масив методом методом фон Неймана.</p></li>
 </ul>
-</div>
-<div class="section" id="o7">
-<h4>Варіант №7<a class="headerlink" href="#o7" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o7">
+<h4>Варіант №7<a class="headerlink" href="#o7" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Перенести в початок масиву всі парні елементи, а в кінець масиву — усі непарні.</p></li>
 <li><p>Впорядкувати масив методом лінійної вставки.</p></li>
 </ul>
-</div>
-<div class="section" id="o8">
-<h4>Варіант №8<a class="headerlink" href="#o8" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o8">
+<h4>Варіант №8<a class="headerlink" href="#o8" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Визначити середнє арифметичне найменших елементів масивів <code class="docutils literal notranslate"><span class="pre">A</span></code> і <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p></li>
 <li><p>Впорядкувати масив методом човникового сортування.</p></li>
 </ul>
-</div>
-<div class="section" id="o9">
-<h4>Варіант №9<a class="headerlink" href="#o9" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o9">
+<h4>Варіант №9<a class="headerlink" href="#o9" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Підрахувати максимальну кількість від’ємних елементів, що йдуть поспіль.</p></li>
 <li><p>Впорядкувати масив методом сортування Шелла.</p></li>
 </ul>
-</div>
-<div class="section" id="o10">
-<h4>Варіант №10<a class="headerlink" href="#o10" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o10">
+<h4>Варіант №10<a class="headerlink" href="#o10" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Знайти перший та останній додатні елементи масиву, підрахувати кількість елементів, розташованих між ними.</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по зростанню.</p></li>
 </ul>
-</div>
-<div class="section" id="o11">
-<h4>Варіант №11<a class="headerlink" href="#o11" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o11">
+<h4>Варіант №11<a class="headerlink" href="#o11" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Підрахувати максимальну кількість додатних елементів, розташованих між нулями.</p></li>
 <li><p>Впорядкувати масив методом швидкого сортування (метод Хоара).</p></li>
 </ul>
-</div>
-<div class="section" id="o12">
-<h4>Варіант №12<a class="headerlink" href="#o12" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o12">
+<h4>Варіант №12<a class="headerlink" href="#o12" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Нехай від’ємні елементи розбивають його на групи. Знайти групу додатних елементів масиву з максимальною сумою.</p></li>
 <li><p>Впорядкувати масив методом Шейкер-сортування (бульбашкове сортування, чергуючи напрямок проходу по масиву).</p></li>
 </ul>
-</div>
-<div class="section" id="o13">
-<h4>Варіант №13<a class="headerlink" href="#o13" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o13">
+<h4>Варіант №13<a class="headerlink" href="#o13" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Скільки значень елементів у масиві <code class="docutils literal notranslate"><span class="pre">A</span></code> зустрічається більше одного разу?</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по зростанню.</p></li>
 </ul>
-</div>
-<div class="section" id="o14">
-<h4>Варіант №14<a class="headerlink" href="#o14" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o14">
+<h4>Варіант №14<a class="headerlink" href="#o14" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Скільки значень елементів зустрічається в масиві по 3 рази?</p></li>
 <li><p>Впорядкувати масив методом лінійної вставки.</p></li>
 </ul>
-</div>
-<div class="section" id="o15">
-<h4>Варіант №15<a class="headerlink" href="#o15" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o15">
+<h4>Варіант №15<a class="headerlink" href="#o15" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Визначити найбільшу за модулем різницю між сусідніми елементами масиву.</p></li>
 <li><p>Впорядкувати масив методом швидкого сортування (метод Хоара).</p></li>
 </ul>
-</div>
-<div class="section" id="o16">
-<h4>Варіант №16<a class="headerlink" href="#o16" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o16">
+<h4>Варіант №16<a class="headerlink" href="#o16" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Визначити найменшу з різниць <span class="math notranslate nohighlight">\(|a_i|-|a_{n-i+1}|\)</span>, де <code class="docutils literal notranslate"><span class="pre">n</span></code> — парне.</p></li>
 <li><p>Впорядкувати масив комбінованим методом швидкого сортування з методом «бульбашки».</p></li>
 </ul>
-</div>
-<div class="section" id="o17">
-<h4>Варіант №17<a class="headerlink" href="#o17" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o17">
+<h4>Варіант №17<a class="headerlink" href="#o17" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Визначити кількість чисел, що входять у масив по одному разу.</p></li>
 <li><p>Впорядкувати масив методом методом фон Неймана.</p></li>
 </ul>
-</div>
-<div class="section" id="o18">
-<h4>Варіант №18<a class="headerlink" href="#o18" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o18">
+<h4>Варіант №18<a class="headerlink" href="#o18" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Виключити з масиву всі нульові елементи, розташовані між максимальним і мінімальним елементами.</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по спадаючій.</p></li>
 </ul>
-</div>
-<div class="section" id="o19">
-<h4>Варіант №19<a class="headerlink" href="#o19" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o19">
+<h4>Варіант №19<a class="headerlink" href="#o19" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Визначити найменше зі значень <span class="math notranslate nohighlight">\(2/(a_i+a_i^2)\)</span>.</p></li>
 <li><p>Впорядкувати масив методом човникового сортування.</p></li>
 </ul>
-</div>
-<div class="section" id="o20">
-<h4>Варіант №20<a class="headerlink" href="#o20" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o20">
+<h4>Варіант №20<a class="headerlink" href="#o20" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Дано одновимірний масив <code class="docutils literal notranslate"><span class="pre">A</span></code>, що складається з <code class="docutils literal notranslate"><span class="pre">n</span></code> елементів. Визначити номер найбільшого елемента масиву <code class="docutils literal notranslate"><span class="pre">A</span></code> та найбільшого значення серед модулів елементів масиву <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p></li>
 <li><p>Впорядкувати масив методом Шейкер – сортування (бульбашкове сортування, чергуються напрямок проходу по масиву).</p></li>
 </ul>
-</div>
-<div class="section" id="o21">
-<h4>Варіант №21<a class="headerlink" href="#o21" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o21">
+<h4>Варіант №21<a class="headerlink" href="#o21" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати новий масив з позитивних непарних елементів  заданого масиву <code class="docutils literal notranslate"><span class="pre">Р</span> <span class="pre">(n)</span></code>.</p></li>
 <li><p>Впорядкувати масив методом лінійної вставки.</p></li>
 </ul>
-</div>
-<div class="section" id="o22">
-<h4>Варіант №22<a class="headerlink" href="#o22" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o22">
+<h4>Варіант №22<a class="headerlink" href="#o22" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Знайти суму парних елементів масиву <code class="docutils literal notranslate"><span class="pre">М</span> <span class="pre">(n)</span></code>, що мають парні індекси.</p></li>
 <li><p>Впорядкувати масив методом обмінного сортування по спадаючій.</p></li>
 </ul>
-</div>
-<div class="section" id="o23">
-<h4>Варіант №23<a class="headerlink" href="#o23" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o23">
+<h4>Варіант №23<a class="headerlink" href="#o23" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Обчислити суму позитивних елементів масиву <code class="docutils literal notranslate"><span class="pre">М</span> <span class="pre">(n)</span></code>, кратних заданому натуральному <code class="docutils literal notranslate"><span class="pre">а</span></code>.</p></li>
 <li><p>Впорядкувати масив методом лінійної вставки.</p></li>
 </ul>
-</div>
-<div class="section" id="o24">
-<h4>Варіант №24<a class="headerlink" href="#o24" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o24">
+<h4>Варіант №24<a class="headerlink" href="#o24" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати новий масив з елементів заданого цілочисельного масиву <code class="docutils literal notranslate"><span class="pre">А</span> <span class="pre">(n)</span></code>, значення яких зустрічаються в ньому неодноразово. У новому масиві все значення повинні бути унікальними.</p></li>
 <li><p>Впорядкувати масив комбінованим методом швидкого сортування з методом «бульбашки».</p></li>
 </ul>
-</div>
-<div class="section" id="o25">
-<h4>Варіант №25<a class="headerlink" href="#o25" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o25">
+<h4>Варіант №25<a class="headerlink" href="#o25" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Знайти 2 перших елемента в масиві <code class="docutils literal notranslate"><span class="pre">С</span> <span class="pre">(n)</span></code>, значення яких не потрапляють в заданий з клавіатури діапазон <code class="docutils literal notranslate"><span class="pre">[a,</span> <span class="pre">b]</span></code>. Поміняти їх місцями.</p></li>
 <li><p>Впорядкувати масив методом човникового сортування.</p></li>
 </ul>
-</div>
-<div class="section" id="o26">
-<h4>Варіант №26<a class="headerlink" href="#o26" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o26">
+<h4>Варіант №26<a class="headerlink" href="#o26" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати 2 масиви дійсних чисел: <code class="docutils literal notranslate"><span class="pre">A(n)</span></code>і <code class="docutils literal notranslate"><span class="pre">B(n)</span></code>. Обчислити <span class="math notranslate nohighlight">\((a_1+b_n)*(a_2+b_{n-1})*\ldots*(a_n+b_1)\)</span>.</p></li>
 <li><p>Упорядкувати будь-який масив (<code class="docutils literal notranslate"><span class="pre">А</span></code> чи <code class="docutils literal notranslate"><span class="pre">В</span></code>) методом обмінного сортування по спадаючій.</p></li>
 </ul>
-</div>
-<div class="section" id="o27">
-<h4>Варіант №27<a class="headerlink" href="#o27" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o27">
+<h4>Варіант №27<a class="headerlink" href="#o27" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати масив із 30 цілих чисел. Роздрукувати їх в зворотному порядку по 6 чисел в рядку.</p></li>
 <li><p>Упорядкувати вихідний масив методом фон Неймана.</p></li>
 </ul>
-</div>
-<div class="section" id="o28">
-<h4>Варіант №28<a class="headerlink" href="#o28" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o28">
+<h4>Варіант №28<a class="headerlink" href="#o28" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати 2 масиви цілих чисел: <code class="docutils literal notranslate"><span class="pre">A(n)</span></code>і <code class="docutils literal notranslate"><span class="pre">B(n)</span></code>. Перетворити послідовність <span class="math notranslate nohighlight">\(b_1, b_2,\ldots,b_n\)</span> за правилом: якщо <span class="math notranslate nohighlight">\(a_i \le 0\)</span>, то <span class="math notranslate nohighlight">\(b_i\)</span> збільшити в 10 разів, інакше, <span class="math notranslate nohighlight">\(b_i\)</span> замінити нулем.</p></li>
 <li><p>Упорядкувати вихідний масив <code class="docutils literal notranslate"><span class="pre">B</span></code> методом сортування прямим вибором.</p></li>
 </ul>
-</div>
-<div class="section" id="o29">
-<h4>Варіант №29<a class="headerlink" href="#o29" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o29">
+<h4>Варіант №29<a class="headerlink" href="#o29" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати одновимірний масив, в якому є позитивні і негативні елементи . Замінити негативні елементи на протилежні за знаком.</p></li>
 <li><p>Упорядкувати вихідний масив методом сортування вставками.</p></li>
 </ul>
-</div>
-<div class="section" id="o30">
-<h4>Варіант №30<a class="headerlink" href="#o30" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="o30">
+<h4>Варіант №30<a class="headerlink" href="#o30" title="Permalink to this heading">#</a></h4>
 <ul class="simple">
 <li><p>Сформувати одновимірний масив дійсних чисел. З нього отримати масив, що складається з цілих частин початкового масиву.</p></li>
 <li><p>Виконати сортування обміном результуючого масиву.</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="id5">
-<h3>Опрацювання матриць<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id6">
-<h4>Варіант №1<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+</section>
+</section>
+<section id="id5">
+<h3>Опрацювання матриць<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h4>Варіант №1<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
 <p>Для матриці з 3 стовпців і 7 рядків надрукувати номери рядків, у яких третій елемент у рядку більший від суми двох інших, і число таких рядків.</p>
-</div>
-<div class="section" id="id7">
-<h4>Варіант №2*<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id7">
+<h4>Варіант №2*<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
 <p>Дано матриці <span class="math notranslate nohighlight">\(A\)</span> й <span class="math notranslate nohighlight">\(B\)</span> розмірів <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">x</span> <span class="pre">m</span></code> і <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">l</span></code>, відповідно. Знайти <span class="math notranslate nohighlight">\(A * B\)</span>.</p>
-</div>
-<div class="section" id="id8">
-<h4>Варіант №3<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id8">
+<h4>Варіант №3<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
 <p>Для матриці з 3 рядків і 6 стовпців надрукувати номери стовпців, у яких перший елемент менший від другого, а другий — менший від третього, і число таких стовпців.</p>
-</div>
-<div class="section" id="id9">
-<h4>Варіант №4<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id9">
+<h4>Варіант №4<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з цілих чисел, розмірністю не менше <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">x</span> <span class="pre">5</span></code>. Матрицю для вдалого тестування заповняти вручну. Зібрати всі нульові елементи вище за головну діагональ (заповнення здійснювати паралельно головній діагоналі).</p>
-</div>
-<div class="section" id="id10">
-<h4>Варіант №5<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id10">
+<h4>Варіант №5<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
 <p>Розглядаючи матрицю <span class="math notranslate nohighlight">\(A\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code>) як складену з чотирьох квадратів, поміняти в ній центрально-симетричні квадрати один з одним місцями.</p>
-</div>
-<div class="section" id="id11">
-<h4>Варіант №6*<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id11">
+<h4>Варіант №6*<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю <span class="math notranslate nohighlight">\(A\)</span>:
 а) розміру <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">m</span></code>;
 б) розміру <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">n</span></code>.
 Одержати матрицю <span class="math notranslate nohighlight">\(AA^T\)</span>, де <span class="math notranslate nohighlight">\(T\)</span> — операція транспонування (розмір результуючої матриці повинен бути <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">m</span></code>).</p>
-</div>
-<div class="section" id="id12">
-<h4>Варіант №7<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id12">
+<h4>Варіант №7<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з цілих чисел. Зібрати всі від’ємні елементи вище за побічну діагональ (заповнення здійснювати за рядками).</p>
-</div>
-<div class="section" id="id13">
-<h4>Варіант №8<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id13">
+<h4>Варіант №8<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
 <p>Знайти всі сідлові точки матриці <span class="math notranslate nohighlight">\(A\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">m</span></code>). Матриця має сідлову точку <span class="math notranslate nohighlight">\(a_{ij}\)</span>, якщо <span class="math notranslate nohighlight">\(a_{ij}\)</span> є мінімальним елементом в <em>i</em>-му рядку і максимальним елементом у <em>j</em>-му стовпці.</p>
-</div>
-<div class="section" id="id14">
-<h4>Варіант №9*<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id14">
+<h4>Варіант №9*<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
 <p>Дано квадратні матриці <span class="math notranslate nohighlight">\(A\)</span> та <span class="math notranslate nohighlight">\(B\)</span> порядку <code class="docutils literal notranslate"><span class="pre">n</span></code>. Одержати матрицю <span class="math notranslate nohighlight">\(AB-BA\)</span>.</p>
-</div>
-<div class="section" id="id15">
-<h4>Варіант №10<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id15">
+<h4>Варіант №10<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з цілих чисел. У рядках, усі елементи яких парні, розташувати елементи у зворотному порядку.</p>
-</div>
-<div class="section" id="id16">
-<h4>Варіант №11*<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id16">
+<h4>Варіант №11*<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
 <p>Дано квадратну матрицю <span class="math notranslate nohighlight">\(A\)</span> порядку <code class="docutils literal notranslate"><span class="pre">m</span></code>. Одержати матриці <span class="math notranslate nohighlight">\(\frac{1}{2}(A + A^T)\)</span> і <span class="math notranslate nohighlight">\(\frac{1}{2}(A - A^T)\)</span>, де <span class="math notranslate nohighlight">\(T\)</span> — операція транспонування.</p>
-</div>
-<div class="section" id="id17">
-<h4>Варіант №12<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id17">
+<h4>Варіант №12<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з 2 рядків і 10 стовпців. Перший елемент кожного стовпця являє собою абсцису, другий — ординату однієї з 10 точок площини <span class="math notranslate nohighlight">\(XOY\)</span>. Надрукувати номери стовпців, якими представлено точки першої чверті площини, а також загальну кількість таких стовпців.</p>
-</div>
-<div class="section" id="id18">
-<h4>Варіант №13<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id18">
+<h4>Варіант №13<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
 <p>Дано квадратну матрицю <span class="math notranslate nohighlight">\(A\)</span> порядку <code class="docutils literal notranslate"><span class="pre">n</span></code>. Одержати матрицю <span class="math notranslate nohighlight">\(A*B\)</span>, де елементи матриці <span class="math notranslate nohighlight">\(B\)</span> обчислюють за формулою: <span class="math notranslate nohighlight">\(b_{ij} = \frac{1}{i+j-1}\)</span>.</p>
-</div>
-<div class="section" id="id19">
-<h4>Варіант №14<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id19">
+<h4>Варіант №14<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з дійсних чисел. Знайти максимальний і мінімальний елементи й суму елементів, розташованих між ними.</p>
-</div>
-<div class="section" id="id20">
-<h4>Варіант №15<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id20">
+<h4>Варіант №15<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з цілих чисел. Зібрати всі додатні елементи масиву вище за головну діагональ (заповнення здійснювати за рядками).</p>
-</div>
-<div class="section" id="id21">
-<h4>Варіант №16<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id21">
+<h4>Варіант №16<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з 4 стовпцями та 6 рядками. У кожному рядку містяться оцінки одного з 6 студентів із 4 іспитів. Надрукувати номери рядків, яким відповідає середній бал студента, більший від заданої величини, і число таких рядків.</p>
-</div>
-<div class="section" id="id22">
-<h4>Варіант №17<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id22">
+<h4>Варіант №17<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
 <p>Дано матрицю з 2 стовпців і 10 рядків. Перший елемент кожного стовпця являє собою абсцису, другий — ординату однієї з 10 точок площини <span class="math notranslate nohighlight">\(XOY\)</span>. Надрукувати відстані від початку координат для точок, які належать кругу з заданим радіусом, і число таких точок.</p>
-</div>
-<div class="section" id="id23">
-<h4>Варіант №18<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id23">
+<h4>Варіант №18<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
 <p>Розглядаючи матрицю <span class="math notranslate nohighlight">\(A\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code>) як складену з чотирьох квадратів, поміняти в ній квадрати місцями за годинниковою стрілкою.</p>
-</div>
-<div class="section" id="id24">
-<h4>Варіант №19*<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id24">
+<h4>Варіант №19*<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
 <p>Дано квадратну матрицю <span class="math notranslate nohighlight">\(A\)</span> порядку <code class="docutils literal notranslate"><span class="pre">n</span></code>. Одержати вектор <span class="math notranslate nohighlight">\(A\bar{b}\)</span>, де елементи вектора <span class="math notranslate nohighlight">\(\bar{b}\)</span> обчислюють за формулою <span class="math notranslate nohighlight">\(b_i = \frac{1}{i+2}\)</span>.</p>
-</div>
-<div class="section" id="id25">
-<h4>Варіант №20<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id25">
+<h4>Варіант №20<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
 <p>Для матриці з 3 стовпців і 10 рядків надрукувати суму елементів кожного рядка, для якого значення цієї суми більше від одної заданої величини, але менше від іншої заданої величини, і число таких рядків.</p>
-</div>
-<div class="section" id="id26">
-<h4>Варіант №21<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id26">
+<h4>Варіант №21<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
 <p>Задана матриця <span class="math notranslate nohighlight">\(C\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code>). отримати вектор <span class="math notranslate nohighlight">\(\bar{b}\)</span>, кожен елемент якого дорівнює кількості нулів, що стоять в стовпці матриці.</p>
-</div>
-<div class="section" id="id27">
-<h4>Варіант №22<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id27">
+<h4>Варіант №22<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
 <p>Задана матриця <span class="math notranslate nohighlight">\(Q\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code>). Якщо на головній діагоналі стоїть нуль, то відповідний рядок замінити одиницями.</p>
-</div>
-<div class="section" id="id28">
-<h4>Варіант №23<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id28">
+<h4>Варіант №23<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h4>
 <p>Задана матриця <span class="math notranslate nohighlight">\(D\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code>). Якщо максимальний елемент матриці стоїть на головній діагоналі, то всі елементи головної діагоналі зробити рівними максимальному.</p>
-</div>
-<div class="section" id="id29">
-<h4>Варіант №24<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id29">
+<h4>Варіант №24<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h4>
 <p>Переписати перші елементи кожного рядка матриці <span class="math notranslate nohighlight">\(D\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code>), які більше 10, в масив <code class="docutils literal notranslate"><span class="pre">В</span></code>.</p>
-</div>
-<div class="section" id="id30">
-<h4>Варіант №25<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id30">
+<h4>Варіант №25<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h4>
 <p>Впорядкувати рядки матриці <span class="math notranslate nohighlight">\(S\)</span> (<code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">m</span></code>), що містять нулі, в порядку зростання їх кількості.</p>
-</div>
-<div class="section" id="id31">
-<h4>Варіант №26<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id31">
+<h4>Варіант №26<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h4>
 <p>Підрахувати середнє арифметичне значення і дисперсію в кожному стовпці матриці. Матриця заповнюється випадковими значеннями за допомогою функції <code class="docutils literal notranslate"><span class="pre">rand()</span></code>. Розміри матриці задаються за допомогою <code class="docutils literal notranslate"><span class="pre">#define</span></code>.</p>
-</div>
-<div class="section" id="id32">
-<h4>Варіант №27<a class="headerlink" href="#id32" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id32">
+<h4>Варіант №27<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h4>
 <p>Розташувати по зростанню елементи побічної діагоналі матриці. Елементи матриці — цілі числа.</p>
-</div>
-<div class="section" id="id33">
-<h4>Варіант №28<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id33">
+<h4>Варіант №28<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h4>
 <p>В матриці дійсних чисел підрахувати середнє арифметичне всіх елементів і обнулити ті елементи, які більше середнього арифметичного значення.</p>
-</div>
-<div class="section" id="id34">
-<h4>Варіант №29<a class="headerlink" href="#id34" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id34">
+<h4>Варіант №29<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h4>
 <p>Розташувати по спадаючій елементи головної діагоналі матриці. Елементи матриці цілі числа.</p>
-</div>
-<div class="section" id="id35">
-<h4>Варіант №30<a class="headerlink" href="#id35" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="id35">
+<h4>Варіант №30<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h4>
 <p>У цілочисленої матриці (<code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">x</span> <span class="pre">m</span></code>) підрахувати середнє арифметичне значення. Всі елементи матриці, менші середнього арифметичного, замінити на <code class="docutils literal notranslate"><span class="pre">-1</span></code>, більші — на <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
-</div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1022,7 +849,7 @@
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content/lab2"
         },
         predefinedOutput: true
@@ -1030,38 +857,177 @@
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="questions.html" title="previous page">Контрольні питання</a>
-    <a class='right-next' id="next-link" href="../lab3/intro.html" title="next page">Вступ</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Громова В.В.<br/>
-        
-            &copy; Copyright 2020.<br/>
-          <div class="extra_footer">
-            This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
-          </div>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="questions.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Контрольні питання</p>
       </div>
-    </div>
+    </a>
+    <a class="right-next"
+       href="../lab3/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Вступ</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
 
-    <script src="../../_static/js/index.js"></script>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Узагальнене формулювання завдання до лабораторної роботи</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Варіанти завдань до лабораторної роботи</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Опрацювання векторів</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o1">Варіант №1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o2">Варіант №2</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o3">Варіант №3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o4">Варіант №4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o5">Варіант №5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o6">Варіант №6</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o7">Варіант №7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o8">Варіант №8</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o9">Варіант №9</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o10">Варіант №10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o11">Варіант №11</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o12">Варіант №12</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o13">Варіант №13</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o14">Варіант №14</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o15">Варіант №15</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o16">Варіант №16</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o17">Варіант №17</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o18">Варіант №18</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o19">Варіант №19</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o20">Варіант №20</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o21">Варіант №21</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o22">Варіант №22</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o23">Варіант №23</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o24">Варіант №24</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o25">Варіант №25</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o26">Варіант №26</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o27">Варіант №27</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o28">Варіант №28</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o29">Варіант №29</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#o30">Варіант №30</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Опрацювання матриць</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Варіант №1</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Варіант №2*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Варіант №3</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Варіант №4</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Варіант №5</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Варіант №6*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Варіант №7</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Варіант №8</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Варіант №9*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Варіант №10</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Варіант №11*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Варіант №12</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Варіант №13</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">Варіант №14</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Варіант №15</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Варіант №16</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Варіант №17</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Варіант №18</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Варіант №19*</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">Варіант №20</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Варіант №21</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">Варіант №22</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">Варіант №23</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Варіант №24</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id30">Варіант №25</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id31">Варіант №26</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id32">Варіант №27</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id33">Варіант №28</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id34">Варіант №29</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id35">Варіант №30</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
     
+<p class="component-author">
+By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2020.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  This page was created by <a href="https://github.com/gasperpaul/c-labs-book/graphs/contributors">сommunity</a>.
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
