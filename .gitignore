@@ -1,6 +1,5 @@
 # Build artifacts
-_build/.*
-_build/jupyter_execute
+_build*
 
 # Jekyll
 _site/
