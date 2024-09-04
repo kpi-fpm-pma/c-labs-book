@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Теоретичні відомості &#8212; Основи програмування &lt;br/&gt; мовою С</title>
   
@@ -15,55 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab8/theory';</script>
     <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/lab8/theory.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Контрольні питання" href="questions.html" />
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro/intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Основи програмування <br/> мовою С - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Основи програмування <br/> мовою С - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -160,75 +183,75 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №1</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab1/intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab1/intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab1/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab1/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab1/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab2/intro.html">Одновимірні й двовимірні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab2/intro.html">Одновимірні й двовимірні масиви</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №3</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №4</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab4/intro.html">Указівники, функції, рекурсія</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab4/intro.html">Указівники, функції, рекурсія</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab4/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab4/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab4/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №5</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №6</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №7</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №8</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Робота з бінарними й текстовими файлами</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Робота з бінарними й текстовими файлами</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Додатки</span></p>
 <ul class="nav bd-sidenav">
@@ -252,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -261,14 +284,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -293,14 +316,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/kpi-fpm-pma/c-labs-book/main?urlpath=lab/tree/content/lab8/theory.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -374,26 +397,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -448,12 +473,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Теоретичні відомості<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>Теоретичні відомості<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>Потоки й файли<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Потоки й файли<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Система уведення-виведення мови С підтримує інтерфейс, що не залежить від використовуваного фізичного пристрою уведення-виведення. Іншими словами, мова С підтримує абстрактний рівень між програмістом і фізичним пристроєм. Цю абстракцію називають <em>потік</em>. Незважаючи на те, що пристрої можуть бути різні (термінал, дисководи тощо), стандарт ANSI мови С пов’язує кожний із пристроїв із <em>логічним пристроєм</em> — потоком. Оскільки потоки не залежать від фізичних пристроїв, одна й та сама функція може як записувати інформацію на диск, так і виводити її на екран, принтер.</p>
 <p>Спосіб зберігання інформації на фізичному пристрої називають <em>файл</em>. Із погляду програміста, під файлом розуміють деяку пойменовану сукупність даних, яка перебуває на зовнішньому пристрої та має певні атрибути (характеристики). Файл — це такий самий об’єкт програми, як і будь-який інший, але різниця полягає в тому, що дані файлу знаходяться не в оперативній пам’яті, а поза нею. Таким чином, файл є довготривалим «сховищем» даних поза програмою.</p>
 <p>Кожний потік, пов’язаний із файлом, має керуючу структуру, яку називають <code class="docutils literal notranslate"><span class="pre">FILE</span></code>. Її описано в заголовковому файлі <code class="docutils literal notranslate"><span class="pre">stdio.h</span></code>.</p>
@@ -498,7 +523,7 @@ document.write(`
 <p>Функції бібліотеки уведення-виведення містяться в заголовковому файлі <code class="docutils literal notranslate"><span class="pre">stdio.h</span></code>.</p>
 </section>
 <section id="id3">
-<h2>Відкриття та закриття потоку<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>Відкриття та закриття потоку<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>Для початку роботи з потоком його треба відкрити. При цьому потік зв’язується зі структурою типу <code class="docutils literal notranslate"><span class="pre">FILE</span></code>, визначення якої міститься в бібліотековому файлі <code class="docutils literal notranslate"><span class="pre">stdio.h</span></code>. У структурі знаходяться вказівник на буфер, указівник на поточну позицію файлу тощо. Після відкриття потоку повертається вказівник на нього, тобто на об’єкт типу <code class="docutils literal notranslate"><span class="pre">FILE</span></code>:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1">;</span>
 <span class="c1">//...</span>
@@ -511,7 +536,7 @@ document.write(`
 <p>Режими відкриття файлу наведено в таблиці 8.1.</p>
 <p>Потік можна відкрити в текстовому (<code class="docutils literal notranslate"><span class="pre">t</span></code>) або бінарному (<code class="docutils literal notranslate"><span class="pre">b</span></code>) режимах. За замовчуванням використовують текстовий режим. Явно режим указують у такий спосіб: <code class="docutils literal notranslate"><span class="pre">&quot;r</span> <span class="pre">+</span> <span class="pre">b&quot;</span></code> (або <code class="docutils literal notranslate"><span class="pre">&quot;rb&quot;</span></code>) — бінарний режим для читання.</p>
 <p>Таблиця 8.1 – Перелік режимів відкриття файлу</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Режим</p></th>
 <th class="head text-left"><p>Опис режиму</p></th>
@@ -538,6 +563,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>У файлі <code class="docutils literal notranslate"><span class="pre">stdio.h</span></code> визначено константу <code class="docutils literal notranslate"><span class="pre">EOF</span></code> (від’ємне ціле число), яка є ознакою кінця файлу.</p>
 <p>Під час відкриття потоку можуть виникати такі помилки:</p>
 <ul class="simple">
@@ -556,7 +582,7 @@ document.write(`
 <p>Запустити цей код можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab8-Example-81">посиланням</a>.</p>
 </aside>
 <section id="id4">
-<h3>Приклад 8.1<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
 
@@ -592,7 +618,7 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>Основні функції для роботи з файлами<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>Основні функції для роботи з файлами<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>Аналогічно роботі зі стандартними потоками виконують уведення-виведення в потоки, пов’язані з файлами.</p>
 <p>Для символьного уведення-виведення використовують такі функції:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">fgetc</span><span class="p">(</span><span class="kt">FILE</span><span class="o">*</span><span class="w"> </span><span class="n">fp</span><span class="p">)</span>
@@ -655,14 +681,14 @@ document.write(`
 </ul>
 </section>
 <section id="id6">
-<h2>Робота з текстовими файлами<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<h2>Робота з текстовими файлами<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>Перед початком роботи з файлом його потрібно відкрити за допомогою функції <code class="docutils literal notranslate"><span class="pre">fopen()</span></code>, синтаксис якої описано вище. Розгляньмо послідовність дій зі створення простого текстового файлу мовою C та запису в нього текстової інформації.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Запустити цей код можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab8-Example-82">посиланням</a>.</p>
 </aside>
 <section id="id7">
-<h3>Приклад 8.2<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.2<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
 
@@ -691,7 +717,7 @@ document.write(`
 </aside>
 </section>
 <section id="id8">
-<h3>Приклад 8.3<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.3<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -721,7 +747,7 @@ document.write(`
 </aside>
 </section>
 <section id="id9">
-<h3>Приклад 8.4<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.4<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -752,7 +778,7 @@ document.write(`
 </aside>
 </section>
 <section id="id10">
-<h3>Приклад 8.5<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.5<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>Нехай є структура, яка зберігає таку інформацію про книжки: назва, автор, рік видання. Потрібно написати програму збереження цієї інформації в текстовий файл і її зчитування.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define N 2</span>
@@ -810,7 +836,7 @@ document.write(`
 </aside>
 </section>
 <section id="id11">
-<h3>Приклад 8.6<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.6<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -844,7 +870,7 @@ document.write(`
 </section>
 </section>
 <section id="id12">
-<h2>Робота з бінарними файлами<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
+<h2>Робота з бінарними файлами<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
 <p>В усіх розглянутих вище прикладах функція <code class="docutils literal notranslate"><span class="pre">fopen()</span></code> у режимах <code class="docutils literal notranslate"><span class="pre">&quot;r&quot;</span></code> та <code class="docutils literal notranslate"><span class="pre">&quot;w&quot;</span></code> відкриває текстовий файл на читання й запис, відповідно. Це означає, що деякі символи форматування тексту, наприклад, повернення каретки <code class="docutils literal notranslate"><span class="pre">'\r'</span></code>, не можна зчитати як окремі символи: їх ніби не існує у файлі, хоча насправді вони там є.</p>
 <p>Для «тоншої» роботи з умістом файлів існує бінарний режим, який подає вміст файлу як послідовність байтів, у якій керуючі коди є просто числами. У цьому режимі можливе видалення та додавання керуючих символів, недоступне в текстовому режимі. Продемонструймо особливості опрацювання бінарного файлу на прикладі підрахунку у файлі числа керуючих символів повернення каретки <code class="docutils literal notranslate"><span class="pre">'\r'</span></code>.</p>
 <aside class="margin sidebar">
@@ -852,7 +878,7 @@ document.write(`
 <p>Запустити цей код можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab8-Example-87">посиланням</a>.</p>
 </aside>
 <section id="id13">
-<h3>Приклад 8.7<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.7<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -904,7 +930,7 @@ document.write(`
 </aside>
 </section>
 <section id="id14">
-<h3>Приклад 8.8<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.8<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -948,7 +974,7 @@ document.write(`
 </section>
 </section>
 <section id="id15">
-<h2>Загальні принципи роботи з файлами записів<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
+<h2>Загальні принципи роботи з файлами записів<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
 <p>Розгляньмо основні принципи роботи з файлами, що містять записи структур деякого типу.</p>
 <p>Спочатку потрібно за допомогою відповідної програми створити файл. У програмі повинно бути передбачено функцію додавання запису. Оскільки уведення запису з клавіатури як цілісності неможливо, кожне поле (якщо воно не структуроване) потрібно уводити окремо за запитом або заповнюючи екранну форму. Сформовану структуру записують у файл як цілісність.</p>
 <p>Під час читання інформації з файлу читати запис ліпше як цілісність, а потім у програмі аналізувати вміст полів та виконувати потрібні дії.</p>
@@ -959,7 +985,7 @@ document.write(`
 <p>Запустити цей код можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab8-Example-89">посиланням</a>.</p>
 </aside>
 <section id="id16">
-<h3>Приклад 8.9<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.9<a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
 <p>Скласти програму, яка виконує такі функції:</p>
 <ol class="arabic simple">
 <li><p>Створення нового файлу структур із такими полями:</p>
@@ -1125,7 +1151,7 @@ document.write(`
 </aside>
 </section>
 <section id="id17">
-<h3>Приклад 8.10<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.10<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
 <p>Програма для корекції існуючого файлу з результатами деякої олімпіади. Відповідна структура містить:</p>
 <ul class="simple">
 <li><p>поле для назви країни;</p></li>
@@ -1259,7 +1285,7 @@ document.write(`
 </aside>
 </section>
 <section id="id18">
-<h3>Приклад 8.11<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 8.11<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
 <p>Програма для організації запису рядка (символьного масиву) у файл блоком, а також читання й виведення на екран записаної інформації.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
@@ -1330,11 +1356,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -1354,10 +1379,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1365,6 +1387,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1418,6 +1441,7 @@ By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2020.
@@ -1447,8 +1471,8 @@ By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

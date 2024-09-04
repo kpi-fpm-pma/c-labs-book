@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Завдання &#8212; Основи програмування &lt;br/&gt; мовою С</title>
   
@@ -15,57 +14,54 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab1/problems';</script>
     <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/lab1/problems.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Вступ" href="../lab2/intro.html" />
@@ -79,19 +75,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,12 +113,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -133,9 +141,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro/intro.html">
+  
   
   
   
@@ -145,12 +157,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Основи програмування <br/> мовою С - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Основи програмування <br/> мовою С - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -162,75 +185,75 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №1</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab2/intro.html">Одновимірні й двовимірні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab2/intro.html">Одновимірні й двовимірні масиви</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №3</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №4</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab4/intro.html">Указівники, функції, рекурсія</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab4/intro.html">Указівники, функції, рекурсія</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab4/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab4/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab4/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №5</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №6</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №7</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №8</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab8/intro.html">Робота з бінарними й текстовими файлами</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab8/intro.html">Робота з бінарними й текстовими файлами</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab8/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab8/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab8/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Додатки</span></p>
 <ul class="nav bd-sidenav">
@@ -254,7 +277,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -263,14 +286,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -345,26 +368,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -468,19 +493,19 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Завдання<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>Завдання<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>Узагальнене формулювання завдання до лабораторної роботи<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Узагальнене формулювання завдання до лабораторної роботи<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Завдання складається з двох частин:</p>
 <ul class="simple">
 <li><p>програмування операцій уведення-виведення для обчислення конкретних формул;</p></li>
 <li><p>програмування бітових операцій та операцій зсуву.</p></li>
 </ul>
 <section id="id3">
-<h3>Постановка першого завдання<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Постановка першого завдання<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>Завдання складається з двох задач. У програмі потрібно передбачити меню, яке даватиме можливість вибрати будь-яку з двох задач. Для програмування потрібно вибрати потрібну формулу з курсу геометрії (якщо у варіанті формулу не вказано явно).</p>
 <p>Програма повинна виконувати такі функції:</p>
 <ul class="simple">
@@ -493,7 +518,7 @@ document.write(`
 <p>Повинно бути передбачено можливість, не виходячи з програми, продовжити її випробування.</p>
 </section>
 <section id="id4">
-<h3>Постановка другого завдання<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Постановка другого завдання<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>Завдання складається з двох задач. У рамках завдання потрібно скласти дві підпрограми:</p>
 <ul class="simple">
 <li><p>перша підпрограма уводить складові частини структури даних, наведеної у відповідному варіанті індивідуального завдання, і формує з них задану упаковану структуру;</p></li>
@@ -510,184 +535,184 @@ document.write(`
 </section>
 </section>
 <section id="id5">
-<h2>Варіанти завдань до лабораторної роботи<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<h2>Варіанти завдань до лабораторної роботи<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <section id="id6">
-<h3>Програмування операцій уведення-виведення для обчислення конкретних формул<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>Програмування операцій уведення-виведення для обчислення конкретних формул<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p><em>УВАГА</em>: для всіх варіантів із цього циклу завдань перша задача працює з дійсними числами, а друга — з цілими.</p>
 <section id="o1">
-<h4>Варіант №1<a class="headerlink" href="#o1" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №1<a class="headerlink" href="#o1" title="Link to this heading">#</a></h4>
 <p>1. Обчислити периметр прямокутника.
 2. Обчислити об’єм прямої призми, в основі якої лежить рівносторонній трикутник зі стороною <span class="math notranslate nohighlight">\(a\)</span>. Висота призми — <span class="math notranslate nohighlight">\(h\)</span>.</p>
 </section>
 <section id="o2">
-<h4>Варіант №2<a class="headerlink" href="#o2" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №2<a class="headerlink" href="#o2" title="Link to this heading">#</a></h4>
 <p>1. Обчислити площу прямокутника.
 2. Відомі координати вершин трикутника. Обчислити периметр і площу трикутника.</p>
 </section>
 <section id="o3">
-<h4>Варіант №3<a class="headerlink" href="#o3" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №3<a class="headerlink" href="#o3" title="Link to this heading">#</a></h4>
 <p>1. Обчислити площу трикутника за основою та висотою.
 2. Обчислити об’єм прямокутного паралелепіпеда за трьома сторонами.</p>
 </section>
 <section id="o4">
-<h4>Варіант №4<a class="headerlink" href="#o4" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №4<a class="headerlink" href="#o4" title="Link to this heading">#</a></h4>
 <p>1. Обчислити висоту паралелепіпеда.
 2. Обчислити Евклідову відстань між двома точками.</p>
 </section>
 <section id="o5">
-<h4>Варіант №5<a class="headerlink" href="#o5" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №5<a class="headerlink" href="#o5" title="Link to this heading">#</a></h4>
 <p>1. Обчислити <span class="math notranslate nohighlight">\((a+b)^3\)</span>.
 2. Відомі кількість жителів у державі та площа її території. Визначити щільність населення в цій державі.</p>
 </section>
 <section id="o6">
-<h4>Варіант №6<a class="headerlink" href="#o6" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №6<a class="headerlink" href="#o6" title="Link to this heading">#</a></h4>
 <p>1. Обчислити <span class="math notranslate nohighlight">\(1/a+2/a+\ldots+5/a\)</span>.
 2. Обчислити <span class="math notranslate nohighlight">\(f(x)=kx+b,~x=1,2,\ldots,5\)</span>.</p>
 </section>
 <section id="o7">
-<h4>Варіант №7<a class="headerlink" href="#o7" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №7<a class="headerlink" href="#o7" title="Link to this heading">#</a></h4>
 <p>1. Обчислити <span class="math notranslate nohighlight">\((a-b)^2\)</span>.
 2. Обчислити об’єм і повну поверхню куба, ребро якого дорівнює <span class="math notranslate nohighlight">\(b\)</span>.</p>
 </section>
 <section id="o8">
-<h4>Варіант №8<a class="headerlink" href="#o8" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №8<a class="headerlink" href="#o8" title="Link to this heading">#</a></h4>
 <p>1. Обчислити повну поверхню прямої призми, в основі якої лежить прямокутний трикутник із катетами <span class="math notranslate nohighlight">\(a\)</span> і <span class="math notranslate nohighlight">\(b\)</span>. Висота призми — <span class="math notranslate nohighlight">\(h\)</span>.
 2. Обчислити площу паралелограма за основою та висотою.</p>
 </section>
 <section id="o9">
-<h4>Варіант №9<a class="headerlink" href="#o9" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №9<a class="headerlink" href="#o9" title="Link to this heading">#</a></h4>
 <p>1. Обчислити 10% від тризначного числа.
 2. Обчислити <span class="math notranslate nohighlight">\(a_1b_1+a_2b_2+\ldots+a_5b_5\)</span>.</p>
 </section>
 <section id="o10">
-<h4>Варіант №10<a class="headerlink" href="#o10" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №10<a class="headerlink" href="#o10" title="Link to this heading">#</a></h4>
 <p>1. Обчислити об’єм прямої призми, в основі якої лежить прямокутний трикутник з катетами <span class="math notranslate nohighlight">\(a\)</span> і <span class="math notranslate nohighlight">\(b\)</span>. Висота призми — <span class="math notranslate nohighlight">\(h\)</span>.
 2. Обчислити <span class="math notranslate nohighlight">\(f(x)=x^2+b,~x=1,2,\ldots,5\)</span>.</p>
 </section>
 <section id="o11">
-<h4>Варіант №11<a class="headerlink" href="#o11" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №11<a class="headerlink" href="#o11" title="Link to this heading">#</a></h4>
 <p>1. Обчислити площу трапеції за висотою та середньою лінією.
 2. Обчислити площу ромба за його діагоналями.</p>
 </section>
 <section id="o12">
-<h4>Варіант №12<a class="headerlink" href="#o12" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №12<a class="headerlink" href="#o12" title="Link to this heading">#</a></h4>
 <p>1. Обчислити радіус кола, описаного навколо трикутника.
 2. Дано три числа, які є довжинами сторін трикутника. Визначити тип трикутника (рівносторонній, рівнобедрений, різносторонній).</p>
 </section>
 <section id="o13">
-<h4>Варіант №13<a class="headerlink" href="#o13" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №13<a class="headerlink" href="#o13" title="Link to this heading">#</a></h4>
 <p>1. Обчислити площу бічної поверхні циліндра.
 2. Дано катети прямокутного трикутника. Знайти його гіпотенузу.</p>
 </section>
 <section id="o14">
-<h4>Варіант №14<a class="headerlink" href="#o14" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №14<a class="headerlink" href="#o14" title="Link to this heading">#</a></h4>
 <p>1. Обчислити площу між колом радіуса <span class="math notranslate nohighlight">\(R\)</span> і вписаним усередині нього колом радіуса <span class="math notranslate nohighlight">\(r\)</span>.
 2. Знайти медіану трикутника, що сполучає вершину <span class="math notranslate nohighlight">\(A\)</span> з серединою протилежної сторони <span class="math notranslate nohighlight">\(a\)</span>.</p>
 </section>
 <section id="o15">
-<h4>Варіант №15<a class="headerlink" href="#o15" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №15<a class="headerlink" href="#o15" title="Link to this heading">#</a></h4>
 <p>1. Обчислити об’єм тора, утвореного обертанням кола радіуса <span class="math notranslate nohighlight">\(r\)</span> навколо вісі, яка відступає на відстань <span class="math notranslate nohighlight">\(R\)</span> від центру, за формулою <span class="math notranslate nohighlight">\(V=2\pi^2Rr^2\)</span>.
 2. Обчислити радіус уписаного в трикутник кола.</p>
 </section>
 <section id="o16">
-<h4>Варіант №16<a class="headerlink" href="#o16" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №16<a class="headerlink" href="#o16" title="Link to this heading">#</a></h4>
 <p>1. Обчислити площу правильного шестикутника за його стороною.
 2. Обчислити площу рівнобедреного трикутника за його основою та бічною стороною.</p>
 </section>
 <section id="o17">
-<h4>Варіант №17<a class="headerlink" href="#o17" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №17<a class="headerlink" href="#o17" title="Link to this heading">#</a></h4>
 <p>1. Обчислити відстань між двома точками з заданими координатами.
 2. Обчислити площу паралелограма за його основою та висотою.</p>
 </section>
 <section id="o18">
-<h4>Варіант №18<a class="headerlink" href="#o18" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №18<a class="headerlink" href="#o18" title="Link to this heading">#</a></h4>
 <p>1. Дано два числа. Знайти середнє арифметичне кубів цих чисел і середнє геометричне модулів цих чисел.
 2. Обчислити об’єм прямокутного паралелепіпеда.</p>
 </section>
 <section id="o19">
-<h4>Варіант №19<a class="headerlink" href="#o19" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №19<a class="headerlink" href="#o19" title="Link to this heading">#</a></h4>
 <p>1. Обчислити вагу тіла <span class="math notranslate nohighlight">\(P\)</span> на поверхні Землі за формулою <span class="math notranslate nohighlight">\(P=mm_2/R\)</span>, де <span class="math notranslate nohighlight">\(m_2\)</span> — маса Землі, <span class="math notranslate nohighlight">\(m\)</span> — маса тіла, <span class="math notranslate nohighlight">\(R\)</span> — радіус Землі.
 2. Обчислити площу трикутника за двома сторонами <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, і кутом <span class="math notranslate nohighlight">\(\alpha\)</span> між ними.</p>
 </section>
 <section id="o20">
-<h4>Варіант №20<a class="headerlink" href="#o20" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №20<a class="headerlink" href="#o20" title="Link to this heading">#</a></h4>
 <p>1. Дано два числа. Знайти їх суму, різницю, добуток, частку від ділення першого числа на друге.
 2. Обчислити об’єм піраміди, в основі якої лежить квадрат зі стороною <span class="math notranslate nohighlight">\(b\)</span>. Висота піраміди — <span class="math notranslate nohighlight">\(h\)</span>.</p>
 </section>
 <section id="o21">
-<h4>Варіант №21<a class="headerlink" href="#o21" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №21<a class="headerlink" href="#o21" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Обчислити <span class="math notranslate nohighlight">\(x=4y^2/(4z-2t^3)\)</span>. Ввести коефіцієнти <span class="math notranslate nohighlight">\(t\)</span> і <span class="math notranslate nohighlight">\(z\)</span>; <span class="math notranslate nohighlight">\(y = \sin t\)</span>.</p></li>
 <li><p>Обчислити площу рівностороннього трикутника по стороні.</p></li>
 </ol>
 </section>
 <section id="o22">
-<h4>Варіант №22<a class="headerlink" href="#o22" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №22<a class="headerlink" href="#o22" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Обчислити <span class="math notranslate nohighlight">\(x=4y^3-z/t\)</span>. Ввести коефіцієнти <span class="math notranslate nohighlight">\(t\)</span> i <span class="math notranslate nohighlight">\(z\)</span>; <span class="math notranslate nohighlight">\(y=\cos(t+z)\)</span>.</p></li>
 <li><p>Обчислити по гіпотенузі і катету прямокутного трикутника другий катет і радіус вписаного кола.</p></li>
 </ol>
 </section>
 <section id="o23">
-<h4>Варіант №23<a class="headerlink" href="#o23" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №23<a class="headerlink" href="#o23" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Обчислити тангенс кута прямокутного трикутника. Ввести довжини прилеглого і протилежного катетів.</p></li>
 <li><p>Обчислити <span class="math notranslate nohighlight">\(y =|2x-x^2|\)</span>.</p></li>
 </ol>
 </section>
 <section id="o24">
-<h4>Варіант №24<a class="headerlink" href="#o24" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №24<a class="headerlink" href="#o24" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Обчислити поверхню усіченого конуса <span class="math notranslate nohighlight">\(s=\pi(R^2 + (R+r)L+ r^2)\)</span> і об’єм <span class="math notranslate nohighlight">\(v=1/3\pi(R^2+r^2+Rr)h\)</span>.</p></li>
 <li><p>Обчислити периметр і площу трикутника, заданого координатами своїх вершин.</p></li>
 </ol>
 </section>
 <section id="o25">
-<h4>Варіант №25<a class="headerlink" href="#o25" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №25<a class="headerlink" href="#o25" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Змішано <span class="math notranslate nohighlight">\(v_1\)</span> літрів води температури <span class="math notranslate nohighlight">\(t_1\)</span> з <span class="math notranslate nohighlight">\(v_2\)</span> літрами води температури <span class="math notranslate nohighlight">\(t_2\)</span>.  Знайти об’єм і температуру утвореної суміші.</p></li>
 <li><p>Цілої змінної <span class="math notranslate nohighlight">\(s\)</span> присвоїти суму цифр тризначного цілого числа <span class="math notranslate nohighlight">\(k\)</span>.</p></li>
 </ol>
 </section>
 <section id="o26">
-<h4>Варіант №26<a class="headerlink" href="#o26" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №26<a class="headerlink" href="#o26" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Обчислити висоти трикутника за заданими сторонами.</p></li>
 <li><p>Ввести три числа. Збільшити перше число в два рази, друге число зменшити на 3, третє число звести в квадрат і потім знайти суму нових трьох чисел.</p></li>
 </ol>
 </section>
 <section id="o27">
-<h4>Варіант №27<a class="headerlink" href="#o27" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №27<a class="headerlink" href="#o27" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Ввести три числа. Знайти середнє арифметичне цих чисел, а також різницю подвоєної суми першого і третього чисел і потроєного другого числа.</p></li>
 <li><p>Відомо, що <span class="math notranslate nohighlight">\(x\)</span> кг цукерок коштують <span class="math notranslate nohighlight">\(a\)</span> гривень. Визначте, скільки коштує <span class="math notranslate nohighlight">\(y\)</span> кг цих цукерок, а також скільки кг цукерок можна купити на <span class="math notranslate nohighlight">\(k\)</span> гривень. Всі значення вводить користувач.</p></li>
 </ol>
 </section>
 <section id="o28">
-<h4>Варіант №28<a class="headerlink" href="#o28" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №28<a class="headerlink" href="#o28" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Вивести на екран поточну назву дня тижня, назву місяця і своє ім’я. Кожне слово має бути в окремому рядку.</p></li>
 <li><p>Ввести час в хвилинах і відстань в кілометрах. Знайти швидкість в м/c.</p></li>
 </ol>
 </section>
 <section id="o29">
-<h4>Варіант №29<a class="headerlink" href="#o29" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №29<a class="headerlink" href="#o29" title="Link to this heading">#</a></h4>
 <ol class="arabic simple">
 <li><p>Ввести три змінних <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> і <span class="math notranslate nohighlight">\(c\)</span>. Змінити значення цих змінних так, щоб в <span class="math notranslate nohighlight">\(a\)</span> зберігалося значення <span class="math notranslate nohighlight">\(a+b\)</span>, в <span class="math notranslate nohighlight">\(b\)</span> зберігалася різниця старих значень <span class="math notranslate nohighlight">\(c-a\)</span>, а в <span class="math notranslate nohighlight">\(c\)</span> зберігалося сума старих значень <span class="math notranslate nohighlight">\(a+b+c\)</span>.</p></li>
 <li><p>Знайти алгебраїчну суму для виразу: <span class="math notranslate nohighlight">\(1^k + 2^k + 3^k + \ldots + N^k\)</span>. <span class="math notranslate nohighlight">\(N\)</span> і ступінь <span class="math notranslate nohighlight">\(k\)</span> вводить користувач.</p></li>
 </ol>
 </section>
 <section id="o30">
-<h4>Варіант №30<a class="headerlink" href="#o30" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №30<a class="headerlink" href="#o30" title="Link to this heading">#</a></h4>
 <p>Обчислити вираз <span class="math notranslate nohighlight">\(\ln(1 - \frac{a}{4})c\)</span>. Значення <span class="math notranslate nohighlight">\(a\)</span> і <span class="math notranslate nohighlight">\(c\)</span> ввести.</p>
 </section>
 </section>
 <section id="id7">
-<h3>Програмування бітових операцій та операцій зсуву<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>Програмування бітових операцій та операцій зсуву<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <section id="id8">
-<h4>Варіант №1<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №1<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
 <p>Фізична адреса на диску подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -729,6 +754,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">HH</span></code> — номер головки;</p></li>
@@ -737,9 +763,9 @@ document.write(`
 </ul>
 </section>
 <section id="id9">
-<h4>Варіант №2<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №2<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <p>Слово стану програми в обчислювальній системі подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -781,6 +807,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — маски каналів 0–3;</p></li>
@@ -791,9 +818,9 @@ document.write(`
 </ul>
 </section>
 <section id="id10">
-<h4>Варіант №3<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №3<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
 <p>Слово стану каналу в обчислювальній системі подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -835,6 +862,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — номер каналу;</p></li>
@@ -844,9 +872,9 @@ document.write(`
 </ul>
 </section>
 <section id="id11">
-<h4>Варіант №4<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №4<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <p>Формат команди завантаження/збереження в обчислювальній системі має вигляд:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -888,6 +916,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — напрямок передачі: у регістр (0)/у пам’ять (1);</p></li>
@@ -896,9 +925,9 @@ document.write(`
 </ul>
 </section>
 <section id="id12">
-<h4>Варіант №5<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №5<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
 <p>Слово стану обладнання для обчислювальної системи подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -940,6 +969,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">PPP</span></code> — кількість принтерів;</p></li>
@@ -949,9 +979,9 @@ document.write(`
 </ul>
 </section>
 <section id="id13">
-<h4>Варіант №6<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №6<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
 <p>Формат команди зсуву в обчислювальній системі має вигляд:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -993,6 +1023,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TT</span></code> — тип зсуву;</p></li>
@@ -1001,9 +1032,9 @@ document.write(`
 </ul>
 </section>
 <section id="id14">
-<h4>Варіант №7<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №7<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <p>Блок управління буфером кеша в обчислювальній системі подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1045,6 +1076,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">SSS</span></code> — код системної області або 000;</p></li>
@@ -1054,9 +1086,9 @@ document.write(`
 </ul>
 </section>
 <section id="id15">
-<h4>Варіант №8<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №8<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <p>Елемент списку безпеки об’єкта в обчислювальної системі подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1098,6 +1130,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">U..U</span></code> — ідентифікатор користувача;</p></li>
@@ -1108,9 +1141,9 @@ document.write(`
 </ul>
 </section>
 <section id="id16">
-<h4>Варіант №9<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №9<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>Формат команди каналу в системі уведення-виведення має вигляд:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1152,6 +1185,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">O..O</span></code> — код операції;</p></li>
@@ -1161,9 +1195,9 @@ document.write(`
 </ul>
 </section>
 <section id="id17">
-<h4>Варіант №10<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №10<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <p>Елемент профілю користувача в системі подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1205,6 +1239,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">G..G</span></code> — ідентифікатор групи, до якої належить користувач;</p></li>
@@ -1213,9 +1248,9 @@ document.write(`
 </ul>
 </section>
 <section id="id18">
-<h4>Варіант №11<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №11<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
 <p>Інформація про стан пристрою в системі уведення-виведення подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1257,6 +1292,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CCC</span></code> — номер каналу;</p></li>
@@ -1266,9 +1302,9 @@ document.write(`
 </ul>
 </section>
 <section id="id19">
-<h4>Варіант №12<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №12<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p>Формат команди додавання в обчислювальній системі має вигляд:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1310,6 +1346,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">D</span></code> — додавання байтів/слів (0/1);</p></li>
@@ -1318,9 +1355,9 @@ document.write(`
 </ul>
 </section>
 <section id="id20">
-<h4>Варіант №13<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №13<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
 <p>Формат подання поточної дати в деяких системних структурах має вигляд:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1362,14 +1399,15 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <p>де D..D — день;
 M..M — місяць;
 Y..Y — рік після 1980.</p>
 </section>
 <section id="id21">
-<h4>Варіант №14<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №14<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
 <p>Формат подання поточного часу в деяких системних структурах має вигляд:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1411,6 +1449,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — секунди/2;</p></li>
@@ -1419,9 +1458,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="id22">
-<h4>Варіант №15<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №15<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
 <p>Дескриптор сегмента для системи віртуальної пам’яті подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1463,6 +1502,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">F..F</span></code> — номер блока, з якого починається сегмент;</p></li>
@@ -1472,9 +1512,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="id23">
-<h4>Варіант №16<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №16<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
 <p>Атрибут файлу у файловій системі подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1516,6 +1556,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">T..T</span></code> — код типу файлу;</p></li>
@@ -1524,9 +1565,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="id24">
-<h4>Варіант №17<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №17<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
 <p>Блок управління пам’яттю в операційній системі має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1568,6 +1609,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">O..O</span></code> — ідентифікатор власника блока;</p></li>
@@ -1576,9 +1618,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="id25">
-<h4>Варіант №18<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №18<a class="headerlink" href="#id25" title="Link to this heading">#</a></h4>
 <p>Точка зображення на 16-кольоровому дисплеї з розміром екрану 64 х 64 описується у форматі:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1620,6 +1662,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">X..X</span></code> — горизонтальна координата;</p></li>
@@ -1628,9 +1671,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="id26">
-<h4>Варіант №19<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №19<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
 <p>Керуюче слово програмованого таймера має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1672,6 +1715,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CC</span></code> — номер каналу таймера;</p></li>
@@ -1680,9 +1724,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="id27">
-<h4>Варіант №20<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
+<h4>Варіант №20<a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
 <p>Інформація про критичну помилку на диску подається у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1724,6 +1768,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">O</span></code> — тип операції — читання/запис (0/1);</p></li>
@@ -1733,9 +1778,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-21">
-<h4>Вариант № 21<a class="headerlink" href="#o-21" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 21<a class="headerlink" href="#o-21" title="Link to this heading">#</a></h4>
 <p>Дескриптор повідомлення в системі телекомунікацій має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1777,6 +1822,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — номер вузла, з якого прийшло повідомлення;</p></li>
@@ -1785,9 +1831,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-22">
-<h4>Вариант № 22<a class="headerlink" href="#o-22" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 22<a class="headerlink" href="#o-22" title="Link to this heading">#</a></h4>
 <p>Дескриптор семафора, який захищає пул ресурсів, має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1829,6 +1875,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">N..N</span></code> — поточна кількість вільних одиниць ресурсу;</p></li>
@@ -1838,9 +1885,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-23">
-<h4>Вариант № 23<a class="headerlink" href="#o-23" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 23<a class="headerlink" href="#o-23" title="Link to this heading">#</a></h4>
 <p>Заголовок кадру в системі передачі даних має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1882,6 +1929,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">S..S</span></code> — адреса джерела;</p></li>
@@ -1890,9 +1938,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-24">
-<h4>Вариант № 24<a class="headerlink" href="#o-24" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 24<a class="headerlink" href="#o-24" title="Link to this heading">#</a></h4>
 <p>Заголовок пакета в системі передачі даних має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1934,6 +1982,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">TTT</span></code> — тип пакета;</p></li>
@@ -1942,9 +1991,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-25">
-<h4>Вариант № 25<a class="headerlink" href="#o-25" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 25<a class="headerlink" href="#o-25" title="Link to this heading">#</a></h4>
 <p>Поле управління диспетчером кадру в протоколі управління логічним каналом має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -1986,6 +2035,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">CC</span></code> — керуючий код;</p></li>
@@ -1994,9 +2044,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-26">
-<h4>Вариант № 26<a class="headerlink" href="#o-26" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 26<a class="headerlink" href="#o-26" title="Link to this heading">#</a></h4>
 <p>Формат заголовку пакета в системі ретрансляції кадрів такий:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -2038,6 +2088,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — ідентифікатор каналу передачі;</p></li>
@@ -2046,9 +2097,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-27">
-<h4>Вариант № 27<a class="headerlink" href="#o-27" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 27<a class="headerlink" href="#o-27" title="Link to this heading">#</a></h4>
 <p>Формат елемента доступу до об’єкту в системі безпеки такий:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -2090,6 +2141,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">AAA</span></code>— код доступу до об’єкту з групи PUBLIC;</p></li>
@@ -2098,9 +2150,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-28">
-<h4>Вариант № 28<a class="headerlink" href="#o-28" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 28<a class="headerlink" href="#o-28" title="Link to this heading">#</a></h4>
 <p>Дескриптор масиву, який формується компілятором мови програмування, має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -2142,6 +2194,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">L..L</span></code> — розмір елементу масиву;</p></li>
@@ -2150,9 +2203,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-29">
-<h4>Вариант № 29<a class="headerlink" href="#o-29" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 29<a class="headerlink" href="#o-29" title="Link to this heading">#</a></h4>
 <p>Блок керування сегментом пам’яті в системі з реальною пам’яттю має формат:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -2194,6 +2247,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">T..T</span></code> — ідентифікатор завдання,  якому належить сегмент або 0 - для вільного сегмента;</p></li>
@@ -2202,9 +2256,9 @@ Y..Y — рік після 1980.</p>
 </ul>
 </section>
 <section id="o-30">
-<h4>Вариант № 30<a class="headerlink" href="#o-30" title="Permalink to this heading">#</a></h4>
+<h4>Вариант № 30<a class="headerlink" href="#o-30" title="Link to this heading">#</a></h4>
 <p>Слово стану пристрою в системі уведення-виведення представляється у вигляді:</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>№ розряду</p></th>
 <th class="head text-center"><p>15</p></th>
@@ -2246,6 +2300,7 @@ Y..Y — рік після 1980.</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>де</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">C..C</span></code> — код стану;</p></li>
@@ -2283,11 +2338,10 @@ Y..Y — рік після 1980.</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="questions.html"
@@ -2307,10 +2361,7 @@ Y..Y — рік після 1980.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -2318,6 +2369,7 @@ Y..Y — рік після 1980.</p>
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2420,6 +2472,7 @@ By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2020.
@@ -2449,8 +2502,8 @@ By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

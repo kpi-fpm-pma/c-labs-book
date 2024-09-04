@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Теоретичні відомості &#8212; Основи програмування &lt;br/&gt; мовою С</title>
   
@@ -15,55 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/lab4/theory';</script>
     <link rel="canonical" href="https://gasperpaul.github.io/c-labs-book/content/lab4/theory.html" />
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Контрольні питання" href="questions.html" />
@@ -77,19 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -131,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro/intro.html">
+  
   
   
   
@@ -143,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Основи програмування <br/> мовою С - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Основи програмування <br/> мовою С - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -160,75 +183,75 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №1</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab1/intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab1/intro.html">Базові типи даних, уведення-виведення, бітові операції, операції зсуву</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab1/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab1/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab1/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №2</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab2/intro.html">Одновимірні й двовимірні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab2/intro.html">Одновимірні й двовимірні масиви</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab2/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №3</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab3/intro.html">Опрацювання символьних даних</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab3/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №4</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Указівники, функції, рекурсія</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Указівники, функції, рекурсія</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №5</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab5/intro.html">Типи даних, визначені користувачем</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab5/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №6</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab6/intro.html">Динамічні масиви</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab6/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №7</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab7/intro.html">Однозв'язні списки</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab7/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Лабораторна робота №8</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../lab8/intro.html">Робота з бінарними й текстовими файлами</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lab8/intro.html">Робота з бінарними й текстовими файлами</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../lab8/theory.html">Теоретичні відомості</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab8/questions.html">Питання для самоперевірки</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../lab8/problems.html">Завдання</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Додатки</span></p>
 <ul class="nav bd-sidenav">
@@ -252,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -261,14 +284,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -293,14 +316,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/kpi-fpm-pma/c-labs-book/main?urlpath=lab/tree/content/lab4/theory.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -374,26 +397,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -463,12 +488,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>Теоретичні відомості<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>Теоретичні відомості<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>Указівники<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>Указівники<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>Указівники є одним із найпотужніших засобів мови С. Сфера застосування вказівників досить широка, наприклад:</p>
 <ul class="simple">
 <li><p>указівники дають можливість змінювати аргументи функцій, що знаходяться у викликах;</p></li>
@@ -486,7 +511,7 @@ document.write(`
 </ul>
 <p>Змінна, яку оголошують як указівник на тип <code class="docutils literal notranslate"><span class="pre">void</span></code>, можна використати для посилання на об’єкт будь-якого типу. Проте, щоб можна було виконати арифметичні та логічні операції над указівниками або над об’єктами, на які вони вказують, потрібно під час виконання кожної операції явно визначати типи об’єктів. Такі визначення типів можна виконати за допомогою операцій перетворення типів.</p>
 <section id="id3">
-<h3>Оператори для роботи зі вказівниками<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<h3>Оператори для роботи зі вказівниками<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
 <p>У мові C існує два оператори, які вживають зі вказівниками: <code class="docutils literal notranslate"><span class="pre">*</span></code> і <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. Оператор <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> є унарним і повертає адресу комірки пам’яті свого операнда. Наприклад:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">var</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pvar</span><span class="p">;</span><span class="w"> </span><span class="cm">/*оголошено змінну цілого типу та вказівник на змінну цілого тіпа*/</span>
 <span class="n">pvar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">var</span><span class="p">;</span><span class="w"> </span><span class="cm">/*у змінну pvar поміщено адресу комірки пам&#39;яті змінної var*/</span>
@@ -502,7 +527,7 @@ document.write(`
 <p>призведе до однакового результату: змінна <code class="docutils literal notranslate"><span class="pre">var</span></code> набуде значення 150.</p>
 </section>
 <section id="id4">
-<h3>Вирази зі вказівниками<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>Вирази зі вказівниками<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>До вказівників можна застосовувати операцію присвоювання. Указівнику на <code class="docutils literal notranslate"><span class="pre">void</span></code> можна присвоїти вказівник будь-якого типу. Проте для зворотного присвоювання потрібно використовувати явне перетворення вказівника:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="o">*</span><span class="w"> </span><span class="n">pv</span><span class="p">;</span>
 <span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">pf</span><span class="p">;</span>
@@ -534,7 +559,7 @@ document.write(`
 <p>Указівники можна порівнювати: до них можливо застосувати всі 6 операцій порівняння: <code class="docutils literal notranslate"><span class="pre">&gt;,</span> <span class="pre">&gt;=,</span> <span class="pre">&lt;,</span> <span class="pre">&lt;=,</span> <span class="pre">==,</span> <span class="pre">!=</span></code>.</p>
 </section>
 <section id="id5">
-<h3>Указівники та одновимірні масиви<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>Указівники та одновимірні масиви<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p>У мові С між указівниками й масивами існує тісний зв’язок. Наприклад, оголошення масиву <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">array[25]</span></code> визначає не тільки виділення пам’яті для двадцяти п’яти елементів масиву, але й для вказівника з іменем <code class="docutils literal notranslate"><span class="pre">array</span></code>. Ім’я масиву без індексів трактується як адреса початкового елемента. Тобто ім’я масиву є вказівником на масив. Таким чином, доступ до елементів масиву здійснюється через указівник з іменем <code class="docutils literal notranslate"><span class="pre">array</span></code>.</p>
 <p>Оскільки ім’я масиву є вказівником, допустиме таке присвоєння:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">arrаy</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
@@ -560,7 +585,7 @@ document.write(`
 <p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab4-Example-41">посиланням</a>.</p>
 </aside>
 <section id="id6">
-<h4>Приклад 4.1<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.1<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*версія з використанням індексованого імені*/</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctype.h&gt;</span><span class="c1"> // tolower</span>
@@ -584,7 +609,7 @@ document.write(`
 </aside>
 </section>
 <section id="id7">
-<h4>Приклад 4.2<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.2<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cm">/*версія з використанням указівника*/</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;ctype.h&gt;</span><span class="c1"> //tolower</span>
@@ -612,7 +637,7 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h3>Масиви вказівників<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<h3>Масиви вказівників<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
 <p>У мові С допускається організовувати масиви вказівників. Щоб оголосити масив цілих указівників розміром 10, потрібно записати:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
 </pre></div>
@@ -638,7 +663,7 @@ document.write(`
 <p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab4-Example-43">посиланням</a>.</p>
 </aside>
 <section id="id9">
-<h4>Приклад 4.3<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.3<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string.h&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
@@ -674,7 +699,7 @@ document.write(`
 </section>
 </section>
 <section id="id10">
-<h3>Указівники, що вказують на інші вказівники<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>Указівники, що вказують на інші вказівники<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>Указівник на вказівник є однією з форм багаторівневої (непрямої) адресації. Як відомо, значенням указівника є адреса змінної, що містить потрібне значення. У випадку вказівника на вказівник перший указівник містить адресу другого вказівника, який, у свою чергу, указує на змінну, що містить потрібне значення. На рисунках 4.1 і 4.2 зображено однорівневу й багаторівневу адресації, відповідно.</p>
 <p><img alt="Однорівнева адресація" src="../../_images/lab41.png" /></p>
 <p>Рисунок 4.1 – Однорівнева адресація</p>
@@ -687,7 +712,7 @@ document.write(`
 <p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab4-Example-44">посиланням</a>.</p>
 </aside>
 <section id="id11">
-<h4>Приклад 4.4<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.4<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 
 <span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
@@ -704,7 +729,7 @@ document.write(`
 </section>
 </section>
 <section id="id12">
-<h3>Указівники на багатовимірні масиви<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>Указівники на багатовимірні масиви<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <p>Під час розміщення елементів багатовимірних масивів вони розташовуються в пам’яті поспіль за рядками, тобто останній індекс змінюється найшвидше, а перший — найповільніше. Такий порядок дає можливість звертатися до будь-якого елемента багатовимірного масиву, використовуючи адресу його початкового елемента та тільки один індексний вираз. Наприклад, для масиву, оголошеного як <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">arr[m][n];</span></code>, справедливе співвідношення</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">адреса</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span> <span class="o">=</span> <span class="n">адреса</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="n">j</span><span class="p">)</span><span class="o">*</span><span class="n">k</span><span class="p">,</span>
 </pre></div>
@@ -712,7 +737,7 @@ document.write(`
 <p>де <code class="docutils literal notranslate"><span class="pre">k</span></code> — кількість байтів, виділених для елемента масиву (залежно від типу).</p>
 </section>
 <section id="id13">
-<h3>Розподіл пам’яті для двовимірного масиву<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>Розподіл пам’яті для двовимірного масиву<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>Указівники на багатовимірні масиви у мові С — це масиви масивів, тобто масиви, елементами яких є масиви. Під час оголошення таких масивів у пам’яті комп’ютера створюється декілька різних об’єктів. Наприклад, під час оголошення двовимірного масиву <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">arr[4][3]</span></code> у пам’яті виділяється ділянка для зберігання значення змінної <code class="docutils literal notranslate"><span class="pre">arr</span></code>, яка є вказівником на масив із чотирьох указівників. Для цього масиву з чотирьох указівників теж виділяється пам’ять. Кожний із цих чотирьох указівників містить адресу масиву з трьох елементів типу <code class="docutils literal notranslate"><span class="pre">int</span></code>. Таким чином, у пам’яті комп’ютера виділяється чотири ділянки для зберігання чотирьох масивів чисел типу <code class="docutils literal notranslate"><span class="pre">int</span></code>, кожний із яких складається з трьох елементів. Це породжує в програмі три різних об’єкта:</p>
 <ul class="simple">
 <li><p>указівник з ідентифікатором <code class="docutils literal notranslate"><span class="pre">arr</span></code>;</p></li>
@@ -740,7 +765,7 @@ document.write(`
 <p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab4-Example-45">посиланням</a>.</p>
 </aside>
 <section id="id14">
-<h4>Приклад 4.5<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.5<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define ROWS 2</span>
 <span class="cp">#define COLS 3</span>
@@ -770,7 +795,7 @@ document.write(`
 <p>У наступному фрагменті показано зв’язок між матрицею та вказівником на неї.</p>
 </section>
 <section id="id15">
-<h4>Приклад 4.6<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.6<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define ROWS 2</span>
 <span class="cp">#define COLS 3</span>
@@ -821,7 +846,7 @@ document.write(`
 <p>У нижченаведеному прикладі показано зв’язок матриці та масиву вказівників.</p>
 </section>
 <section id="id16">
-<h4>Приклад 4.7<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.7<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define ROWS 2</span>
 <span class="cp">#define COLS 3</span>
@@ -872,7 +897,7 @@ document.write(`
 <p>Оскільки вказівник на вказівник — це те саме, що й масив указівників, то дозволено запис, наведений у наступному фрагменті.</p>
 </section>
 <section id="id17">
-<h4>Приклад 4.8<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.8<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define ROWS 2</span>
 <span class="cp">#define COLS 3</span>
@@ -918,7 +943,7 @@ document.write(`
 </section>
 </section>
 <section id="id18">
-<h2>Функції<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h2>
+<h2>Функції<a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
 <p><em>Функція</em> — це деяка логічно завершена сукупність операторів мови, яка виконує певну задачу, і яку можна викликати для виконання потрібну кількість разів. Основна форма опису функції має вигляд:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;тип&gt; &lt;ім’я функції&gt; (&lt;формальні параметри&gt;) { &lt;тіло функції&gt; }
 </pre></div>
@@ -940,7 +965,7 @@ document.write(`
 <p>Виклик функції можна оформити у вигляді <em>оператора</em>, якщо з іменем функції не пов’язано значення, що повертається, або у вигляді <em>виразу</em>, якщо повертається значення, пов’язане з іменем функції.</p>
 <p>Прототип функції можна вказувати замість її опису до моменту її виклику для того, щоб компілятор міг виконати перевірку відповідності типів аргументів і параметрів. Прототип функції за формою такий же, як і заголовок функції. Наприкінці нього ставлять <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
 <section id="id19">
-<h3>Масиви й функції<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h3>
+<h3>Масиви й функції<a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
 <p>У тому випадку, коли в якості аргумента функції використовують масив, то у функцію передають тільки адресу масиву, а не його повну копію. Під час викликання функції з іменем масиву як аргументом у неї передається вказівник на перший елемент масиву. Тому оголошення параметра має мати тип, схожий із типом указівника.</p>
 <p>Існує три способи оголошення параметра, який буде отримувати вказівник масиву:</p>
 <ul class="simple">
@@ -951,7 +976,7 @@ document.write(`
 <p>Усі три способи породжують один і той же результат — указівник.</p>
 </section>
 <section id="id20">
-<h3>Двовимірні масиви як аргументи функції<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
+<h3>Двовимірні масиви як аргументи функції<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
 <p>У випадку використання як аргумента функції багатовимірного масиву найліпше вказувати масив з усіма його розмірами, наприклад:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">mult</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mi">5</span><span class="p">][</span><span class="mi">5</span><span class="p">]);</span>
 </pre></div>
@@ -962,7 +987,7 @@ document.write(`
 <p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab4-Example-49">посиланням</a>.</p>
 </aside>
 <section id="id21">
-<h4>Приклад 4.9<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.9<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
 <p>Сортування масивів.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define N 10</span>
@@ -1002,7 +1027,7 @@ document.write(`
 </aside>
 </section>
 <section id="id22">
-<h4>Приклад 4.10<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.10<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
 <p>Із заданої матриці сформувати нову матрицю шляхом викреслювання заданих рядка та стовпця.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
 <span class="cp">#define ROWS 4</span>
@@ -1071,7 +1096,7 @@ document.write(`
 </aside>
 </section>
 <section id="id23">
-<h4>Приклад 4.11<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<h4>Приклад 4.11<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
 <p>Знайти середнє арифметичне значення елементів матриці, не рівних ні найбільшому, ні найменшому з її елементів.
 У нижченаведеному фрагменті використано функцію <code class="docutils literal notranslate"><span class="pre">prmatr()</span></code> з попереднього прикладу, але для дійсних чисел.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
@@ -1158,14 +1183,14 @@ document.write(`
 </section>
 </section>
 <section id="id24">
-<h2>Рекурсія<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h2>
+<h2>Рекурсія<a class="headerlink" href="#id24" title="Link to this heading">#</a></h2>
 <p><em>Рекурсія</em> — це спосіб організації допоміжного алгоритму у вигляді підпрограми (процедури або функції), за якого вона в ході виконання звертається сама до себе. Рекурсивним називають будь-який об’єкт, який частково визначається через себе.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Запустити цей приклад можна за <a class="reference external" href="https://repl.it/&#64;GasperPaul/Lab4-Example-412">посиланням</a>.</p>
 </aside>
 <section id="id25">
-<h3>Приклад 4.12<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h3>
+<h3>Приклад 4.12<a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
 <p>Простим прикладом рекурсії є функція <code class="docutils literal notranslate"><span class="pre">fact_recursive()</span></code>, яка обчислює факторіал цілого числа <code class="docutils literal notranslate"><span class="pre">n</span></code> — добуток усіх цілих чисел від 1 до <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span><span class="c1"> </span>
 
@@ -1230,11 +1255,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -1254,10 +1278,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1265,6 +1286,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1333,6 +1355,7 @@ By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2020.
@@ -1362,8 +1385,8 @@ By <a href="mailto:vikvikgrom@gmail.com">Громова В.В.</a>
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
