@@ -40,4 +40,4 @@ execute:
 
 #######################################################################################
 # Sphinx settings
-bibtex_bibfiles: references.bib
+bibtex_bibfiles: [references.bib]
